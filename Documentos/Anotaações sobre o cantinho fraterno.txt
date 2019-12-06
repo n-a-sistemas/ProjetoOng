@@ -1,0 +1,60 @@
+Precisam colocar tudo que recebe e a saída
+precisa dizer o que está sendo arrecadado
+dar entrada do que entrou e o que saiu
+ter um código para facilitar entrada e saída
+setores para produtos (roupas, vestidos de festas, etc...)
+valor
+
+cadastro - relatório - gráficos - código de barras
+
+BRIEFING - TODOS 
+PERSONAS - TODOS OK 
+CARD SORTING - TODOS
+WIREFRAME - ANDRÉ (PRIMEIRO NO PAPEL, DEPOIS NINJA MOCK E POR FIM PHOTOSHOP)
+SITEMAP - ALICE
+PHOTOSHOP - NATÁLIA
+
+--------------------------------------------------------------
+
+28/11/2019
+
+(Design de interiores, sustentabilidade e ti)
+
+Leitor de código de barras
+bazar recebe roupas, sapatos, móveis todos os dias
+contabilizar os valores, o quanto rende o bazar
+tem uma ideia de uma renda de uns 21 mil reais
+vicentinos (acolhe familias carentes)
+apresentando para a nova diretoria
+sistematização do bazar
+rémedios, atendimento médico...
+eles possuem uma planilha entrada, quantidade
+o antigo era mais genérico
+informações do que é vendido lá
+quem estipula os valores são os valores (R$2, R$5, R$15 -> roupas)
+calças o mesmo codigo, ou seja, separar cada código para cada categoria
+brechó shopping
+muito volumoso e rápido
+nome, descrição, valor e quantidade, observação
+controle do que entra e sai (dinheiro e objetos)
+relatório do que vende mais
+masculino, feminino e infantil (cds livros)
+o pessoal do design esta fazendo a categorização
+móveis e utensílios (quantos colchões)
+imagens aleatórias para representar os produtos
+uma observação para dizer algum desenho
+gráfico será para representar a saída
+quinzenal, semanal e mensal
+um campo para adicionar produtos ()
+
+- adicionar categoria
+- diario do ano
+------------------------------------------------------------------
+
+LOGIN/CADASTRO
+TELA DE ESTOQUE
+CADASTRO DOS PRODUTOS
+VENDA
+TELA INFORMATIVA (GRÁFICOS, RELATÓRIO: ENTRADA DE PRODUTOS E DOAÇÕES, 
+			SAIDA E RELATÓRIO FINANCEIRO RENDA FINAL. SEPARAR DINHEIRO DE DOAÇÕES)
+ 
