@@ -7,7 +7,7 @@
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    $sql = "SELECT FROM  usuarios WHERE email = '$email'";
+    $sql = "SELECT * FROM  usuarios WHERE email = '$email'";
     
     $resultado = $conn->query($sql);
 
