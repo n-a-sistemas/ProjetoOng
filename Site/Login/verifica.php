@@ -14,12 +14,14 @@
     if($resultado->num_rows > 0){
         $linha = $resultado->fetch_assoc();
         if($linha['senha'] == hash('sha256', $password)){
-            echo "Login efetuado com sucesso";
             $_SESSION ['login'] = true;
+            header('Location: ../Caixa/caixa.php');
         }
         else{
-            echo "Erro";
+            //substituir
+            echo "Usuário ou senha incorretos!";
         }
     }else{
-        echo "erro 2";
+        //substituir
+        echo "Usuário ou senha incorretos";
     }
