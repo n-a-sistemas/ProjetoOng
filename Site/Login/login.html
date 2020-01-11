@@ -9,39 +9,36 @@
 </head>
 <body>
     <form action="">
-        <div>
-            <figure id="user">
-                <img src="../../Projeto Gráfico/imagens/user-png-icon.png" alt="Imagem do usuário" width="300px">
+        <div id="user-image">
+            <figure>
+                <img src="../../Projeto Gráfico/imagens/user-png-icon.png" alt="Imagem do usuário" width="200px">
             </figure>
+            <a>Teste 1</a>
         </div>
 
         <div id="flex-box">
             <div>
-                <label for="email">Email: </label>
-                <input type="email" id="email">
+                <input type="email" id="email" name="email" placeholder="Digite aqui o seu email...">
             </div>
 
             <div>
-                <label for="senha">Senha: </label>
-                <input type="password" id="senha">
+                <input type="password" id="senha" name="senha" placeholder="Digite aqui a sua senha...">
             </div>
-
-            <button id="btn" type="submit">Entrar</button>
         </div>
 
-        <div>
+        <button id="btn" type="submit">ENTRAR</button>
+
+        <div id="msg-alert">
             <p>Usuário ou senha incorretos. Tente novamente.</p>
         </div>
 
-        <div>
-            <a href="">
-            <p>Esqueceu a senha? Clique aqui.</p>
-            </a>
+        <div id="link-troca">
+            <a href="">Esqueceu a senha? Clique aqui.</a>
         </div>
 
         <footer>
-            <figure id="logo">
-                <img src="../../Documentos/EXEMPLOS DE TELA/logo-cantinho.png" alt="Logo Cantinho Fraterno">
+            <figure>
+                <img src="../../Documentos/EXEMPLOS DE TELA/logo-cantinho.png" alt="Logo Cantinho Fraterno" width="150px">
             </figure>
         </footer>
     </form>
