@@ -8,7 +8,7 @@
     <title>Login</title>
 </head>
 <body>
-    <form action="">
+    <form action="verifica.php" method="post">
         <div id="user-image">
             <figure>
                 <img src="../../Projeto Gráfico/imagens/user-png-icon.png" alt="Imagem do usuário" width="200px">
@@ -22,7 +22,7 @@
             </div>
 
             <div>
-                <input type="password" id="senha" name="senha" placeholder="Digite aqui a sua senha...">
+                <input type="password" id="senha" name="password" placeholder="Digite aqui a sua senha...">
             </div>
         </div>
 

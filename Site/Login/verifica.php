@@ -23,5 +23,5 @@
         }
     }else{
         //substituir
-        echo "Usuário ou senha incorretos";
+        echo "Usuário ou senha incorretos!";
     }
