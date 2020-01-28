@@ -17,14 +17,21 @@ input{
     border-radius: 18px;
     margin-top: 20px;
     font-size: 18px;
+    box-shadow: 2px 2px 4px #afafaf;
 }
 
 #btn{
-    width: 100px;
+    width: 140px;
     height: 60px;
-    font-size: 17px;
+    font-size: 20px;
     margin-top: 40px;
     margin-bottom: 20px;
+    border: 1px 1px;
+    outline: none;
+    color: white;
+    border-radius: 14px;
+    background-color: #0073C1;
+    box-shadow: 2px 2px 4px #afafaf;
 }
 
 div a{
@@ -40,5 +47,4 @@ div a{
 footer{
     margin-top: 20px;
     margin-bottom: 2px;
-    /*jhdfjhskjdh*/
 }
