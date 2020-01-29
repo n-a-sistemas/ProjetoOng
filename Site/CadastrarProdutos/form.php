@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="insert.php" method="POST">
+    <form action="insert.php" method="POST" enctype=multipart/form-data>
         <div>
             <label for="">Código</label>
             <input type="text" name="codigo">
@@ -22,6 +22,14 @@
         <div>
             <label for="">Nome</label>
             <input type="text" name="nome">
+        </div>
+        <div>
+            <label for="">Descrição</label>
+            <input type="text" name="descricao">
+        </div>
+        <div>
+            <label for="">Imagem</label>
+            <input type="file" name="imagem">
         </div>
         <input type="submit" value="cadastrar">
     </form>

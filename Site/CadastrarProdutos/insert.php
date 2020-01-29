@@ -2,18 +2,15 @@
 
 include('conn.php');
 
-$codido = $_POST['codigo'];
+$codigo = $_POST['codigo'];
 $categoria = $_POST['categoria'];
 $nome = $_POST['nome'];
-$foto = basename($_FILES['foto']['name']);
+$imagem = basename($_FILES['imagem']['name']);
+$descricao = $_POST['descricao'];
 
-if(move_uploaded_file($_FILES['foto']['tmp_name'], $foto)){
-    //header('Location: login.php');
-}else{
-    echo "Não foi possível salvar";
-}
+move_uploaded_file($_FILES['imagem']['tmp_name'], $imagem);
 
-$sql = "INSERT INTO produtos(codigo, categoria, nome, imagem) VALUES ('$codido', '$categoria', '$nome', '$foto')";
+$sql = "INSERT INTO produtos(codigo, categoria, nome, imagem, descricao) VALUES ('$codigo', '$categoria', '$nome', '$imagem', '$descricao')";
 
 if($conn->query($sql) == TRUE){
     echo "Dado inserido com sucesso";
