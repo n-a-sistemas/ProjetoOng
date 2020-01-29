@@ -15,7 +15,7 @@
         $linha = $resultado->fetch_assoc();
         if($linha['senha'] == hash('sha256', $password)){
             $_SESSION ['login'] = true;
-            header('Location: ../Caixa/caixa.php');
+            header('Location: ../CadastrarProdutos/form.php');
         }
         else{
             //substituir
