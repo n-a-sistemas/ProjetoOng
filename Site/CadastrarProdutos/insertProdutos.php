@@ -2,10 +2,12 @@
 
 include('conn.php');
 
+$diretorio = "uploads/";
 $codigo = $_POST['codigo'];
 $categoria = $_POST['categoria'];
 $nome = $_POST['nome'];
-$imagem = basename($_FILES['imagem']['name']);
+$imagem = $diretorio . basename($_FILES['imagem']['name']);
+$tipo = strtolower(pathinfo($imagem, PATHINFO_EXTENSION));
 $descricao = $_POST['descricao'];
 
 move_uploaded_file($_FILES['imagem']['tmp_name'], $imagem);
@@ -23,7 +25,7 @@ else{
     if(empty($codigo) || empty($categoria) || empty($nome)){
         header("Location: ../CadastrarProdutos/form.php");
     }
-    elseif ($conn->query($sql) == TRUE) {
+    elseif ($conn->query($sql) == TRUE ) {
         header("Location: ../Estoque/form.php");
     }
     else{
