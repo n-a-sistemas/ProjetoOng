@@ -18,7 +18,7 @@
             header('Location: ../CadastrarProdutos/form.php');
         }
         else{
-            //substituir
+            //substituir por cancelamento
             echo "Usuário ou senha incorretos!";
         }
     }else{
