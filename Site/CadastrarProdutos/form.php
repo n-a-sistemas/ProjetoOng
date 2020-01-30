@@ -24,6 +24,10 @@
             <input type="text" name="nome">
         </div>
         <div>
+            <label for="">Quantidade</label>
+            <input type="text" name="quantidade">
+        </div>
+        <div>
             <label for="">Descrição</label>
             <input type="text" name="descricao">
         </div>
