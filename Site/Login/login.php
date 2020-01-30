@@ -29,15 +29,15 @@
         </div>
         <h2 class="display-4 my-4">Login</h2>
         <div class="row">
-            <form action="" class="col text-center">
+            <form action="verifica.php" method="post" class="col text-center">
                 <div class="form-group text-left">
                     <label for="">E-mail</label>
-                    <input type="email" class="form-control" placeholder="Digite aqui o seu e-mail..." id="email">
+                    <input type="email" class="form-control" placeholder="Digite aqui o seu e-mail..." id="email" name="email">
                 </div>
 
                 <div class="form-group text-left">
                     <label for="">Senha</label>
-                    <input type="password" class="form-control" placeholder="Digite aqui a sua senha..." id="email">
+                    <input type="password" class="form-control" placeholder="Digite aqui a sua senha..." id="email" name="password">
                 </div>
 
                 <div class="alert alert-danger alert-dismissible fade show">

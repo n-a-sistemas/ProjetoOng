@@ -19,9 +19,9 @@
         }
         else{
             //substituir por cancelamento
-            echo "Usuário ou senha incorretos!";
+            header('Location: ../Login/login.php');
         }
     }else{
         //substituir
-        echo "Usuário ou senha incorretos!";
+        header('Location: ../Login/login.php');
     }
