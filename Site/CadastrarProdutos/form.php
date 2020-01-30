@@ -7,7 +7,7 @@
     <title>Cadastro de produtos</title>
 </head>
 <body>
-    <form action="insert.php" method="POST" enctype=multipart/form-data>
+    <form action="insertProdutos.php" method="POST" enctype=multipart/form-data>
         <div>
             <label for="">Código</label>
             <input type="text" name="codigo">
@@ -22,6 +22,10 @@
         <div>
             <label for="">Nome</label>
             <input type="text" name="nome">
+        </div>
+        <div>
+            <label for="">Quantidade</label>
+            <input type="text" name="quantidade">
         </div>
         <div>
             <label for="">Descrição</label>
