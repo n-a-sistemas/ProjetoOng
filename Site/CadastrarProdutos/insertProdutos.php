@@ -2,7 +2,7 @@
 
 include('conn.php');
 
-$diretorio = "uploads/";
+$diretorio = "imagens/";
 $codigo = $_POST['codigo'];
 $categoria = $_POST['categoria'];
 $nome = $_POST['nome'];
