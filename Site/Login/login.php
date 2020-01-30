@@ -31,12 +31,12 @@
         <div class="row">
             <form action="verifica.php" method="post" class="col text-center">
                 <div class="form-group text-left">
-                    <label for="">E-mail</label>
+                    <label for="email">E-mail</label>
                     <input type="email" class="form-control" placeholder="Digite aqui o seu e-mail..." id="email" name="email">
                 </div>
 
                 <div class="form-group text-left">
-                    <label for="">Senha</label>
+                    <label for="password">Senha</label>
                     <input type="password" class="form-control" placeholder="Digite aqui a sua senha..." id="email" name="password">
                 </div>
 
@@ -48,6 +48,7 @@
                 <button type="submit" class="btn btn-outline-primary my-4">ENTRAR</button>
             </form>
         </div>
+
 
     </div>
 </body>
