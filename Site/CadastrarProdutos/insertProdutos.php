@@ -2,10 +2,12 @@
 
 include('conn.php');
 
+$diretorio = "imagens/";
 $codigo = $_POST['codigo'];
 $categoria = $_POST['categoria'];
 $nome = $_POST['nome'];
-$imagem = basename($_FILES['imagem']['name']);
+$imagem = $diretorio . basename($_FILES['imagem']['name']);
+$tipo = strtolower(pathinfo($imagem, PATHINFO_EXTENSION));
 $descricao = $_POST['descricao'];
 $quantidade = $_POST['quantidade'];
 
@@ -27,7 +29,7 @@ else{
     if(empty($codigo) || empty($categoria) || empty($nome || empty($quantidade))){
         header("Location: ../CadastrarProdutos/form.php");
     }
-    elseif ($conn->query($sql) == TRUE) {
+    elseif ($conn->query($sql) == TRUE ) {
         header("Location: ../Estoque/form.php");
     }
     else{
