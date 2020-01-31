@@ -21,6 +21,9 @@
 </head>
 
 <body>
+    <?php 
+        include '../menu.php';
+    ?>
     <div class="container text-center">
         <div id="logocan" class="my-4">
             <picture>

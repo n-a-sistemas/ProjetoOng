@@ -6,8 +6,8 @@
     margin-left: 25px;
 }
 
-hr{
-    display: inline-block;
+title{
+    display: none;
 }
 
 label{
