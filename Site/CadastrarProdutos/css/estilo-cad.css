@@ -1,9 +1,12 @@
 @charset "utf-8";
 
 *{
-    display: flex;
-    flex-direction: column;
-    margin-left: 25px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 16px;
+}
+
+hr{
+    background-color: #b3c8fc;
 }
 
 title{
@@ -14,13 +17,3 @@ label{
     margin-top: 10px;
 }
 
-input,
-select,
-button{
-    width: 200px;
-}
-
-#imagem,
-button{
-    margin-top: 70px;
-}

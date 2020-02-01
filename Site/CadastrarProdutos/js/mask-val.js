@@ -26,4 +26,10 @@ $(document).ready(function () {
         }, false);
     })();*/
 
+    //Inserindo o nome do arquivo no campo de imagem
+    $(".custom-file-input").on("change", function() {
+        var fileName = $(this).val().split("\\").pop();
+        $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+      });
+
 });
