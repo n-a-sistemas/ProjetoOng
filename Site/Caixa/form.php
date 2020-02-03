@@ -3,6 +3,7 @@ include 'conn.php';
 $sql="SELECT * FROM produtos";
 $resultado=$conn->query($sql);
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -14,7 +15,7 @@ $resultado=$conn->query($sql);
 <body>
     <h1>Caixa</h1>
 
-    <form action="concluido.php" method="POST">
+    <form action="insertVendas.php" method="POST">
         <div>
             <label for="codigo">Código do Produto: </label>
             <input type="text" name="codigo" id="codigo" value="">
@@ -40,6 +41,10 @@ $resultado=$conn->query($sql);
             <input type="number" name="quantidade" id="quantidade">
         </div>
         <br>
+        <div>
+            <label for="valor">Valor total:</label>
+            <input type="number" id="valor" name="valor" value="">
+        </div>
         <div>
             <input type="submit" value="Confirmar">
         </div>

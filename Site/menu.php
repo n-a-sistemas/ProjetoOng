@@ -12,10 +12,10 @@
             <div class="row">
                 <ul class="nav">
                 <li class="nav-item">
-                    <a class="nav-link active" href="../ProjetoOng/Site/Caixa/form.php">Caixa</a>
+                    <a class="nav-link active" href="#">Caixa</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../ProjetoOng/Site/Estoque/form.php">Estoque</a>
+                    <a class="nav-link" href="#">Estoque</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Cadastrar produtos</a>
