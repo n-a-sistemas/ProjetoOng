@@ -18,6 +18,7 @@
     <script src="../Mascaras/js/jquery.mask.min.js" type="text/javascript"></script>
     <script src="../CadastrarProdutos/js/mask-val.js"></script>
     <link rel="stylesheet" href="../CadastrarProdutos/css/estilo-cad.css" />
+    <link rel="stylesheet" href="../ProjetoOng/Site/menu.css">
     <title>Cadastro de produtos</title>
 </head>
 <body>
@@ -28,11 +29,11 @@
             <h2>Cadastro de produtos</h2>
             <hr>
         </div>
-        <div class="form-group text-left col-2">
+        <div class="form-group text-left col-md">
             <label for="">Código</label>
-            <input type="text" name="codigo" class="form-control codigo" required>
+            <input type="text" name="codigo" class="form-control codigo" placeholder="Digite apenas números..." required>
         </div>
-        <div class="form-group text-left col-2">
+        <div class="form-group text-left col-4">
             <label for="categoria">Categoria</label>
             <select name="categoria" id="" class="form-control" required>
                 <option value="1">Camisa</option>
@@ -44,16 +45,20 @@
             <label for="">Nome</label>
             <input type="text" name="nome" class="form-control" required>
         </div>
-        <div class="form-group text-left col-2">
+        <div class="form-group text-left col-4">
             <label for="">Quantidade</label>
-            <input type="text" name="quantidade" class="form-control codigo" required>
+            <input type="text" name="quantidade" class="form-control quantidade" placeholder="Digite apenas números..." required>
+        </div>
+        <div class="form-group text-left col-4">
+            <label for="">Preço</label>
+            <input type="text" name="quantidade" class="form-control dinheiro" placeholder="Digite apenas números..." required>
         </div>
         <div class="form-group text-left col">
             <label for="">Descrição</label>
             <input type="text" name="descricao" class="form-control">
         </div>
         <div class="form-group text-left col">
-            <label for="" class="custom-file-label">Inserir imagem...</label>
+            <label for="" class="custom-file-label">Clique aqui para inserir uma imagem...</label>
             <input type="file" name="imagem" value="Pesquisar" class="custom-file-input col" required>
         </div>
         <input type="submit" value="Cadastrar" class="btn btn-lg btn-outline-primary my-4 mx-4">
@@ -61,5 +66,9 @@
         <input type="reset" value="Cancelar" class="btn btn-lg btn-outline-danger my-4 mx-4">
     </form>
     </div>
+    <script src="../Mascaras/js/jquery.mask.min.js" type="text/javascript"></script>
+    <script src="../CadastrarProdutos/js/mask-val.js"></script>
+    <link rel="stylesheet" href="../CadastrarProdutos/css/estilo-cad.css" />
+    <link rel="stylesheet" href="../ProjetoOng/Site/menu.css">
 </body>
 </html>
