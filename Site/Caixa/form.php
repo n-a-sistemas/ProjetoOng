@@ -18,7 +18,7 @@ $resultado=$conn->query($sql);
     <form action="insertVendas.php" method="POST">
         <div>
             <label for="codigo">Código do Produto: </label>
-            <input type="text" name="codigo" id="codigo" value="">
+            <input type="text" name="codigo" id="codigo">
         </div>
         <br>
         <div>
