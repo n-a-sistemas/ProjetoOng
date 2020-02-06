@@ -21,16 +21,10 @@
 </head>
 
 <body>
-    <?php 
-        include '../menu.php';
-    ?>
     <div class="container text-center">
-        <div id="logocan" class="my-4">
-            <picture>
-                <img class="img-fluid" style="width: 270px;" src="../../Documentos/EXEMPLOS DE TELA/logo-cantinho.png" alt="Logo Cantinho Fraterno">
-            </picture>
-        </div>
-        <h2 class="display-4 my-4">Login</h2>
+        <br/>
+        <br/>
+        <h2 class="display-4 my-5">Login</h2>
         <div class="row">
             <form action="verifica.php" method="post" class="col text-center">
                 <div class="form-group text-left">
@@ -48,11 +42,15 @@
                     <p>Usuário ou senha incorreto. Tente novamente.</p>
                 </div>
 
-                <button type="submit" class="btn btn-outline-primary my-4">ENTRAR</button>
+                <button type="submit" class="btn btn-lg btn-outline-primary my-4">ENTRAR</button>
             </form>
         </div>
 
-
+        <div id="logocan" class="my-3 text-center">
+            <picture>
+                <img class="img-fluid" style="width: 270px;" src="../../Documentos/EXEMPLOS DE TELA/logo-cantinho.png" alt="Logo Cantinho Fraterno">
+            </picture>
+        </div>
     </div>
 </body>
 
