@@ -1,4 +1,8 @@
+.container-xl{
+    background-color: #b3c8fc!important;
+    height: 60px!important;
+}
 .container-fluid{
-    background-color: #b3c8fc;
+    background-color: #8dadfc;
     height: 60px;
 }

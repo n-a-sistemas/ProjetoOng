@@ -2,6 +2,7 @@ $(document).ready(function () {
 
     //Máscaras
     $('.codigo').mask('0000000000', { reverse: true });
+    $('.quantidade').mask('0000', { reverse: true });
     $('.dinheiro').mask('000.000.000.000,00', { reverse: true });
 
     /*Validacao de campos

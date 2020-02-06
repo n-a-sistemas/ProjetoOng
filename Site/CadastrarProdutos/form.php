@@ -18,6 +18,7 @@
     <script src="../Mascaras/js/jquery.mask.min.js" type="text/javascript"></script>
     <script src="../CadastrarProdutos/js/mask-val.js"></script>
     <link rel="stylesheet" href="../CadastrarProdutos/css/estilo-cad.css" />
+    <link rel="stylesheet" href="../ProjetoOng/Site/menu.css">
     <title>Cadastro de produtos</title>
 </head>
 <body>
@@ -28,11 +29,11 @@
             <h2>Cadastro de produtos</h2>
             <hr>
         </div>
-        <div class="form-group text-left col-2">
+        <div class="form-group text-left col-md">
             <label for="">Código</label>
-            <input type="text" name="codigo" class="form-control codigo" required>
+            <input type="text" name="codigo" class="form-control codigo" placeholder="Digite apenas números..." required>
         </div>
-        <div class="form-group text-left col-2">
+        <div class="form-group text-left col-4">
             <label for="categoria">Categoria</label>
             <select name="categoria" id="" class="form-control" required>
                 <option value="1">Camisa</option>
@@ -61,5 +62,9 @@
         <input type="reset" value="Cancelar" class="btn btn-lg btn-outline-danger my-4 mx-4">
     </form>
     </div>
+    <script src="../Mascaras/js/jquery.mask.min.js" type="text/javascript"></script>
+    <script src="../CadastrarProdutos/js/mask-val.js"></script>
+    <link rel="stylesheet" href="../CadastrarProdutos/css/estilo-cad.css" />
+    <link rel="stylesheet" href="../ProjetoOng/Site/menu.css">
 </body>
 </html>
