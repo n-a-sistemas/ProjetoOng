@@ -44,17 +44,17 @@
             <label for="">Nome</label>
             <input type="text" name="nome" class="form-control" required>
         </div>
-        <div class="form-group text-left col-2">
+        <!--<div class="form-group text-left col-2">
             <label for="">Quantidade</label>
             <input type="text" name="quantidade" class="form-control codigo" required>
-        </div>
+        </div>-->
         <div class="form-group text-left col">
             <label for="">Descrição</label>
             <input type="text" name="descricao" class="form-control">
         </div>
         <div class="form-group text-left col">
             <label for="" class="custom-file-label">Inserir imagem...</label>
-            <input type="file" name="imagem" value="Pesquisar" class="custom-file-input col" required>
+            <input type="file" name="imagem" value="Pesquisar" class="custom-file-input col" >
         </div>
         <input type="submit" value="Cadastrar" class="btn btn-lg btn-outline-primary my-4 mx-4">
 
