@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 4.9.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 03-Fev-2020 às 21:23
--- Versão do servidor: 10.4.10-MariaDB
--- versão do PHP: 7.3.12
+-- Tempo de geração: 03-Fev-2020 às 23:17
+-- Versão do servidor: 10.4.8-MariaDB
+-- versão do PHP: 7.3.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `cantinhofraterno`
+-- Banco de dados: `cantinho fraterno`
 --
 
 -- --------------------------------------------------------
@@ -64,14 +64,14 @@ CREATE TABLE `item_vendas` (
 --
 
 CREATE TABLE `produtos` (
-  `id_produto` int(100) NOT NULL,
-  `codigo` int(100) NOT NULL,
+  `id_produto` int(11) NOT NULL,
+  `codigo` int(11) NOT NULL,
   `categoria` varchar(50) NOT NULL,
   `nome` varchar(100) NOT NULL,
   `imagem` varchar(150) NOT NULL,
   `descricao` varchar(150) NOT NULL,
   `quantidade` int(11) NOT NULL,
-  `valor` int(100) NOT NULL
+  `valor` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -79,8 +79,8 @@ CREATE TABLE `produtos` (
 --
 
 INSERT INTO `produtos` (`id_produto`, `codigo`, `categoria`, `nome`, `imagem`, `descricao`, `quantidade`, `valor`) VALUES
-(1, 123, 'Camiseta', 'Camiseta Masculina', '', '', 0, 2),
-(2, 456, 'Camiseta', 'Camiseta Feminina', '', '', 0, 4),
+(1, 123, '1', 'Camiseta Masculina', '', '', 0, 2),
+(2, 456, '1', 'Camiseta Feminina', '', '', 0, 4),
 (6, 789, '1', 'Camisa azul', 'imagens/camiseta azul.jpg', 'Azul camisa', 4, 0);
 
 -- --------------------------------------------------------
@@ -90,7 +90,7 @@ INSERT INTO `produtos` (`id_produto`, `codigo`, `categoria`, `nome`, `imagem`, `
 --
 
 CREATE TABLE `usuarios` (
-  `id_usuario` smallint(100) NOT NULL,
+  `id_usuario` int(11) NOT NULL,
   `nome` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `senha` varchar(64) NOT NULL,
@@ -104,7 +104,7 @@ CREATE TABLE `usuarios` (
 --
 
 CREATE TABLE `vendas` (
-  `id_venda` int(100) NOT NULL,
+  `id_venda` int(11) NOT NULL,
   `valor` double NOT NULL,
   `data` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -163,19 +163,19 @@ ALTER TABLE `doacoes`
 -- AUTO_INCREMENT de tabela `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `id_produto` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_produto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` smallint(100) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `vendas`
 --
 ALTER TABLE `vendas`
-  MODIFY `id_venda` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_venda` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
