@@ -1,8 +1,10 @@
 <?php 
-    $json = file_get_contents('relatorioEncode.php');
+    $datainicial = $_GET['datainicial'];
+    $datafinal = $_GET['datafinal'];
+    $json = file_get_contents('http://localhost/xampp/ProjetoOng/Site/RelatorioDoacao/relatorioEncode.php?datainicial='
+            .$datainicial.'&datafinal='.$datafinal);
 
-    $data= json_decode($json);
-
+    $data= json_decode($json, true);
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +16,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="">
+    <form action="" method="GET">
         <label for="">Data Inicial</label>
         <input type="text" name="datainicial">
         <label for="">Data Final</label>
@@ -24,7 +26,9 @@
 
     <table>
         <tr>
-            <td><?php $data->data?></td>
+            <td><?php echo $data[0]['categoria']?></td>
+            <td><?php echo $data[0]['data']?></td>
+            <td></td>
         </tr>
     </table>
 </body>
