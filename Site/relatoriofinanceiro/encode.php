@@ -2,19 +2,22 @@
 
 include('conn.php');
 
-$datainicial = $_POST['datainicial'];
-$datafinal = $_POST['datafinal'];
+$datainicial = $_GET['datainicial'];
+$datafinal = $_GET['datafinal'];
 
-$sql = "SELECT * FROM vendas WHERE data BETWEEN $datainicial AND $datafinal";
+$sql = "SELECT a.id_venda, a.valor, a.data, b.id_produto, b.id_venda, b.quantidade, c.id_produto, c.nome, c.categoria
+FROM vendas a, item_vendas b, produtos c
+WHERE a.id_venda = b.id_venda AND b.id_produto = c.id_produto AND a.data BETWEEN '$datainicial' AND '$datafinal'";
+
 $resultado = $conn->query($sql);
 
-$produtos=array();
+$vendas=array();
 
 if($resultado->num_rows > 0){
     while($linha=$resultado->fetch_assoc()){
-        array_push($produtos, $linha);
+        array_push($vendas, $linha);
     }
-    echo json_encode(urf8_string_array_encode($produtos));
+    echo json_encode($vendas);
 }
 
 function utf8_string_array_encode(&$array){
