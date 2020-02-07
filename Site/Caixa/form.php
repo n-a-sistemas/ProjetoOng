@@ -18,22 +18,22 @@ $resultado=$conn->query($sql);
     <form action="insertVendas.php" method="POST">
         <div>
             <label for="codigo">Código do Produto: </label>
-            <input type="text" name="codigo" id="codigo">
-        </div>
-        <br>
-        <div>
-            <label for="produto">Produto: </label>
-            <select name="produto" id="produto">
-                <?php
+            <select name="codigo" id="codigo">
+            <?php
                     if($resultado->num_rows){
                         while($linha=$resultado->fetch_assoc()){
                             ?>
-                            <option value="<?php echo $linha['id_produto']?>"><?php echo $linha['nome']?></option>
+                            <option value="<?php echo $linha['id_produto']?>"><?php echo $linha['codigo']?></option>
                             <?php
                         }
                     }
                 ?>
             </select>
+        </div>
+        <br>
+        <div>
+            <label for="produto">Produto: </label>
+            <input type="text" name="produto" id="produto">
         </div>
         <br>
         <div>
