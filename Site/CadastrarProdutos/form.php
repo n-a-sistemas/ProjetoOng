@@ -37,10 +37,6 @@
                 <input type="text" name="nome" class="form-control" required>
             </div>
             <div class="form-group text-left col-4">
-                <label for="">Quantidade</label>
-                <input type="text" name="quantidade" class="form-control quantidade" placeholder="Digite apenas números..." required>
-            </div>
-            <div class="form-group text-left col-4">
                 <label for="">Preço</label>
                 <input type="text" name="quantidade" class="form-control dinheiro" placeholder="Digite apenas números..." required>
             </div>

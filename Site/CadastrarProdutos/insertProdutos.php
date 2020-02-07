@@ -14,7 +14,7 @@ $quantidade = $_POST['quantidade'];
 
 move_uploaded_file($_FILES['imagem']['tmp_name'], $imagem);
 
-$sql = "SELECT * FROM produtos WHERE codigo = '$codigo'";
+$sql = "SELECT * FROM produtos WHERE nome = '$nome'";
 
 $resultado = $conn->query($sql);
 
@@ -24,7 +24,7 @@ if($resultado->num_rows > 0){
 else{
     $sql = "INSERT INTO produtos(codigo, categoria, nome, imagem, descricao) VALUES ('$codigo', '$categoria', '$nome', '$imagem', '$descricao')";
 
-    if(empty($codigo) || empty($categoria) || empty($nome || empty($quantidade))){
+    if(empty($codigo) || empty($categoria) || empty($nome) || empty($quantidade)){
         header("Location: ../CadastrarProdutos/form.php");
     }
     elseif ($conn->query($sql) == TRUE ) {
@@ -34,6 +34,7 @@ else{
         echo "Erro: " . $conn->error;
     }
 }
+
 
 
 
