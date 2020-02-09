@@ -15,10 +15,8 @@
     <?php include '../menu.php'; ?>
     <div class="container text-center primary">
         <form action="insertProdutos.php" method="POST" enctype=multipart/form-data>
-            <div class="display-4 my-4 text-left">
-                <br/>
+            <div class="d-flex justify-contente-center row display-4 my-4">
                 <h1>Cadastro de produtos</h1>
-                <hr/>
             </div>
 
             <div class="form-group text-left col-md">
@@ -26,7 +24,7 @@
                 <input type="text" name="codigo" class="form-control codigo" placeholder="Digite apenas números..." required>
             </div>
 
-            <div class="form-group text-left col-4">
+            <div class="form-group text-left col-auto col-md-4">
                 <label for="categoria">Categoria</label>
                 <select name="categoria" id="" class="form-control" required>
                     <option value="1">Camisa</option>
@@ -40,7 +38,7 @@
                 <input type="text" name="nome" class="form-control" required>
             </div>
 
-            <div class="form-group text-left col-4">
+            <div class="form-group text-left col-auto col-md-4">
                 <label for="">Preço (R$)</label>
                 <input type="text" name="quantidade" class="form-control dinheiro" placeholder="Digite apenas números..." required>
             </div>
@@ -50,9 +48,12 @@
                 <input type="text" name="descricao" class="form-control">
             </div>
 
-            <div class="form-group text-left col">
-                <label for="" class="custom-file-label">Clique aqui para inserir uma imagem...</label>
-                <input type="file" name="imagem" value="Pesquisar" class="custom-file-input col">
+            <div class="container form-group">
+                <div class="col-auto custom-file">
+                    <input class="form-control custom-file-input" type="file" name="imagemUpload" value="Procurar..."
+                        accept="image/png ,image/jpeg">
+                    <label class="custom-file-label text-left" for="customFile">insira uma imagem...</label>
+                </div>
             </div>
 
             <button type="submit" class="btn btn-lg btn-outline-success my-4 mx-4">Cadastrar</button>
