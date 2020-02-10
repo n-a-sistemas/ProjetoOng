@@ -1,6 +1,6 @@
 <?php
-    $json = file_get_contents("encode.php");
-
+    $json = file_get_contents("http://localhost/ProjetoOng/Site/Estoque/encode.php");
+    $dados = json_decode($json, true);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -15,10 +15,39 @@
 <body>
     <?php include '../menu.php';?>
     <br/>
-    <form class="form-inline my-5 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
-    </form>
+    <div class="container primary">
+        <h1>Estoque</h1>
+        <form class="form-inline my-5 my-lg-0 teste">
+            <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
+        </form>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead class="table-primary">
+                    <tr>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Categoria</th>
+                    <th scope="col">Quantidade</th>
+                    <th scope="col">Preço</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <?php
+                foreach($dados as $row){
+                ?>
+                    <tr>
+                    <td scope="row"><?php echo $row['nome'] ?></td>
+                    <td><?php echo $row['categoria'] ?></td>
+                    <td><?php echo $row['quantidade'] ?></td>
+                    <td><?php echo $row['valor'] ?></td>
+                    </tr>
+                <?php
+                }
+                ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
