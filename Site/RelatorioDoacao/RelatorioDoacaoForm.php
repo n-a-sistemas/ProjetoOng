@@ -1,9 +1,9 @@
 <?php 
     $datainicial = $_GET['datainicial'];
     $datafinal = $_GET['datafinal'];
-    $json = file_get_contents('http://localhost/xampp/ProjetoOng/Site/RelatorioDoacao/relatorioEncode.php?datainicial='
-            .$datainicial.'&datafinal='.$datafinal);
-
+    $url = 'http://localhost/xampp/ProjetoOng/Site/RelatorioDoacao/relatorioEncode.php?datainicial='
+    .$datainicial.'&datafinal='.$datafinal;
+    $json = file_get_contents($url);
     $data= json_decode($json, true);
 ?>
 
@@ -25,11 +25,17 @@
     </form>
 
     <table>
+    <?php
+        foreach ($data as $row) {
+    ?>
         <tr>
-            <td><?php echo $data[0]['categoria']?></td>
-            <td><?php echo $data[0]['data']?></td>
+            <td><?php echo $row['categoria']?></td>
+            <td><?php echo $row['data']?></td>
             <td></td>
         </tr>
+    <?php
+        }
+    ?>
     </table>
 </body>
 </html>
