@@ -16,11 +16,11 @@
     <?php include '../menu.php';?>
     <br/>
     <div class="container primary">
+        <h1>Estoque</h1>
         <form class="form-inline my-5 my-lg-0 teste">
             <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
         </form>
-        
         <div class="table-responsive">
             <table class="table table-bordered">
                 <thead class="table-primary">
