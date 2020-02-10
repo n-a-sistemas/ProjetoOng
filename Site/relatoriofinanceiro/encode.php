@@ -5,11 +5,13 @@ include('conn.php');
 $datainicial = $_GET['datainicial'];
 $datafinal = $_GET['datafinal'];
 
-$sql = "SELECT a.id_venda, a.valor, a.data, b.id_produto, b.id_venda, b.quantidade, c.id_produto, c.nome, c.categoria
+$sql = "SELECT a.id_venda, a.valor, a.data, b.id_produto, b.id_venda, b.quantidade, c.id_produto, c.nome, c.categoria 
 FROM vendas a, item_vendas b, produtos c
 WHERE a.id_venda = b.id_venda AND b.id_produto = c.id_produto AND a.data BETWEEN '$datainicial' AND '$datafinal'";
 
 $resultado = $conn->query($sql);
+
+
 
 $vendas=array();
 
@@ -17,7 +19,6 @@ if($resultado->num_rows > 0){
     while($linha=$resultado->fetch_assoc()){
         array_push($vendas, $linha);
     }
-    echo json_encode($vendas);
 }
 
 function utf8_string_array_encode(&$array){
@@ -35,3 +36,15 @@ function utf8_string_array_encode(&$array){
     array_walk($array,$func);
     return $array;
 }
+
+$total = "SELECT * FROM vendas WHERE data BETWEEN '$datainicial 00:00:00' AND '$datafinal 23:59:59'";
+
+$result = $conn->query($total);
+$preco = 0;
+if($result->num_rows > 0){
+    while($linha=$result->fetch_assoc()){
+        $preco += $linha['valor'];
+    }
+}
+
+echo json_encode($vendas, $preco);

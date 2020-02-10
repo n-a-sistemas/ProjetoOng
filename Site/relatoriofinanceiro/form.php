@@ -1,9 +1,16 @@
 <?php
-$datainicial = $_GET['datainicial'];
-$datafinal = $_GET['datafinal'];
+$datainicial = "";
+$datafinal = "";
+if(isset($_GET['datainicial']) && isset($_GET['datafinal'])){
+    $datainicial = $_GET['datainicial'];
+    $datafinal = $_GET['datafinal'];    
+}
+if($datainicial != "" && $datafinal != ""){
+    $json = file_get_contents('http://localhost/ProjetoOng/Site/relatoriofinanceiro/encode.php?datainicial=' . $datainicial . '&datafinal=' . $datafinal);
+    $dados = json_decode($json, true);
+    echo $dados;
+}
 
-$json = file_get_contents('http://localhost/ProjetoOng/Site/relatoriofinanceiro/encode.php?datainicial=' . $datainicial . '&datafinal=' . $datafinal);
-$dados = json_decode($json, true);
 ?> 
 
 <!DOCTYPE html>
@@ -16,7 +23,7 @@ $dados = json_decode($json, true);
 </head>
 <body>
     
-    <form action="" method="GET">
+    <form action="encode.php" method="GET">
         <label for="">Data Inicial: </label>
         <input type="date" name="datainicial" id="datainicial">
         <label for="datafinal">Data Final: </label>
@@ -24,11 +31,15 @@ $dados = json_decode($json, true);
         <input type="submit" value="Procurar">
     </form>
     <table>
-        <tr>
-            <td><?php echo $dados[0]['nome'];?></td>
-            <td><?php echo $dados[0]['categoria']?></td>
-            <td><?php echo $dados[0]['valor']?></td>
-        </tr>
+        <?php
+            foreach($dados as $d){
+                echo "<tr>";
+                echo "<td>" . $d->nome . "</td>";
+                echo "<td>" . $d->categoria . "</td>";
+                echo "<td>" . $d->valor . "</td>";
+                echo "</tr>";
+            }
+        ?>
     </table>
     
 
