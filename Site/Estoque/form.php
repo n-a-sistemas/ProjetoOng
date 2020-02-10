@@ -1,5 +1,6 @@
 <?php
-    $json = file_get_contents("encode.php");
+    $json = file_get_contents("http://localhost/ProjetoOng/Site/Estoque/encode.php");
+    $dados = json_decode($json, true);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -14,16 +15,12 @@
 <body>
     <?php include '../menu.php';?>
     <br/>
-    <form class="form-inline my-5 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
-    </form>
     <div class="container primary">
-        <form class="form-inline my-5 my-lg-0">
+        <h1>Estoque</h1>
+        <form class="form-inline my-5 my-lg-0 teste">
             <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
         </form>
-        
         <div class="table-responsive">
             <table class="table table-bordered">
                 <thead class="table-primary">
@@ -35,24 +32,18 @@
                     </tr>
                 </thead>
                 <tbody>
+                <?php
+                foreach($dados as $row){
+                ?>
                     <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
+                    <td scope="row"><?php echo $row['nome'] ?></td>
+                    <td><?php echo $row['categoria'] ?></td>
+                    <td><?php echo $row['quantidade'] ?></td>
+                    <td><?php echo $row['valor'] ?></td>
                     </tr>
-                    <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                    </tr>
-                    <tr>
-                    <th scope="row">3</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                    </tr>
+                <?php
+                }
+                ?>
                 </tbody>
             </table>
         </div>
