@@ -1,11 +1,13 @@
 
 <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow">
+          
         <a class="navbar-brand" href="#">
-            <img src="http://localhost/xampp/ProjetoOng/Documentos/EXEMPLOS%20DE%20TELA/logo-cantinho.png" width="120" class="img-fluid d-inline-block" alt="">
+            <img src="../Documentos/EXEMPLOS\ DE\ TELA/logo-cantinho.png" width="120" class="img-fluid d-inline-block" alt="">
         </a>
+
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
-        <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
@@ -27,9 +29,17 @@
                     Relatórios
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Relatório Financeiro</a>
-                        <a class="dropdown-item" href="#">Relatório de doações</a>
+                        <a class="dropdown-item" href="../RelatorioDoacao/form.php">Relatório Financeiro</a>
+                        <a class="dropdown-item" href="../relatoriofinanceiro/form.php">Relatório de doações</a>
                     </div>
+                </li>
+
+                <li  class="nav-item">
+                    <a class="nav-link" href="../MeuPerfil/perfil.html">Meu perfil</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Sair</a>
                 </li>
             </ul>
         </div>
