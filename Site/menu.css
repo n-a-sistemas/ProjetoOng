@@ -10,7 +10,17 @@ h1{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif!important;
 }
 
+hr{
+    background-color: #b3c8fc;
+}
+
+label{
+    margin-top: 10px;
+}
+
 .primary{
     margin-top: 150px;
     text-align: center;
+
+    /*background-image: url("");*/
 }
