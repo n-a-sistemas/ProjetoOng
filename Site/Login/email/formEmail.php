@@ -7,9 +7,13 @@
 </head>
 <body>
     <form action="enviar.php" method="POST">
-    
-    
-
+        <div>
+            <label for="">Email: </label>
+            <input type="email" id='email' name='email'>
+        </div>
+        <div>
+            <input type="submit" value="Enviar">
+        </div>
     </form>
 </body>
 </html>
