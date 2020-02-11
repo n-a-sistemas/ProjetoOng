@@ -6,14 +6,16 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="enviar.php" method="POST">
+    <form action="">
         <div>
-            <label for="">Email: </label>
-            <input type="email" id='email' name='email'>
+            <label for="">Nova senha:</label>
+            <input type="password" name="password">
         </div>
         <div>
-            <input type="submit" value="Enviar">
+            <label for="">Confirme a nova senha:</label>
+            <input type="cpassword" name='cpassword'>
         </div>
+        <input type="submit">
     </form>
 </body>
 </html>

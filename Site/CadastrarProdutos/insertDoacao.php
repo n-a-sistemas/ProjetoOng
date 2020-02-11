@@ -23,3 +23,21 @@ if($conn->query($sql)){
 }else {
    echo $conn->error;
 }
+
+$sql = "SELECT quantidade FROM produtos WHERE id_produto = '$id'";
+
+$resultado = $conn->query($sql);
+
+if($resultado->num_rows > 0){
+   while($linha=$resultado->fetch_assoc()){
+      $quantidade += $linha['quantidade'];
+   }
+}
+
+$sql = "UPDATE produtos SET quantidade = '$quantidade' WHERE id_produto = $id";
+
+if($conn->query($sql) == TRUE){
+   header("Location: ../Estoque/form.php");
+}else{
+   $conn->error();
+}

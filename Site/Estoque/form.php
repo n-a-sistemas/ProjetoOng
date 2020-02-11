@@ -1,10 +1,4 @@
 <?php
-    if($coluna == null){
-        $coluna = "nome";
-    }
-    else{
-    $coluna = $_GET['colunas'];
-    }
     $pesquisar = $_GET['pesquisar'];
     $json = file_get_contents("http://localhost/ProjetoOng/Site/Estoque/encode.php?pesquisar=".$pesquisar."&colunas=".$coluna);
     $dados = json_decode($json, true);

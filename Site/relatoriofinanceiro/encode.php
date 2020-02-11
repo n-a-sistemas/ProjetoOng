@@ -37,13 +37,10 @@ function utf8_string_array_encode(&$array){
     return $array;
 }
 
-$total = "SELECT * FROM vendas WHERE data BETWEEN '$datainicial 00:00:00' AND '$datafinal 23:59:59'";
 
-$result = $conn->query($total);
-$preco = 0;
 if($result->num_rows > 0){
     while($linha=$result->fetch_assoc()){
-        $preco += $linha['valor'];
+       echo $preco += $linha['valor'];
     }
 }
 

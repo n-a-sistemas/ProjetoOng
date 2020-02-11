@@ -2,14 +2,15 @@
 
 include('conn.php');
 
-$id = $_POST['produto'];
-$codigo = $_POST['codigo'];
+//$id = $_POST['codigo'];
+$id = $_POST['codigo'];
 $quantidade = $_POST['quantidade'];
+$valor = $_POST['valor'];
 
 date_default_timezone_set('America/Sao_Paulo');
 $data = date('Y-m-d H:i:s');
 
-$sql = "INSERT INTO vendas (data) VALUES ('$data')";
+$sql = "INSERT INTO vendas (data, valor_total) VALUES ('$data', '$valor')";
 
 if($conn->query($sql)){
     $idVendas = $conn->insert_id;
@@ -25,10 +26,10 @@ if($conn->query($sql)){
    echo $conn->error;
 }
 
-$sql = "SELECT * FROM produtos WHERE codigo = '".$codigo."'";
+$sql = "SELECT * FROM produtos WHERE id_produto = '".$id."'";
 
 $resultado = $conn->query($sql);
-
+$quantidadefinal = 0;
 if($resultado->num_rows == 1){
     while($linha = $resultado->fetch_assoc()){
         $quantidadefinal = $linha['quantidade'];
@@ -37,10 +38,10 @@ if($resultado->num_rows == 1){
 
 $quantidadefinal = $quantidadefinal - $quantidade;
 
-$sql = "UPDATE produtos SET `quantidade` = '".$quantidadefinal."' WHERE codigo = '".$codigo."'";
+$sql = "UPDATE produtos SET `quantidade` = '".$quantidadefinal."' WHERE id_produto = '".$id."'";
 
 if($conn->query($sql) == TRUE){
-    header("Location: ../menu.php");
+    //header("Location: ../menu.php");
 }else{
    echo $conn->error;
 }
