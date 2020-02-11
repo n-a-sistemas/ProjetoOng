@@ -1,4 +1,6 @@
 <?php
+include('conn.php');
+
 $datainicial = "";
 $datafinal = "";
 if(isset($_GET['datainicial']) && isset($_GET['datafinal'])){
@@ -8,8 +10,11 @@ if(isset($_GET['datainicial']) && isset($_GET['datafinal'])){
 if($datainicial != "" && $datafinal != ""){
     $json = file_get_contents('http://localhost/ProjetoOng/Site/relatoriofinanceiro/encode.php?datainicial=' . $datainicial . '&datafinal=' . $datafinal);
     $dados = json_decode($json, true);
-    echo $dados;
 }
+
+$total = "SELECT * FROM vendas WHERE data BETWEEN '$datainicial 00:00:00' AND '$datafinal 23:59:59'";
+$preco = 0;
+$result = $conn->query($total);
 
 ?> 
 
@@ -23,7 +28,7 @@ if($datainicial != "" && $datafinal != ""){
 </head>
 <body>
     
-    <form action="encode.php" method="GET">
+    <form action="" method="GET">
         <label for="">Data Inicial: </label>
         <input type="date" name="datainicial" id="datainicial">
         <label for="datafinal">Data Final: </label>
@@ -31,17 +36,29 @@ if($datainicial != "" && $datafinal != ""){
         <input type="submit" value="Procurar">
     </form>
     <table>
-        <?php
-            foreach($dados as $d){
-                echo "<tr>";
-                echo "<td>" . $d->nome . "</td>";
-                echo "<td>" . $d->categoria . "</td>";
-                echo "<td>" . $d->valor . "</td>";
-                echo "</tr>";
-            }
-        ?>
+    <?php
+    if(isset($_GET['datainicial']) && isset($_GET['datafinal'])){
+        foreach ($dados as $d) {
+    ?>
+    <tr>
+        <td><?php echo $d['nome']?></td>
+        <td><?php echo $d['categoria']?></td>
+        <td><?php echo $d['valor']?></td>
+    <?php
+        }
+    ?>
+    <?php
+    if($result->num_rows > 0){
+        while($linha=$result->fetch_assoc()){
+    ?>
+      <td><?php echo $preco += $linha['valor'];?></td>
+      <?php
+      }
+    }
+} 
+      ?>
+    </tr>
     </table>
-    
 
 </body>
 </html>

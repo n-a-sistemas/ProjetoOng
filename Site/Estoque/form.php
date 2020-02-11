@@ -39,7 +39,7 @@
                     <td scope="row"><?php echo $row['nome'] ?></td>
                     <td><?php echo $row['categoria'] ?></td>
                     <td><?php echo $row['quantidade'] ?></td>
-                    <td><?php echo $row['valor'] ?></td>
+                    <td><?php echo $row['valor_unitario'] ?></td>
                     </tr>
                 <?php
                 }
