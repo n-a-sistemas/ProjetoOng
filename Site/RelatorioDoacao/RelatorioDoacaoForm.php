@@ -1,6 +1,13 @@
 <?php 
-    $datainicial = $_GET['datainicial'];
-    $datafinal = $_GET['datafinal'];
+    if(isset($_GET['datainicial']) || isset($_GET['datainicial'])){
+        $datainicial = $_GET['datainicial'];
+        $datafinal = $_GET['datafinal'];
+    } 
+    else{
+        $datainicial ='';
+        $datafinal ='';
+    }
+
     $url = 'http://localhost/xampp/ProjetoOng/Site/RelatorioDoacao/relatorioEncode.php?datainicial='
     .$datainicial.'&datafinal='.$datafinal;
     $json = file_get_contents($url);
@@ -26,7 +33,8 @@
 
     <table>
     <?php
-        foreach ($data as $row) {
+        if(isset($_GET['datainicial']) || isset($_GET['datainicial'])){
+            foreach ($data as $row) {
     ?>
         <tr>
             <td><?php echo $row['categoria']?></td>
@@ -34,7 +42,12 @@
             <td></td>
         </tr>
     <?php
-        }
+
+            }
+        }else{
+            $datainicial ='';
+            $datafinal ='';
+        }   
     ?>
     </table>
 </body>
