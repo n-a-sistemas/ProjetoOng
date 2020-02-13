@@ -1,6 +1,12 @@
 <?php
     $pesquisar = $_GET['pesquisar'];
-    $json = file_get_contents("http://localhost/ProjetoOng/Site/Estoque/encode.php?pesquisar=".$pesquisar."&colunas=".$coluna);
+    if(isset($_GET['colunas'])){
+        $colunas = $_GET['colunas'];
+    }else{
+        $colunas = "nome";
+    }
+    
+    $json = file_get_contents("http://localhost/ProjetoOng/Site/Estoque/encode.php?pesquisar=".$pesquisar."&colunas=".$colunas);
     $dados = json_decode($json, true);
 ?>
 <!DOCTYPE html>
@@ -41,9 +47,11 @@
                     </tr>
                 </thead>
                 <tbody>
+                <p>
                 <?php
                 if($dados == null){
-                    
+                    echo "NENHUM RESULTADO FOI ENCONTRADO PARA A SUA PESQUISA<br>";
+                    echo "Caso queira limpar sua pesquisa, basta pesquisar com a barra vazia";
                 }
                 else{
                     foreach($dados as $row){
@@ -52,12 +60,13 @@
                         <td scope="row"><?php echo $row['nome'] ?></td>
                         <td><?php echo $row['categoria'] ?></td>
                         <td><?php echo $row['quantidade'] ?></td>
-                        <td><?php echo $row['valor'] ?></td>
+                        <td><?php echo $row['valor_unitario'] ?></td>
                         </tr>
-                <?php
+                    <?php
                     }
                 }
                 ?>
+                </p>
                 </tbody>
             </table>
         </div>

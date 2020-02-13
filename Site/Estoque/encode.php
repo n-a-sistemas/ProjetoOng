@@ -3,7 +3,7 @@
 
     $colunas = $_GET['colunas'];
     $pesquisar = $_GET['pesquisar'];
-    $sql = "SELECT * FROM produtos WHERE $coluna LIKE '%".$pesquisar."%'";
+    $sql = "SELECT * FROM produtos WHERE $colunas LIKE '%".$pesquisar."%'";
     $resultado = $conn->query($sql);
 
     $produtos=array();

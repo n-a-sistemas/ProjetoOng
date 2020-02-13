@@ -7,3 +7,8 @@ select{
     width: 101px;
     margin-top: -100px;
 }
+p{
+    font-size: large;
+    font-weight: bold;
+    color: #ff3845;
+}
