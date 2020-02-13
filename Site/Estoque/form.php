@@ -1,5 +1,12 @@
 <?php
-    $json = file_get_contents("http://localhost/ProjetoOng/Site/Estoque/encode.php");
+    $pesquisar = $_GET['pesquisar'];
+    if(isset($_GET['colunas'])){
+        $colunas = $_GET['colunas'];
+    }else{
+        $colunas = "nome";
+    }
+    
+    $json = file_get_contents("http://localhost/ProjetoOng/Site/Estoque/encode.php?pesquisar=".$pesquisar."&colunas=".$colunas);
     $dados = json_decode($json, true);
 ?>
 <!DOCTYPE html>
@@ -11,15 +18,23 @@
     <title>Cantinho Fraterno</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="../menu.css">
+    <link rel="stylesheet" href="css/estoque.css">
 </head>
 <body>
     <?php include '../menu.php';?>
     <br/>
     <div class="container primary">
-        <h1>Estoque</h1>
-        <form class="form-inline my-5 my-lg-0 teste">
-            <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+        <form class="form-inline my-5 my-lg-0" action="" method="GET">
+            <div class="display-4 my-5 text-left">
+                <h1>Estoque</h1>
+                <hr/>
+            </div>
+            <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar" name="pesquisar">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
+            <select name="colunas">
+                <option value="nome" selected>Nome</option>
+                <option value="categoria">Categoria</option>
+            </select>
         </form>
         <div class="table-responsive">
             <table class="table table-bordered">
@@ -32,18 +47,26 @@
                     </tr>
                 </thead>
                 <tbody>
+                <p>
                 <?php
-                foreach($dados as $row){
-                ?>
-                    <tr>
-                    <td scope="row"><?php echo $row['nome'] ?></td>
-                    <td><?php echo $row['categoria'] ?></td>
-                    <td><?php echo $row['quantidade'] ?></td>
-                    <td><?php echo $row['valor_unitario'] ?></td>
-                    </tr>
-                <?php
+                if($dados == null){
+                    echo "NENHUM RESULTADO FOI ENCONTRADO PARA A SUA PESQUISA<br>";
+                    echo "Caso queira limpar sua pesquisa, basta pesquisar com a barra vazia";
+                }
+                else{
+                    foreach($dados as $row){
+                    ?>
+                        <tr>
+                        <td scope="row"><?php echo $row['nome'] ?></td>
+                        <td><?php echo $row['categoria'] ?></td>
+                        <td><?php echo $row['quantidade'] ?></td>
+                        <td><?php echo $row['valor_unitario'] ?></td>
+                        </tr>
+                    <?php
+                    }
                 }
                 ?>
+                </p>
                 </tbody>
             </table>
         </div>

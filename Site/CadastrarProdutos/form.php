@@ -42,7 +42,7 @@
 
                 <div class="form-group text-left col-auto col-md-4">
                     <label for="">Preço (R$)</label>
-                    <input type="text" name="quantidade" class="form-control dinheiro" placeholder="Digite apenas números..." required>
+                    <input type="text" name="valor" class="form-control dinheiro" placeholder="Digite apenas números..." required>
                 </div>
 
                 <div class="form-group text-left col">

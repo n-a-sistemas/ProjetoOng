@@ -19,7 +19,7 @@ label{
 }
 
 .primary{
-    margin-top: 150px;
+    margin-top: 150px!important;
     text-align: center;
 
     /*background-image: url("");*/

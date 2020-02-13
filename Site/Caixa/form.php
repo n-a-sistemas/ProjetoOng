@@ -1,7 +1,7 @@
 <?php
-    //include 'conn.php';
-    //$sql="SELECT * FROM produtos";
-    //$resultado=$conn->query($sql);
+    include 'conn.php';
+    $sql="SELECT * FROM produtos";
+    $resultado=$conn->query($sql);
 ?>
 
 <!DOCTYPE html>
