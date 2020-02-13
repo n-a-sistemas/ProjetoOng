@@ -29,7 +29,7 @@
                 <h1>Estoque</h1>
                 <hr/>
             </div>
-            <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar" name="pesquisar">
+            <input class="form-control d-flex justify-content-end mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar" name="pesquisar">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
             <select name="colunas">
                 <option value="nome" selected>Nome</option>
@@ -38,7 +38,7 @@
         </form>
         <div class="table-responsive">
             <table class="table table-bordered">
-                <thead class="table-primary">
+                <thead class="table">
                     <tr>
                     <th scope="col">Nome</th>
                     <th scope="col">Categoria</th>
