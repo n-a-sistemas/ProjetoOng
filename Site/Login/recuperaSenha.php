@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="">
+    <form action="update.php">
         <div>
             <label for="">Nova senha:</label>
             <input type="password" name="password">
