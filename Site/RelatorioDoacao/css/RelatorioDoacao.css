@@ -1,0 +1,24 @@
+label{
+    margin-left: 10px;
+}
+input{
+    width: 200px;
+    margin-left: 100px;
+    margin-bottom: 15px;
+    border: 1px;
+    border-style: groove;
+    border-radius: 100px;
+}
+button{
+    margin-left: 142px;
+}
+.container{
+    margin-left: 100px;
+    width: 450px;
+    border-style: groove;
+    border-color: #B4D1FF;
+    border-radius: 10px;
+}
+.teste{
+    height: 100px;
+}

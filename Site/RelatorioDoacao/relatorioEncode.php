@@ -35,3 +35,4 @@ function utf8_string_array_encode(&$array){
     array_walk($array,$func);
     return $array;
 }
+?>
