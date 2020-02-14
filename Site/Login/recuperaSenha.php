@@ -1,3 +1,18 @@
+<?php
+
+    include 'conn.php';
+
+    $token = $_GET['token'];
+    $sql = "SELECT * FROM token, usuarios WHERE token.token = '$token' AND token.email = usuarios.email";
+    $resultado = $conn->query($sql);
+
+    if($resultado->num_rows > 0){
+        while($linha = $resultado->fetch_assoc()){
+            $email = $linha['email'];
+        }
+    }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,14 +21,14 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="update.php">
+    <form action="updateSenha.php?email=<?php echo $email;?>" method="POST">
         <div>
             <label for="">Nova senha:</label>
-            <input type="password" name="password">
+            <input type="password" name="novaSenha">
         </div>
         <div>
             <label for="">Confirme a nova senha:</label>
-            <input type="cpassword" name='cpassword'>
+            <input type="password" name='confirmaSenha'>
         </div>
         <input type="submit">
     </form>
