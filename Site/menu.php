@@ -2,7 +2,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow">
           
         <a class="navbar-brand" href="#">
-            <img src="../Documentos/exemplostela/logocantinho.png" width="120" class="img-fluid d-inline-block" alt="">
+            <img src="../logocantinho.png" width="120" class="img-fluid d-inline-block" alt="">
         </a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
@@ -11,7 +11,7 @@
 
         <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" href="../CadastrarProdutos/form.php">Cadastrar Produtos</a>
                 </li>
                 
@@ -42,6 +42,8 @@
                 </li>
             </ul>
         </div>
+
+        <!-- https://work.smarchal.com/twbscolor/ Trocar cor do nav -->
     </nav>
 </header>
 

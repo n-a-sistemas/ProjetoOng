@@ -54,6 +54,10 @@
                 </div>
             </div>
 
+            <div>
+                <img src="" alt="">
+            </div>
+
             <button type="submit" class="btn btn-lg btn-outline-success my-4 mx-4">Confirmar</button>
             <button type="reset" class="btn btn-lg btn-outline-danger my-4 mx-4">Cancelar</button>
 
