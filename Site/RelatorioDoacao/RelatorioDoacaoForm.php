@@ -4,13 +4,12 @@
         $datafinal = $_GET['datafinal'];
     } 
     else{
-        $datainicial ='';
-        $datafinal ='';
+        $datainicial = "";
+        $datafinal = "";
     }
 
-    $url = 'http://localhost/xampp/ProjetoOng/Site/RelatorioDoacao/relatorioEncode.php?datainicial='
-    .$datainicial.'&datafinal='.$datafinal;
-    $json = file_get_contents($url);
+    $json = file_get_contents("http://localhost/ProjetoOng/Site/RelatorioDoacao/relatorioEncode.php?datainicial="
+    .$datainicial."&datafinal=".$datafinal);
     $data= json_decode($json, true);
 ?>
 
@@ -28,66 +27,59 @@
 <body>
     <?php include '../menu.php';?>
     <div class="container primary">
-        <form class="form-inline my-5 my-lg-0" action="" method="GET">
-            <div class="display-4 my-5 text-left">
-                <h1>Relatórios de Doações</h1>
-                <hr/>
-            <label for="">Data Inicial</label>
-            <input type="date" name="datainicial">
-            <label for="">Data Final</label>
-            <input type="date" name="datafinal">
-            <div class="form-group col-md-4">
-        </form>
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
-    </div>
-    <div class="container teste">
-        <table>
-        <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
-    </thead>
-    <tbody>
-        <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-        </tr>
-        <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-        </tr>
-        <tr>
-        <th scope="row">3</th>
-        <td>Larry</td>
-        <td>the Bird</td>
-        <td>@twitter</td>
-        </tr>
-    </tbody>
-            </table>
+        <div>
+            <div class="container text-center col primary">
+                <div class="display-4 my-5 text-left">
+                    <h1>Relatório de Doações</h1>
+                    <hr/>
+            </div>
         </div>
-</body>
-</html>
-<!--<?php
+        <form action="" class="form-inline" method="GET">
+            <div class="form-group ">
+                <label for="" class="mx-2">Data Inicial: </label>
+                <input type="date" name="datainicial" class="mx-1 form-control" id="datainicial">
+            </div>
+            <div class="form-group ">
+                <label for="datafinal" class="mx-2">Data Final: </label>
+                <input type="date" name="datafinal" class="mx-1 form-control" id="datafinal">
+            </div>
+            <button type="submit" class="btn btn-lg btn-outline-success mx-2">Procurar</button>
+        </form>
+    </div>
+    <div class="container">
+        <table class="table table-bordered">
+            <thead class="table">
+                <tr>
+                <th scope="col">Id da Doação</th>
+                <th scope="col">Id do Produto</th>
+                <th scope="col">Categoria</th>
+                <th scope="col">Quantidade</th>
+                <th scope="col">Data</th>
+                </tr>
+            </thead>
+            <tbody>
+            <p>
+            <?php
                 if(isset($_GET['datainicial']) || isset($_GET['datainicial'])){
                     foreach ($data as $row) {
                         ?>
                         <tr>
                         <td scope="row"><?php echo $row['id_doacao'] ?></td>
-                        <td><?php echo $row['id_produto'] ?></td>
-                        <td><?php echo $row['quantidade'] ?></td>
+                        <td><?php echo $row['id_produto']?></td>
+                        <td><?php echo $row['categoria']?></td>
+                        <td><?php echo $row['quantidade']?></td>
+                        <td><?php echo $row['data']?></td>
                         </tr>
                         <?php
                     }
                 }
                 else{
-                    
+                    echo "NENHUM RESULTADO FOI ENCONTRADO PARA A SUA PESQUISA";
                 }
-    ?>
--->
+            ?>
+            </p>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
