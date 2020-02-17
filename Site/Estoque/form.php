@@ -50,8 +50,7 @@
                 <p>
                 <?php
                 if($dados == null){
-                    echo "NENHUM RESULTADO FOI ENCONTRADO PARA A SUA PESQUISA<br>";
-                    echo "Caso queira limpar sua pesquisa, basta pesquisar com a barra vazia";
+                    echo "NENHUM RESULTADO FOI ENCONTRADO PARA A SUA PESQUISA";
                 }
                 else{
                     foreach($dados as $row){
