@@ -26,6 +26,7 @@ $result = $conn->query($total);*/
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"/>
     <link rel="stylesheet" href="../menu.css"/>
+    <link rel="stylesheet" href="../financeiro.css"/>
     <title>Relatório Financeiro</title>
 </head>
 <body>        
@@ -36,39 +37,54 @@ $result = $conn->query($total);*/
                 <div class="display-4 my-5 text-left">
                     <h1>Relatório Financeiros</h1>
                     <hr/>
+                </div>
             </div>
         </div>
 
         <form action="" class="form-inline" method="GET">
 
-                <div class="form-group ">
-                    <label for="" class="mx-2">Data Inicial: </label>
-                    <input type="date" name="datainicial" class="mx-1 form-control" id="datainicial">
-                </div>
+            <div class="form-group ">
+                <label for="" class="mx-2">Data Inicial: </label>
+                <input type="date" name="datainicial" class="mx-1 form-control" id="datainicial">
+            </div>
 
-                <div class="form-group ">
-                    <label for="datafinal" class="mx-2">Data Final: </label>
-                    <input type="date" name="datafinal" class="mx-1 form-control" id="datafinal">
-                </div>
+            <div class="form-group ">
+                <label for="datafinal" class="mx-2">Data Final: </label>
+                <input type="date" name="datafinal" class="mx-1 form-control" id="datafinal">
+            </div>
 
-                <button type="submit" class="btn btn-lg btn-outline-success mx-2">Procurar</button>
+            <button type="submit" class="btn btn-lg btn-outline-success mx-2">Procurar</button>
 
         </form>
 
         <div>
-            <div class="collapse navbar-collapse">
-                <ul>
-                    <li class="nav-item">
-                        <a href="" class="nav-link">Vendas</a>
-                    </li>
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Vendas</a>
+                </li>
 
-                    <li class="nav-item">
-                        <a href="" class="nav-link">Investimentos</a>
-                    </li>
-                </ul>
+                <li class="nav-item">
+                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#perfil" role="tab" aria-controls="profile" aria-selected="false">Investimentos</a>
+                </li>
+            </ul>
+
+            <div class="tab-content">
+                <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">Estas são as vendas</div>
+                <div class="tab-pane" id="perfil" role="tabpanel" aria-labelledby="profile-tab">Estes são os investimentos</div>
             </div>
-        </div>
+            
+            <script>
+                $('#myTab').on('click', function (e) {
+                    e.preventDefault()
+                    $(this).tab('show')
+                });
 
+                $(function () {
+                    $('#myTab li:last-child a').tab('show')
+                });
+            </script>
+        </div>
+        
         <table class="table table-bordered table-hover rounded shadow">
             <?php
             if(isset($_GET['datainicial']) && isset($_GET['datafinal'])){
@@ -89,10 +105,11 @@ $result = $conn->query($total);*/
             <?php
             }
             }
-            } 
+            }
             ?>
             </tr>
         </table>
+        
     </div>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

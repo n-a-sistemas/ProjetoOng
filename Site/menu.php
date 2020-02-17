@@ -28,8 +28,8 @@
                     Relatórios
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="../RelatorioDoacao/form.php">Relatório Financeiro</a>
-                        <a class="dropdown-item" href="../relatoriofinanceiro/form.php">Relatório de doações</a>
+                        <a class="dropdown-item" href="../relatoriofinanceiro/form.php">Relatório Financeiro</a>
+                        <a class="dropdown-item" href="../RelatorioDoacao/form.php">Relatório de doações</a>
                     </div>
                 </li>
 

@@ -12,17 +12,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"/>
     <link rel="stylesheet" href="../menu.css"/>
+    <link rel="stylesheet" href="../css/estilo-caixa.css"/>
     <title>Caixa</title>
 </head>
 <body>
     <?php include '../menu.php'; ?>
     <div class="container text-center col-8 primary">
-        <div class="display-4 my-5 text-left">
+        <div class="display-4 my-2 text-left">
             <h1>Caixa</h1>
             <hr/>
         </div>
-        <form action="insertVendas.php" method="POST" enctype=multipart/form-data>
-            <div class="col-6">
+        <form action="insertVendas.php" method="POST" enctype="multipart/form-data" class="row">
+            <div class="col-12 col-lg-6">
                 <div class="form-group text-left col">
                     <label for="codigo">Código do Produto: </label>
                     <select name="codigo" id="codigo" class="form-control" required>
@@ -54,8 +55,8 @@
                 </div>
             </div>
 
-            <div>
-                <img src="" alt="">
+            <div class="col-12 col-lg-6 mt-2 text-center">
+                <img class="img-fluid" width="200px" id="fotoCx" src="camiseta.png" alt="">
             </div>
 
             <button type="submit" class="btn btn-lg btn-outline-success my-4 mx-4">Confirmar</button>
