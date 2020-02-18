@@ -34,7 +34,7 @@ $result = $conn->query($total);*/
     <div class="container">
         <div>
             <div class="container text-center col primary">
-                <div class="display-4 my-5 text-left">
+                <div class="display-4 my-2 text-left">
                     <h1>Relatório Financeiros</h1>
                     <hr/>
                 </div>
@@ -68,7 +68,7 @@ $result = $conn->query($total);*/
                 </li>
             </ul>
 
-            <div class="tab-content">
+            <div class="tab-content ">
                 <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">Estas são as vendas</div>
                 <div class="tab-pane" id="perfil" role="tabpanel" aria-labelledby="profile-tab">Estes são os investimentos</div>
             </div>
