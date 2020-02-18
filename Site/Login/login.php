@@ -12,76 +12,35 @@
 </head>
 
 <body>
-    <div class="container border rounded text-center">
-            <h2 class="display-4">Login</h2>
-            <div class="row">
-                <form action="verifica.php" method="post" class="col text-center">
-                    <div class="form-group text-left">
-                        <label for="email">E-mail</label>
-                        <input type="email" class="form-control" placeholder="Digite aqui o seu e-mail..." id="email" name="email">
-                    </div>
-
-                    <div class="form-group text-left">
-                        <label for="password">Senha</label>
-                        <input type="password" class="form-control" placeholder="Digite aqui a sua senha..." id="email" name="password">
-                    </div>
-
-                    <div class="alert alert-warning alert-dismissible fade show">
-                        <button type="button" class="close" data-dismiss="alert">&times;</button>
-                        <p>Usuário ou senha incorreto. Tente novamente.</p>
-                    </div>
-
-                    <button type="submit" class="btn btn-lg btn-outline-primary my-4">ENTRAR</button>
-
-
-                </form>
+    <div class="container text-center">
+        <form action="" class="col-12 col-lg-6 border">
+            <div class="display-4 text-left">
+                <h1>Login</h1>
             </div>
 
-            <button type="button" class="border-0 float-right" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Esqueceu a sua senha? Clique aqui.</button>
-            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Insira o seu e-mail para trocar de senha</h5>
-
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-
-                        <div class="modal-body">
-                            <form>
-                                <div class="form-group text-left">
-                                    <label for="recipient-name" class="col-form-label">E-mail: </label>
-                                    <input type="text" class="form-control" id="recipient-name">
-                                </div>
-
-                                <div class="alert alert-danger alert-dismissible fade show">
-                                    <button type="button" class="close" data-dismiss="alert">&times;</button>
-                                    <p>E-mail não cadastrado. Tente novamente.</p>
-                                </div>
-
-                                <div class="alert alert-warning alert-dismissible fade show">
-                                    <button type="button" class="close" data-dismiss="alert">&times;</button>
-                                    <p>É necessário inserir o e-mail para prosseguir.</p>
-                                </div>
-                            </form>
-                        </div>
-
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                            <button type="button" class="btn btn-primary">Enviar</button>
-                        </div>
-                    </div>
-
-                </div>
+            <div class="form-group text-left">
+                <label for="">Email</label>
+                <input type="text" class="form-control" name="email" id="email">
             </div>
 
+            <div class="form-group text-left">
+                <label for=""></label>
+                <input type="text" class="form-control" name="email" id="email">
+            </div>
+
+            <div class="form-group text-left">
+                <label for="senha">Senha</label>
+                <input type="password" class="form-control" name="senha" id="senha">
+            </div>
+
+            <div>
+                <button type="submit" class="btn btn-lg btn-outline-success">ENTRAR</button>
+            </div>
+        </form>
 
         <div id="logocan" class="my-3 text-center">
             <picture>
-                <img class="img-fluid" style="width: 270px;" src="../../Documentos/EXEMPLOS DE TELA/logo-cantinho.png" alt="Logo Cantinho Fraterno">
+                <img class="img-fluid" style="width: 270px;" src="logo-cantinho.png" alt="Logo Cantinho Fraterno">
             </picture>
         </div>
     </div>
