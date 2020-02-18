@@ -81,14 +81,6 @@ CREATE TABLE `produtos` (
   `valor_unitario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Extraindo dados da tabela `produtos`
---
-
-INSERT INTO `produtos` (`id_produto`, `codigo`, `categoria`, `nome`, `imagem`, `descricao`, `quantidade`, `valor_unitario`) VALUES
-(1, 123, 'Camiseta', 'Camiseta vermelha', '', '', 6, 0),
-(2, 234, '2', 'Calça Jeans Vermelha ', 'imagens/', 'Calça Jeans', 0, 0);
-
 -- --------------------------------------------------------
 
 --
@@ -164,12 +156,6 @@ ALTER TABLE `produtos`
   ADD PRIMARY KEY (`id_produto`);
 
 --
--- Índices para tabela `token`
---
-ALTER TABLE `token`
-  ADD KEY `fk_id_usuario` (`id_usuario`);
-
---
 -- Índices para tabela `usuarios`
 --
 ALTER TABLE `usuarios`
@@ -212,12 +198,6 @@ ALTER TABLE `vendas`
 --
 -- Restrições para despejos de tabelas
 --
-
---
--- Limitadores para a tabela `token`
---
-ALTER TABLE `token`
-  ADD CONSTRAINT `fk_id_usuario` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

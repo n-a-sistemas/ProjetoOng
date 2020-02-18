@@ -1,5 +1,5 @@
 <?php
-/*include('conn.php');
+include('conn.php');
 
 $datainicial = "";
 $datafinal = "";
@@ -14,7 +14,12 @@ if($datainicial != "" && $datafinal != ""){
 
 $total = "SELECT * FROM vendas WHERE data BETWEEN '$datainicial 00:00:00' AND '$datafinal 23:59:59'";
 $preco = 0;
-$result = $conn->query($total);*/
+$result = $conn->query($total);
+if($result->num_rows > 0){
+    while($linha=$result->fetch_assoc()){
+       $preco += $linha['valor_total'];
+    }
+}
 
 ?> 
 
@@ -87,27 +92,19 @@ $result = $conn->query($total);*/
         
         <table class="table table-bordered table-hover rounded shadow">
             <?php
-            if(isset($_GET['datainicial']) && isset($_GET['datafinal'])){
-                foreach ($dados as $d) {
-            ?>
-            <tr>
-                <td><?php echo $d['nome']?></td>
-                <td><?php echo $d['categoria']?></td>
-                <td><?php echo $d['valor']?></td>
-            <?php
+                if(isset($_GET['datainicial']) || isset($_GET['datafinal'])){
+                    foreach ($dados as $row) {
+                        echo "<tr>";
+                        echo "<td>".$row['nome']."</td>";
+                        echo "<td>".$row['categoria']."</td>";
+                        echo "<td>".$row['valor_total']."</td>";
+                        echo "</tr>"; 
+                    }
+                    echo "</tr><td>Valor total: " . $preco ."</td></tr>";
+
                 }
             ?>
-            <?php
-            if($result->num_rows > 0){
-                while($linha=$result->fetch_assoc()){
-            ?>
-            <td><?php echo $preco += $linha['valor'];?></td>
-            <?php
-            }
-            }
-            }
-            ?>
-            </tr>
+                
         </table>
         
     </div>
