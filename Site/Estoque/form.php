@@ -1,9 +1,13 @@
 <?php
-    $pesquisar = $_GET['pesquisar'];
     if(isset($_GET['colunas'])){
         $colunas = $_GET['colunas'];
     }else{
         $colunas = "nome";
+    }
+    if(isset($_GET['pesquisar'])){
+        $pesquisar = $_GET['pesquisar'];
+    }else{
+        $pesquisar = "";
     }
     
     $json = file_get_contents("http://localhost/ProjetoOng/Site/Estoque/encode.php?pesquisar=".$pesquisar."&colunas=".$colunas);

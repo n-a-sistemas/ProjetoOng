@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="../menu.css"/>
     <title>Cadastro de usuários</title>
 </head>
 <body>
@@ -10,50 +12,51 @@
     <?php include '../menu.php'; ?>
     <main>
         <div class="container text-center primary">
-            <form action="insert.php" method="POST">
-                <div class="d-flex justify-contente-center row display-4 my-2">
-                    <h1>Cadastro de Usuários</h1>
-                    <hr/>
+            <div class="text-left display-4 my-2">
+                <h1>Cadastro de Usuários</h1>
+                <hr/>
+            </div>
+
+            <form action="../Login/login.php" class="col-12 col-lg-6" method="POST">
+
+                <div class="form-group text-left">
+                    <label for="nome" >Nome Completo: </label>
+                    <input type="text" class="form-control" name="nome" id="nome">
                 </div>
 
-                <div class="form-group">
-                    <label for="nome">Nome Completo: </label>
-                    <input type="text" name="nome" id="nome">
+                <div class="form-group text-left">
+                    <label for="email">Email: </label>
+                    <input type="email" class="form-control" name="email" id="email">
                 </div>
 
-                <div>
-                    <label for="email">E-mail: </label>
-                    <input type="email" name="email" id="email">
-                    <label for="confirmaemail">Confirme seu e-mail: </label>
-                    <input type="email" id="confirmaemail" name="confirmaemail">
-                </div>
-
-                <div>
+                <div class="form-group text-left">
                     <label for="senha">Senha: </label>
-                    <input type="password" name="senha" id="senha">
-                    <label for="confirmasenha">Confirme sua senha: </label>
-                    <input type="password" name="confirmasenha" id="confirmasenha">
+                    <input type="password" class="form-control" name="senha" id="senha">
                 </div>
 
-                <div>
-                    <fieldset>
+                <div class="text-left">
+                    <fieldset class="form-group mt-3">
                         <legend>Tipo de usuário: </legend>
                             <div>
-                                <input type="radio" name="user" id="adm" value="1">
+                                <input type="radio" class="form-input" name="user" id="adm" value="1">
                                 <label for="adm">Administrador</label>
                             </div>
+
                             <div>
-                                <input type="radio" name="user" id="comum" value="0" checked>
+                                <input type="radio" class="form-input" name="user" id="comum" value="0">
                                 <label for="comum">Usuário comum</label>
                             </div>
                     </fieldset>
 
                     <div>
-                        <input type="submit" value="Cadastrar">
+                        <button type="submit" class="btn btn-lg btn-outline-success">Cadastrar</button>
                     </div>
                 </div>
             </form>
         </div>
     </main>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
 </html>

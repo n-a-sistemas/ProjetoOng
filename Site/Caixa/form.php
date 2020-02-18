@@ -17,7 +17,7 @@
 </head>
 <body>
     <?php include '../menu.php'; ?>
-    <div class="container text-center col-8 primary">
+    <div class="container text-center primary">
         <div class="display-4 my-2 text-left">
             <h1>Caixa</h1>
             <hr/>

@@ -15,6 +15,12 @@ p{
 thead{
     background-color: #B4D1FF;
 }
-.primary{
-    margin-top: 10px!important;
+select{
+    text-align: center;
+    font-size: 16px;
+    border-radius: 5px;
+    border-color: #28A745;
+    color: #28A745;
+    font-weight: bold;
+    border-style: solid;
 }

@@ -14,6 +14,10 @@
                 <li class="nav-item">
                     <a class="nav-link" href="../CadastrarProdutos/form.php">Cadastrar Produtos</a>
                 </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="../CadastrarUsuarios/form.php">Cadastrar Usuários</a>
+                </li>
                 
                 <li class="nav-item">
                     <a class="nav-link" href="../Caixa/form.php">Caixa</a>
@@ -29,7 +33,7 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="../relatoriofinanceiro/form.php">Relatório Financeiro</a>
-                        <a class="dropdown-item" href="../RelatorioDoacao/form.php">Relatório de doações</a>
+                        <a class="dropdown-item" href="../RelatorioDoacao/RelatorioDoacaoForm.php">Relatório de doações</a>
                     </div>
                 </li>
 
