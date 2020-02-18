@@ -1,13 +1,17 @@
-<?php 
-    if(isset($_GET['datainicial']) || isset($_GET['datainicial'])){
+<?php
+    if(isset($_GET['datainicial'])){
         $datainicial = $_GET['datainicial'];
-        $datafinal = $_GET['datafinal'];
-    } 
-    else{
-        $datainicial = "";
-        $datafinal = "";
     }
-
+    else{
+        $datainicial = "1900-01-01";
+    }
+    if(isset($_GET['datafinal'])){
+        $datafinal = $_GET['datafinal'];
+    }
+    else{
+        $datafinal = date('Y-m-d');
+    }
+    
     $json = file_get_contents("http://localhost/ProjetoOng/Site/RelatorioDoacao/relatorioEncode.php?datainicial="
     .$datainicial."&datafinal=".$datafinal);
     $data= json_decode($json, true);
@@ -60,7 +64,7 @@
             <tbody>
             <p>
             <?php
-                if(isset($_GET['datainicial']) || isset($_GET['datainicial'])){
+                if($datainicial != null && $datafinal != null){
                     foreach ($data as $row) {
                         ?>
                         <tr>
