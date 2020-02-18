@@ -15,18 +15,19 @@
     <?php include '../menu.php'; ?>
     <main>
         <div class="container text-center primary">
-            <form action="insertProdutos.php" method="POST" enctype=multipart/form-data>
-                <div class="d-flex justify-contente-center row display-4 my-4">
-                    <h1>Cadastro de produtos</h1>
-                    <hr/>
-                </div>
+            <div class="text-left display-4 my-2">
+                <h1>Cadastro de produtos</h1>
+                <hr/>
+            </div>
+            
+            <form action="insertProdutos.php" class="col-12 col-lg-6" method="POST" enctype=multipart/form-data>
 
-                <div class="form-group text-left col-4">
+                <div class="form-group text-left col-md-5">
                     <label for="codigo">Código</label>
                     <input type="text" name="codigo" class="form-control codigo" placeholder="Digite apenas números..." required>
                 </div>
 
-                <div class="form-group text-left col-auto col-md-4">
+                <div class="form-group text-left col-md-4">
                     <label for="categoria">Categoria</label>
                     <select name="categoria" id="" class="form-control" required>
                         <option value="1">Camisa</option>
@@ -35,17 +36,17 @@
                     </select>
                 </div>
 
-                <div class="form-group text-left col">
+                <div class="form-group col-auto text-left">
                     <label for="">Nome</label>
                     <input type="text" name="nome" class="form-control" required>
                 </div>
 
-                <div class="form-group text-left col-auto col-md-4">
+                <div class="form-group text-left col-md-5">
                     <label for="">Preço (R$)</label>
                     <input type="text" name="valor" class="form-control dinheiro" placeholder="Digite apenas números..." required>
                 </div>
 
-                <div class="form-group text-left col">
+                <div class="form-group col-auto text-left">
                     <label for="">Descrição</label>
                     <input type="text" name="descricao" class="form-control">
                 </div>
