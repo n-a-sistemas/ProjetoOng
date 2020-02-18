@@ -41,7 +41,7 @@ $result = $conn->query($total);*/
             </div>
         </div>
 
-        <form action="" class="form-inline" method="GET">
+        <form action="" class="form-inline mb-4" method="GET">
 
             <div class="form-group ">
                 <label for="" class="mx-2">Data Inicial: </label>
