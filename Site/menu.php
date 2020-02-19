@@ -1,5 +1,5 @@
 <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow">
           
         <a class="navbar-brand" href="#">
             <img src="../logocantinho.png" width="120" class="img-fluid d-inline-block" alt="">

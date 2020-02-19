@@ -28,17 +28,21 @@
     <?php include '../menu.php';?>
     <br/>
     <div class="container primary">
-        <form class="form-inline my-5 my-lg-0" action="" method="GET">
-            <div class="display-4 my-5 text-left">
-                <h1>Estoque</h1>
-                <hr/>
+        <div class="display-4 my-5 text-left col primary">
+            <h1>Estoque</h1>
+            <hr/>
+        </div>
+        <form class="form-inline my-5 my-lg-0" method="GET">
+            <div class="form-group">
+                <input class="form-control d-flex justify-content-end mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar" name="pesquisar">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
             </div>
-            <input class="form-control d-flex justify-content-end mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar" name="pesquisar">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
-            <select name="colunas">
-                <option value="nome" selected>Nome</option>
-                <option value="categoria">Categoria</option>
-            </select>
+            <div class="form-group">
+                <select name="colunas">
+                    <option value="nome" selected>Nome</option>
+                    <option value="categoria">Categoria</option>
+                </select>
+            </div>
         </form>
         <div class="table-responsive">
             <table class="table table-bordered">
