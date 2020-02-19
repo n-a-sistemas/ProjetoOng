@@ -24,11 +24,11 @@
             <div class="form-group text-left">
                 <label for="">Email</label>
                 <input type="text" class="form-control" name="email" id="email">
-            </div>
+            </div>-->
 
             <div class="form-group text-left">
                 <label for="senha">Senha</label>
-                <input type="password" class="form-control" name="senha" id="senha">
+                <input type="password" class="form-control" name="password" id="senha">
             </div>
 
             <div class="my-2">

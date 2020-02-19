@@ -13,9 +13,9 @@ if($novaSenha != $confirmaSenha){
     $confirmaSenha = hash('sha256', $confirmaSenha);
     $sql = "UPDATE usuarios SET senha = '$confirmaSenha' WHERE email = '$email'";
     $conn->query($sql);
-    //header('Location: login.php');
+    $del = "DELETE FROM token WHERE email = '$email'";
+    $conn->query($del);
+    header('Location: login.php');
 }
-
-//update tabela1 a set a.procest = (select b.email from tokem b where a.email = b.email
 
 
