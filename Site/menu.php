@@ -18,7 +18,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="../CadastrarUsuarios/form.php">Cadastrar Usuários</a>
                 </li>
-                
+                <li class="nav-item">
+                    <a class="nav-link" href="../CadastrarProdutos/formDoacoes.php">Cadastrar Doações</a>
+                </li>  
                 <li class="nav-item">
                     <a class="nav-link" href="../Caixa/form.php">Caixa</a>
                 </li>
