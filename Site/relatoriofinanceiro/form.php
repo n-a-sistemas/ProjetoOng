@@ -1,5 +1,5 @@
 <?php
-include('conn.php');
+/*include('conn.php');
 
 $datainicial = "";
 $datafinal = "";
@@ -19,7 +19,7 @@ if($result->num_rows > 0){
     while($linha=$result->fetch_assoc()){
        $preco += $linha['valor_total'];
     }
-}
+}*/
 
 ?> 
 
