@@ -40,7 +40,7 @@ if($result->num_rows > 0){
         <div>
             <div class="container text-center col primary">
                 <div class="display-4 my-2 text-left">
-                    <h1>Relatório Financeiros</h1>
+                    <h1>Relatório Financeiro</h1>
                     <hr/>
                 </div>
             </div>
@@ -74,40 +74,47 @@ if($result->num_rows > 0){
             </ul>
 
             <div class="tab-content ">
-                <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">Estas são as vendas</div>
+                <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">
+        
+                    <table class="table table-bordered table-hover rounded shadow">
+                        <thead>
+                            <tr>
+                                <th scope="col">Nome</th>
+                                <th scope="col">Categoria</th>
+                                <th scope="col">Valor total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                                if(isset($_GET['datainicial']) || isset($_GET['datafinal'])){
+                                    foreach ($dados as $row) {
+                                        echo "<tr>";
+                                        echo "<td>".$row['nome']."</td>";
+                                        echo "<td>".$row['categoria']."</td>";
+                                        echo "<td>".$row['valor_total']."</td>";
+                                        echo "</tr>"; 
+                                    }
+                                    echo "</tr><td>Valor total: " . $preco ."</td></tr>";
+                                }
+                            ?>
+                        </tbody>
+                    </table>
+                </div>
+
                 <div class="tab-pane" id="perfil" role="tabpanel" aria-labelledby="profile-tab">Estes são os investimentos</div>
             </div>
-            
-            <script>
-                $('#myTab').on('click', function (e) {
-                    e.preventDefault()
-                    $(this).tab('show')
-                });
-
-                $(function () {
-                    $('#myTab li:last-child a').tab('show')
-                });
-            </script>
         </div>
-        
-        <table class="table table-bordered table-hover rounded shadow">
-            <?php
-                if(isset($_GET['datainicial']) || isset($_GET['datafinal'])){
-                    foreach ($dados as $row) {
-                        echo "<tr>";
-                        echo "<td>".$row['nome']."</td>";
-                        echo "<td>".$row['categoria']."</td>";
-                        echo "<td>".$row['valor_total']."</td>";
-                        echo "</tr>"; 
-                    }
-                    echo "</tr><td>Valor total: " . $preco ."</td></tr>";
-
-                }
-            ?>
-                
-        </table>
-        
     </div>
+    <script>
+        $('#myTab').on('click', function (e) {
+            e.preventDefault()
+            $(this).tab('show')
+        });
+
+        $(function () {
+            $('#myTab li:last-child a').tab('show')
+        });
+    </script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>

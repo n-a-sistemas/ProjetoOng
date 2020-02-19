@@ -37,15 +37,15 @@
                 <div class="text-left">
                     <fieldset class="form-check mt-3">
                         <legend>Tipo de usuário: </legend>
-                            <div>
-                                <input type="radio" class="form-input" name="user" id="adm" value="1">
-                                <label for="adm">Administrador</label>
-                            </div>
+                        <div>
+                            <input type="radio" class="form-input" name="user" id="adm" value="1">
+                            <label for="adm">Administrador</label>
+                        </div>
 
-                            <div>
-                                <input type="radio" class="form-input" name="user" id="comum" value="0">
-                                <label for="comum">Usuário comum</label>
-                            </div>
+                        <div>
+                            <input type="radio" class="form-input" name="user" id="comum" value="0">
+                            <label for="comum">Usuário comum</label>
+                        </div>
                     </fieldset>
 
                     <div>

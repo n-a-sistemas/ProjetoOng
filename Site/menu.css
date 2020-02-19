@@ -10,15 +10,25 @@ button{
 div #user{
     width: 150px;
 }
-/*
-.navbar .navbar-expand-lg{
-    color: #C9E6FF;
+
+body #fundo {
+    background: url(laridosos.png) no-repeat center top fixed;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
-.navbar-collapse{
-    color: black;
-    color: #9b59b6;
-}*/
+#fundo{
+    /*background-image: url("laridosos.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    position: relative;
+    width: 100%;
+    height: 100%;*/
+}
 
 h1{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif!important;
@@ -36,5 +46,3 @@ label{
     margin-top: 90px!important;
     text-align: center;
 }
-
-/*Testando mudança de cor no navbar*/
