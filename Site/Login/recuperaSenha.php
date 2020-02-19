@@ -1,6 +1,7 @@
 <?php
 
     include 'conn.php';
+    date_default_timezone_set('America/Sao_Paulo');
 
     $token = $_GET['token'];
     $sql = "SELECT * FROM token, usuarios WHERE token.token = '$token' AND token.email = usuarios.email";
@@ -8,13 +9,19 @@
 
     if($resultado->num_rows > 0){
         while($linha = $resultado->fetch_assoc()){
-            $email = $linha['email'];
+            if(strtotime(date('Y-m-d H:i:s')) >= strtotime($linha['datafinal'])){
+                $del = "DELETE FROM token WHERE token = '$token'";
+                $conn->query($del);
+                header('Location: ../Login/login.php');
+            }else{
+                $email = $linha['email'];
+            }
         }
     }
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

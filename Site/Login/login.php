@@ -13,7 +13,7 @@
 
 <body>
     <div class="container text-center">
-        <form action="" class="col-12 col-lg-6 border">
+        <form action="verifica.php" method="POST" class="col-12 col-lg-6 border">
             <div class="display-4 text-left">
                 <h1>Login</h1>
             </div>
@@ -23,14 +23,14 @@
                 <input type="text" class="form-control" name="email" id="email">
             </div>
 
-            <div class="form-group text-left">
+            <!--<div class="form-group text-left">
                 <label for=""></label>
                 <input type="text" class="form-control" name="email" id="email">
-            </div>
+            </div>-->
 
             <div class="form-group text-left">
                 <label for="senha">Senha</label>
-                <input type="password" class="form-control" name="senha" id="senha">
+                <input type="password" class="form-control" name="password" id="senha">
             </div>
 
             <div>
