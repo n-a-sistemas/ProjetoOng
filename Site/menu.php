@@ -1,5 +1,5 @@
 <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow">
           
         <a class="navbar-brand" href="#">
             <img src="../logocantinho.png" width="120" class="img-fluid d-inline-block" alt="">
@@ -18,7 +18,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="../CadastrarUsuarios/form.php">Cadastrar Usuários</a>
                 </li>
-                
+                <li class="nav-item">
+                    <a class="nav-link" href="../CadastrarProdutos/formDoacoes.php">Cadastrar Doações</a>
+                </li>  
                 <li class="nav-item">
                     <a class="nav-link" href="../Caixa/form.php">Caixa</a>
                 </li>

@@ -1,0 +1,35 @@
+h2{
+    margin-top: 60px;
+    font-weight: bold;
+    font-size: 33px;
+}
+select{
+    height: 44px;
+    width: 300px;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 5px;
+    border-style: solid;
+    margin-bottom: 50px;
+}
+h3{
+    margin-top: 60px;
+    font-weight: bold;
+    font-size: 35px;
+}
+input{
+    border-radius: 5px;
+    height: 40px;
+    width: 300px;
+    font-size: 30px;
+    text-align: center;
+    font-weight: bold;
+    border-style: solid;
+}
+.int{
+    border-style: groove;
+    border-color: #B4D1FF;
+    border-radius: 10px;
+    width: 500px;
+    height: 450px;
+}
