@@ -1,8 +1,27 @@
 @charset "utf-8";
 
-.container{
-    padding: 2em;
-    margin: 500px;
-    
+.fundo{
+    background-image: url('../laridosos.png');
+    background-repeat: no-repeat;
+    background-size:100%;
+    bottom: 0;
+    color: black;
+    left: 0;
+    overflow: auto;
+    padding: 3em;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    background-size: cover;
+    max-width: 100%;
+    height: auto;
+}
 
+form{
+    background: #FFF;
+    background: rgba(255,255,255,0.8);
+    max-width: none;
+    height: none;
+    opacity: none;
 }
