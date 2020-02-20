@@ -49,7 +49,7 @@
                     </fieldset>
 
                     <div>
-                        <button type="submit" class="btn btn-lg btn-outline-success">Cadastrar</button>
+                        <button type="submit" class="btn btn-lg btn-outline-success mt-3">Cadastrar</button>
                     </div>
                 </div>
             </form>
