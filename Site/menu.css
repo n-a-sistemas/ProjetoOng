@@ -11,25 +11,6 @@ div #user{
     width: 150px;
 }
 
-body #fundo {
-    background: url(laridosos.png) no-repeat center top fixed;
-
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-
-#fundo{
-    /*background-image: url("laridosos.png");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    position: relative;
-    width: 100%;
-    height: 100%;*/
-}
-
 h1{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif!important;
 }
@@ -49,5 +30,3 @@ label{
 nav{
     background-color: #B4D1FF;
 }
-
-/*Testando mudança de cor no navbar*/
