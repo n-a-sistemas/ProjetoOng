@@ -7,7 +7,7 @@
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    $sql = "SELECT * FROM  usuarios WHERE email = '$email'";
+    $sql = "SELECT * FROM usuarios WHERE email = '$email'";
     
     $resultado = $conn->query($sql);
 
@@ -15,7 +15,11 @@
         $linha = $resultado->fetch_assoc();
         if($linha['senha'] == hash('sha256', $password)){
             $_SESSION ['login'] = true;
+            if($linha['adm'] == 0){
             header('Location: ../CadastrarProdutos/form.php');
+            }else{
+                header('Location: ../relatoriofinanceiro/form.php');
+            }
         }
         else{
             //substituir por cancelamento
