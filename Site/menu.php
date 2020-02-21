@@ -40,7 +40,7 @@
                 </li>
 
                 <li  class="nav-item">
-                    <a class="nav-link" href="../MeuPerfil/perfil.php">Meu perfil</a>
+                    <a class="nav-link patual" href="../MeuPerfil/perfil.php">Meu perfil</a>
                 </li>
 
                 <li class="nav-item">
