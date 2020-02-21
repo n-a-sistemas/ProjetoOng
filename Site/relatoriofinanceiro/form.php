@@ -1,5 +1,5 @@
 <?php
-/*include('conn.php');
+include('conn.php');
 
 $datainicial = "";
 $datafinal = "";
@@ -8,7 +8,7 @@ if(isset($_GET['datainicial']) && isset($_GET['datafinal'])){
     $datafinal = $_GET['datafinal'];    
 }
 if($datainicial != "" && $datafinal != ""){
-    $json = file_get_contents('http://localhost/ProjetoOng/Site/relatoriofinanceiro/encode.php?datainicial=' . $datainicial . '&datafinal=' . $datafinal);
+    $json = file_get_contents('http://localhost/xampp/ProjetoOng/Site/relatoriofinanceiro/encode.php?datainicial=' . $datainicial . '&datafinal=' . $datafinal);
     $dados = json_decode($json, true);
 }
 
@@ -19,7 +19,9 @@ if($result->num_rows > 0){
     while($linha=$result->fetch_assoc()){
        $preco += $linha['valor_total'];
     }
-}*/
+}
+
+//select para investimentos
 
 ?> 
 
@@ -87,6 +89,7 @@ if($result->num_rows > 0){
                         <tbody>
                             <?php
                                 if(isset($_GET['datainicial']) || isset($_GET['datafinal'])){
+                                    var_dump($dados);
                                     foreach ($dados as $row) {
                                         echo "<tr>";
                                         echo "<td>".$row['nome']."</td>";
@@ -101,7 +104,9 @@ if($result->num_rows > 0){
                     </table>
                 </div>
 
-                <div class="tab-pane" id="perfil" role="tabpanel" aria-labelledby="profile-tab">Estes são os investimentos</div>
+                <div class="tab-pane" id="perfil" role="tabpanel" aria-labelledby="profile-tab">
+                    <?php include('investimentos/despesas.php'); ?>
+                </div>
             </div>
         </div>
     </div>

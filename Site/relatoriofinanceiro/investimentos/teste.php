@@ -1,3 +1,20 @@
+<?php
+include('../conn.php');
+
+$datainicial = "";
+$datafinal = "";
+if(isset($_GET['datainicial']) && isset($_GET['datafinal'])){
+    $datainicial = $_GET['datainicial'];
+    $datafinal = $_GET['datafinal'];    
+}
+if($datainicial != "" && $datafinal != ""){
+    $json = file_get_contents('http://localhost/ProjetoOng/Site/relatoriofinanceiro/investimentos/encode.php?datainicial=' . $datainicial . '&datafinal=' . $datafinal);
+    $dados = json_decode($json, true);
+}
+?>
+
+
+
 <table class="table table-bordered table-hover rounded shadow">
     <thead>
         <tr>
