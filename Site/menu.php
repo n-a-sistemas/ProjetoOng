@@ -1,3 +1,8 @@
+<?php session_start();
+
+        $acesso = $_SESSION['acesso'];
+?>
+
 <header>
     <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow">
           
@@ -11,33 +16,43 @@
 
         <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="../CadastrarProdutos/form.php">Cadastrar Produtos</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="../CadastrarUsuarios/form.php">Cadastrar Usuários</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../CadastrarProdutos/formDoacoes.php">Cadastrar Doações</a>
-                </li>  
-                <li class="nav-item">
-                    <a class="nav-link" href="../Caixa/form.php">Caixa</a>
-                </li>
                 
-                <li class="nav-item">
-                    <a class="nav-link" href="../Estoque/form.php">Estoque</a>
-                </li>
+                
+                
 
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Relatórios
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="../relatoriofinanceiro/form.php">Relatório Financeiro</a>
-                        <a class="dropdown-item" href="../RelatorioDoacao/RelatorioDoacaoForm.php">Relatório de doações</a>
-                    </div>
-                </li>
+                <?php 
+                    if($acesso == true){
+                        echo '<li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Relatórios
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="../RelatorioFinanceiro/RelatorioFinanceiro.php">Relatório Financeiro</a>
+                            <a class="dropdown-item" href="../RelatorioDoacao/RelatorioDoacao.php">Relatório de doações</a>
+                        </div>
+                        </li>';
+                        echo '<li class="nav-item">
+                        <a class="nav-link" href="../CadastrarUsuarios/form.php">Cadastrar Usuários</a>
+                        </li>';                        
+                    }
+                    else{
+                        echo'<li class="nav-item">
+                            <a class="nav-link" href="../CadastrarProdutos/form.php">Cadastrar Produtos</a>
+                        </li>
+    
+                        <li class="nav-item">
+                            <a class="nav-link" href="../CadastrarProdutos/formDoacoes.php">Cadastrar Doações</a>
+                        </li>  
+                        <li class="nav-item">
+                            <a class="nav-link" href="../Caixa/form.php">Caixa</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="../Estoque/form.php">Estoque</a>
+                        </li>';
+                    }
+                ?>
+
+                
 
                 <li  class="nav-item">
                     <a class="nav-link" href="../MeuPerfil/perfil.php">Meu perfil</a>

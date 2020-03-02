@@ -17,7 +17,7 @@
                 <hr/>
             </div>
 
-            <form action="../Login/login.php" class="col-12 col-lg-6" method="POST">
+            <form action="insert.php" class="col-12 col-lg-6" method="POST">
 
                 <div class="form-group text-left">
                     <label for="nome" >Nome Completo: </label>

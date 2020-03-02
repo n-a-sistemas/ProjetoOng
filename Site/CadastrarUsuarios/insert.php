@@ -6,8 +6,11 @@
     $email = $_POST['email'];
     $user = $_POST['user'];
 
-    $senha2 = hash('sha256', $senha2);
-    $sql = "INSERT INTO usuarios(nome, email, senha, adm) VALUES ('$nome', '$email', '$senha', '$user')";
-    $conn->query($sql);
-    header('Location: ../Login/login.php');
+    $senha = hash('sha256', $senha);
+    $sql = "INSERT INTO usuarios(nome, email, senha, acesso) VALUES ('$nome', '$email', '$senha', '$user')";
+    if($conn->query($sql) == TRUE){
+    header('Location: form.php');
+    }else{
+        echo $conn->error;
+    }
 ?>

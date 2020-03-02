@@ -62,26 +62,24 @@
                 </tr>
             </thead>
             <tbody>
-            <p>
-            <?php
-                if($datainicial != null && $datafinal != null){
-                    foreach ($data as $row) {
-                        ?>
-                        <tr>
-                        <td scope="row"><?php echo $row['id_doacao'] ?></td>
-                        <td><?php echo $row['id_produto']?></td>
-                        <td><?php echo $row['categoria']?></td>
-                        <td><?php echo $row['quantidade']?></td>
-                        <td><?php echo $row['data']?></td>
-                        </tr>
-                        <?php
+                <?php
+                    if(isset($_GET['datainicial']) || isset($_GET['datafinal'])){
+                        foreach ($data as $row) {
+                            ?>
+                            <tr>
+                            <td scope="row"><?php echo $row['id_doacao'] ?></td>
+                            <td><?php echo $row['id_produto']?></td>
+                            <td><?php echo $row['categoria']?></td>
+                            <td><?php echo $row['quantidade']?></td>
+                            <td><?php echo $row['data']?></td>
+                            </tr>
+                            <?php
+                        }
                     }
-                }
-                else{
-                    echo "NENHUM RESULTADO FOI ENCONTRADO PARA A SUA PESQUISA";
-                }
-            ?>
-            </p>
+                    else{
+                        echo "NENHUM RESULTADO FOI ENCONTRADO PARA A SUA PESQUISA";
+                    }
+                ?>
             </tbody>
         </table>
     </div>

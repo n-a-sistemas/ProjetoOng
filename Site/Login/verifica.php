@@ -15,7 +15,13 @@
         $linha = $resultado->fetch_assoc();
         if($linha['senha'] == hash('sha256', $password)){
             $_SESSION ['login'] = true;
-            header('Location: ../CadastrarProdutos/form.php');
+            $_SESSION ['acesso'] = $linha['acesso'];
+            if($_SESSION['acesso']){
+                header('Location: ../RelatorioFinanceiro/RelatorioFinanceiro.php');
+            }else{
+                header('Location: ../CadastrarProdutos/form.php');
+            }
+            
         }
         else{
             //substituir por cancelamento
