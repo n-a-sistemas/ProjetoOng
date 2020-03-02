@@ -11,6 +11,9 @@
     else{
         $datafinal = date('Y-m-d');
     }
+    if($datainicial > $datafinal){
+        header("Location: RelatorioDoacaoForm.php");
+    }
     
     $json = file_get_contents("http://localhost/ProjetoOng/Site/RelatorioDoacao/relatorioEncode.php?datainicial="
     .$datainicial."&datafinal=".$datafinal);
