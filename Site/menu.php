@@ -53,7 +53,4 @@
     </nav>
     <link rel="icon" href="../logoigreja.png" type="image/png" sizes="16x16">
 </header>
-<body>
-    
-</body>
 
