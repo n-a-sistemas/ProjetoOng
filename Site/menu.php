@@ -55,7 +55,7 @@
                 
 
                 <li  class="nav-item">
-                    <a class="nav-link" href="../MeuPerfil/perfil.php">Meu perfil</a>
+                    <a class="nav-link patual" href="../MeuPerfil/perfil.php">Meu perfil</a>
                 </li>
 
                 <li class="nav-item">
@@ -66,5 +66,6 @@
 
         <!-- https://work.smarchal.com/twbscolor/ Trocar cor do nav -->
     </nav>
+    <link rel="icon" href="../logoigreja.png" type="image/png" sizes="16x16">
 </header>
 
