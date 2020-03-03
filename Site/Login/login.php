@@ -22,7 +22,7 @@
             </div>
 
             <div class="form-group text-left">
-                <label for="">Email</label>
+                <label for="email">Email</label>
                 <input type="text" class="form-control" name="email" id="email">
             </div>
 
@@ -41,7 +41,7 @@
 
             <div id="logocan" class="my-2 text-center">
                 <picture>
-                    <img class="img-fluid" width=" 200px" src="../logocantinho.png" alt="Logo Cantinho Fraterno">
+                    <img class="img-fluid" width="200px" src="../logocantinho.png" alt="Logo Cantinho Fraterno">
                 </picture>
             </div>
         </form>
