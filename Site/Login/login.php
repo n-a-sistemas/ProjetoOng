@@ -15,11 +15,7 @@
 <body>
 
     <div class="container text-center fundo">
-<<<<<<< HEAD
-        <form action="verifica.php" class="col-12 col-lg-5 my-2 mx-auto border rounded-top shadow" method="POST">
-=======
         <form action="verifica.php" method="post" class="col-12 col-lg-5 my-2 mx-auto border rounded-top shadow">
->>>>>>> a5f368400deb512298ab3b019d6f64c092271c16
             <div class="text-center rounded my-4">
                 <h1 class="display-4">Login</h1>
                 <div class="dropdown-divider"></div>
