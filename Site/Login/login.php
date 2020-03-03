@@ -15,11 +15,7 @@
 <body>
 
     <div class="container text-center fundo">
-<<<<<<< HEAD
-        <form action="verifica.php" class="col-12 col-lg-5 my-2 mx-auto border rounded-top shadow" method="POST">
-=======
-        <form action="verifica.php" method="post" class="col-12 col-lg-5 my-2 mx-auto border rounded-top shadow">
->>>>>>> a5f368400deb512298ab3b019d6f64c092271c16
+        <form action="" id="quickForm" method="post" class="col-12 col-lg-5 my-2 mx-auto border rounded-top shadow">
             <div class="text-center rounded my-4">
                 <h1 class="display-4">Login</h1>
                 <div class="dropdown-divider"></div>
@@ -60,5 +56,55 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
+    <script src="jquery-validation/jquery.validate.min.js"></script>
+    <script src="jquery-validation/additional-methods.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+        $.validator.setDefaults({
+            submitHandler: function () {
+            alert( "Formulário enviado com sucesso!!" );
+            }
+        });
+        
+        $('#quickForm').validate({
+            rules: {
+            email: {
+                required: true,
+                email: true,
+            },
+            password: {
+                required: true,
+                minlength: 5
+            },
+            terms: {
+                required: true
+            },
+            },
+            messages: {
+            email: {
+                required: "Insira um endereço de e-mail",
+                email: "Insira um endereço de e-mail válido"
+            },
+            password: {
+                required: "Insira sua senha",
+                minlength: "Sua senha deve ter pelo menos 5 caracteres"
+            },
+            terms: "Please accept our terms"
+            },
+            errorElement: 'span',
+            errorPlacement: function (error, element) {
+            error.addClass('invalid-feedback');
+            element.closest('.form-group').append(error);
+            },
+            highlight: function (element, errorClass, validClass) {
+            $(element).addClass('is-invalid');
+            },
+            unhighlight: function (element, errorClass, validClass) {
+            $(element).removeClass('is-invalid');
+            }
+        });
+        });
+    </script>
 </body>
 </html>
