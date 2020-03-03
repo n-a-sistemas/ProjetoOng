@@ -15,14 +15,14 @@
 <body>
 
     <div class="container text-center fundo">
-        <form action="" id="quickForm" method="post" class="col-12 col-lg-5 my-2 mx-auto border rounded-top shadow">
+        <form action="verifica.php" id="quickForm" method="post" class="col-12 col-lg-5 my-2 mx-auto border rounded-top shadow">
             <div class="text-center rounded my-4">
                 <h1 class="display-4">Login</h1>
                 <div class="dropdown-divider"></div>
             </div>
 
             <div class="form-group text-left">
-                <label for="">Email</label>
+                <label for="email">Email</label>
                 <input type="text" class="form-control" name="email" id="email">
             </div>
 
@@ -41,7 +41,7 @@
 
             <div id="logocan" class="my-2 text-center">
                 <picture>
-                    <img class="img-fluid" width=" 200px" src="../logocantinho.png" alt="Logo Cantinho Fraterno">
+                    <img class="img-fluid" width="200px" src="../logocantinho.png" alt="Logo Cantinho Fraterno">
                 </picture>
             </div>
         </form>

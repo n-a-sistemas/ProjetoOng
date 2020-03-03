@@ -16,11 +16,7 @@
 
         <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
             <ul class="navbar-nav mr-auto">
-                
-                
-                
-
-                <?php 
+                <?php
                     if($acesso == true){
                         echo '<li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -51,9 +47,6 @@
                         </li>';
                     }
                 ?>
-
-                
-
                 <li  class="nav-item">
                     <a class="nav-link patual" href="../MeuPerfil/perfil.php">Meu perfil</a>
                 </li>
