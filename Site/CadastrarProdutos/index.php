@@ -51,9 +51,14 @@
                     <input type="text" id="nome" name="nome" class="form-control" required>
                 </div>
 
-                <div class="form-group text-left col-md-5">
-                    <label for="preco">Preço (R$)</label>
-                    <input type="text" id="preco" name="valor" class="form-control dinheiro" placeholder="Digite apenas números..." required>
+                <div class=" text-left col-md-5">
+                    <label for="preco" class="d-inline">Preço</label>
+                </div>
+                <div class="input-group text-left col-md-7">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><strong>R$</strong></span>
+                    </div>
+                    <input type="text" id="preco" name="preco" class="form-control dinheiro" placeholder="Digite apenas números..." required>
                 </div>
 
                 <div class="form-group col-auto text-left">
