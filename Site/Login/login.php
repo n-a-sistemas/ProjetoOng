@@ -15,7 +15,7 @@
 <body>
 
     <div class="container text-center fundo">
-        <form action="verifica.php" method="post" class="col-12 col-lg-5 my-2 mx-auto border rounded-top shadow">
+        <form action="verifica.php" id="quickForm" method="post" class="col-12 col-lg-5 my-2 mx-auto border rounded-top shadow">
             <div class="text-center rounded my-4">
                 <h1 class="display-4">Login</h1>
                 <div class="dropdown-divider"></div>
@@ -27,8 +27,8 @@
             </div>
 
             <div class="form-group text-left">
-                <label for="senha">Senha</label>
-                <input type="password" class="form-control" name="password" id="senha">
+                <label for="password">Senha</label>
+                <input type="password" class="form-control" name="password" id="password">
             </div>
 
             <div class="my-2">
@@ -36,13 +36,55 @@
             </div>
 
             <div class="nav-item my-3 text-right">
-                <a href="email/formemail.php" class="nav-link">Esqueceu sua senha? Clique aqui</a>
+                <a href="#" class="nav-link" data-toggle="modal" data-target="#myModal">Esqueceu sua senha? Clique aqui</a>
             </div>
 
             <div id="logocan" class="my-2 text-center">
                 <picture>
                     <img class="img-fluid" width="200px" src="../logocantinho.png" alt="Logo Cantinho Fraterno">
                 </picture>
+            </div>
+
+            <div class="modal fade modal-centered" id="myModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header text-left">
+                        <h4 class="modal-title">Insira o seu e-mail para mudar de senha</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <form action="enviar.php" method="POST" id="quickForm">
+                            <div class="form-group text-left">
+                                <label for="email">E-mail</label>
+                                <input type="email" id="email" name="email" class="form-control">
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Mensagens de erro. Deixarei comentado para que o BackEnd possa fazer o php -->
+                    <!--
+                            <div class='alert alert-danger alert-dismissible fade show'>
+                            <button type='button' class='close' data-dismiss='alert'>&times;</button>
+                            <p>E-mail não cadastrado, tente novamente.</p>
+                            </div>
+
+                            <div class='alert alert-danger alert-dismissible fade show'>
+                                <button type='button' class='close' data-dismiss='alert'>&times;</button>
+                                <p>E-mail enviado com sucesso!</p>
+                            </div>
+                        -->
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-lg btn-outline-success">Enviar</button>
+                    </div>
+
+                    </div>
+                </div>
             </div>
         </form>
     </div>
@@ -56,5 +98,55 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
+    <script src="jquery-validation/jquery.validate.min.js"></script>
+    <script src="jquery-validation/additional-methods.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+        $.validator.setDefaults({
+            submitHandler: function () {
+            alert( "Formulário enviado com sucesso!!" );
+            }
+        });
+        
+        $('#quickForm').validate({
+            rules: {
+            email: {
+                required: true,
+                email: true,
+            },
+            password: {
+                required: true,
+                minlength: 5
+            },
+            terms: {
+                required: true
+            },
+            },
+            messages: {
+            email: {
+                required: "Insira um endereço de e-mail",
+                email: "Insira um endereço de e-mail válido"
+            },
+            password: {
+                required: "Insira sua senha",
+                minlength: "Sua senha deve ter pelo menos 5 caracteres"
+            },
+            terms: "Por favor, aceite os termos."
+            },
+            errorElement: 'span',
+            errorPlacement: function (error, element) {
+            error.addClass('invalid-feedback');
+            element.closest('.form-group').append(error);
+            },
+            highlight: function (element, errorClass, validClass) {
+            $(element).addClass('is-invalid');
+            },
+            unhighlight: function (element, errorClass, validClass) {
+            $(element).removeClass('is-invalid');
+            }
+        });
+        });
+    </script>
 </body>
 </html>

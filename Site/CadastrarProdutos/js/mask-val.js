@@ -11,3 +11,9 @@ $(document).ready(function () {
     });
 
 });
+
+$(document).ready(function () {
+
+    //Máscara
+    $('.dinheiro').mask('000.000,00', { reverse: true });
+});

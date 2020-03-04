@@ -15,12 +15,12 @@
                 <h1>Meu perfil</h1>
                 <hr/>
             </div>
-            <div class="col-12 col-lg-6">    
-                <div class="my-3 text-left">
-                    <img src="user.png" id="user" class="img-fluid" alt="">
-                </div>
             
-
+            <div class="col-12 col-lg-6">
+                <div class="my-3 text-left">
+                    <img src="user.png" id="user" class="img-fluid card-img-top" alt="">
+                </div>
+                
                 <div class="form-group text-left">
                     <label for="">Nome: </label>
                     <span>ADMIN CANTINHO</span>
@@ -32,10 +32,11 @@
                 </div>
 
                 <div class="form-group text-left">
-                    <label for="">Telefone: </label>
-                    <span>99 9999-9999</span>
+                    <label for="">Tipo de usuário: </label>
+                    <span>Admin</span>
                 </div>
             </div>
+            
         </div>
     </main>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
