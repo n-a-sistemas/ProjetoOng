@@ -15,7 +15,7 @@ if($novaSenha != $confirmaSenha){
     $conn->query($sql);
     $del = "DELETE FROM token WHERE email = '$email'";
     $conn->query($del);
-    header('Location: login.php');
+    header('Location: index.php');
 }
 
 

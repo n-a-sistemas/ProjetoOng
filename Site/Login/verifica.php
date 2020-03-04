@@ -23,9 +23,9 @@
         }
         else{
             //substituir por cancelamento
-            header('Location: ../Login/login.php');
+            header('Location: index.php');
         }
     }else{
         //substituir
-        header('Location: ../Login/login.php');
+        header('Location: index.php');
     }
