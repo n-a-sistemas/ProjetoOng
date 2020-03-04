@@ -27,8 +27,8 @@
             </div>
 
             <div class="form-group text-left">
-                <label for="senha">Senha</label>
-                <input type="password" class="form-control" name="password" id="senha">
+                <label for="password">Senha</label>
+                <input type="password" class="form-control" name="password" id="password">
             </div>
 
             <div class="my-2">
@@ -36,13 +36,55 @@
             </div>
 
             <div class="nav-item my-3 text-right">
-                <a href="email/formemail.php" class="nav-link">Esqueceu sua senha? Clique aqui</a>
+                <a href="#" class="nav-link" data-toggle="modal" data-target="#myModal">Esqueceu sua senha? Clique aqui</a>
             </div>
 
             <div id="logocan" class="my-2 text-center">
                 <picture>
                     <img class="img-fluid" width="200px" src="../logocantinho.png" alt="Logo Cantinho Fraterno">
                 </picture>
+            </div>
+
+            <div class="modal fade modal-centered" id="myModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header text-left">
+                        <h4 class="modal-title">Insira o seu e-mail para mudar de senha</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <form action="enviar.php" method="POST" id="quickForm">
+                            <div class="form-group text-left">
+                                <label for="email">E-mail</label>
+                                <input type="email" id="email" name="email" class="form-control">
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Mensagens de erro. Deixarei comentado para que o BackEnd possa fazer o php -->
+                    <!--
+                            <div class='alert alert-danger alert-dismissible fade show'>
+                            <button type='button' class='close' data-dismiss='alert'>&times;</button>
+                            <p>E-mail não cadastrado, tente novamente.</p>
+                            </div>
+
+                            <div class='alert alert-danger alert-dismissible fade show'>
+                                <button type='button' class='close' data-dismiss='alert'>&times;</button>
+                                <p>E-mail enviado com sucesso!</p>
+                            </div>
+                        -->
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-lg btn-outline-success">Enviar</button>
+                    </div>
+
+                    </div>
+                </div>
             </div>
         </form>
     </div>
@@ -90,7 +132,7 @@
                 required: "Insira sua senha",
                 minlength: "Sua senha deve ter pelo menos 5 caracteres"
             },
-            terms: "Please accept our terms"
+            terms: "Por favor, aceite os termos."
             },
             errorElement: 'span',
             errorPlacement: function (error, element) {
