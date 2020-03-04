@@ -33,7 +33,7 @@
                     }
                     else{
                         echo'<li class="nav-item">
-                            <a class="nav-link" href="../CadastrarProdutos/form.php">Cadastrar Produtos</a>
+                            <a class="nav-link" href="../CadastrarProdutos/index.php">Cadastrar Produtos</a>
                         </li>
     
                         <li class="nav-item">

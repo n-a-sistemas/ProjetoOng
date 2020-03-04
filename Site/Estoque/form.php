@@ -55,25 +55,25 @@
                     </tr>
                 </thead>
                 <tbody>
-                <p>
-                <?php
-                if($dados == null){
-                    echo "NENHUM RESULTADO FOI ENCONTRADO PARA A SUA PESQUISA";
-                }
-                else{
-                    foreach($dados as $row){
-                    ?>
-                        <tr>
-                        <td scope="row"><?php echo $row['nome'] ?></td>
-                        <td><?php echo $row['categoria'] ?></td>
-                        <td><?php echo $row['quantidade'] ?></td>
-                        <td><?php echo $row['valor_unitario'] ?></td>
-                        </tr>
+                
                     <?php
+                    if($dados == null){
+                        echo "NENHUM RESULTADO FOI ENCONTRADO PARA A SUA PESQUISA";
                     }
-                }
-                ?>
-                </p>
+                    else{
+                        foreach($dados as $row){
+                        ?>
+                            <tr>
+                            <td><?php echo $row['nome'] ?></td>
+                            <td><?php echo $row['categoria'] ?></td>
+                            <td><?php echo $row['quantidade'] ?></td>
+                            <td><?php echo $row['valor_unitario'] ?></td>
+                            </tr>
+                        <?php
+                        }
+                    }
+                    ?>
+                
                 </tbody>
             </table>
         </div>
