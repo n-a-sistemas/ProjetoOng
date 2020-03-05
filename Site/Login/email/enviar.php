@@ -2,9 +2,9 @@
 
 require 'mailer/PHPMailerAutoload.php';
 
-include 'conn.php';
+include '../../database/conn.php';
 
-$email = $_POST['email'];
+$email = $_POST['emailmodal'];
 
 $token = bin2hex(random_bytes(32));
 

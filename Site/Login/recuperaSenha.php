@@ -1,6 +1,6 @@
 <?php
 
-    include 'conn.php';
+    include '../database/conn.php';
     date_default_timezone_set('America/Sao_Paulo');
 
     $token = $_GET['token'];

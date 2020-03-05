@@ -1,6 +1,6 @@
 <?php
 
-include 'conn.php';
+include '../database/conn.php';
 
 $email = $_GET['email'];
 $novaSenha = $_POST['novaSenha'];

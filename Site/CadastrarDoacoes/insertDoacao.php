@@ -1,6 +1,6 @@
 <?php
 
-include("conn.php");
+include("../database/conn.php");
 
 $id = $_POST['produto'];
 $quantidade = $_POST['quantidade'];

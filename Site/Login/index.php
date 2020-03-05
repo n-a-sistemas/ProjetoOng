@@ -15,7 +15,8 @@
 <body>
 
     <div class="container text-center fundo">
-        <form action="verifica.php" id="quickForm" method="post" class="col-12 col-lg-5 my-2 mx-auto border rounded-top shadow">
+        <form action="verifica.php" id="quickForm" method="POST"
+            class="col-12 col-lg-5 my-2 mx-auto border rounded-top shadow">
             <div class="text-center rounded my-4">
                 <h1 class="display-4">Login</h1>
                 <div class="dropdown-divider"></div>
@@ -36,7 +37,8 @@
             </div>
 
             <div class="nav-item my-3 text-right">
-                <a href="#" class="nav-link" data-toggle="modal" data-target="#myModal">Esqueceu sua senha? Clique aqui</a>
+                <a href="#" class="nav-link" data-toggle="modal" data-target="#myModal">Esqueceu sua senha? Clique
+                    aqui</a>
             </div>
 
             <div id="logocan" class="my-2 text-center">
@@ -44,10 +46,10 @@
                     <img class="img-fluid" width="200px" src="../logocantinho.png" alt="Logo Cantinho Fraterno">
                 </picture>
             </div>
-
-            <div class="modal fade modal-centered" id="myModal">
-                <div class="modal-dialog">
-                    <div class="modal-content">
+        </form>
+        <div class="modal fade modal-centered" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
 
                     <!-- Modal Header -->
                     <div class="modal-header text-left">
@@ -57,10 +59,13 @@
 
                     <!-- Modal body -->
                     <div class="modal-body">
-                        <form action="enviar.php" method="POST" id="quickForm">
+                        <form action="email/enviar.php" method="POST" id="quickForm">
                             <div class="form-group text-left">
                                 <label for="email">E-mail</label>
-                                <input type="email" id="email" name="email" class="form-control">
+                                <input type="email" id="email" name="emailmodal" class="form-control">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-lg btn-outline-success">Enviar</button>
                             </div>
                         </form>
                     </div>
@@ -79,30 +84,27 @@
                         -->
 
                     <!-- Modal footer -->
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-lg btn-outline-success">Enviar</button>
-                    </div>
 
-                    </div>
+
                 </div>
             </div>
-        </form>
+        </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
     <script src="jquery-validation/jquery.validate.min.js"></script>
     <script src="jquery-validation/additional-methods.min.js"></script>
 
     <script type="text/javascript">
-        $(document).ready(function () {
+    $(document).ready(function() {
         $.validator.setDefaults({
             submitHandler: function () {
             alert( "Formulário enviado com sucesso!!" );
@@ -122,7 +124,7 @@
             terms: {
                 required: true
             },
-            },
+            
             messages: {
             email: {
                 required: "Insira um endereço de e-mail",
@@ -146,7 +148,8 @@
             $(element).removeClass('is-invalid');
             }
         });
-        });
+    });
     </script>
 </body>
+
 </html>

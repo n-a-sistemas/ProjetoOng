@@ -1,7 +1,7 @@
 $(document).ready(function(){
     $.ajax({
         type: 'POST',
-        url: 'http://localhost/ProjetoOng/Site/php/categoria.php',
+        url: 'http://localhost/ProjetoOng/Site/CadastrarProdutos/AdicionarCategoria/categoria.php',
         dataType: 'html',
         // Antes de carregar os registros, mostra para o usuário que está
         // sendo carregado.
@@ -20,7 +20,7 @@ $(document).ready(function(){
     $('#categoria').change(function () {
         $.ajax({
             type: 'POST',
-            url: 'http://localhost/ProjetoOng/Site/php/categoria.php',
+            url: 'http://localhost/ProjetoOng/Site/CadastrarProdutos/AdicionarCategoria/categoria.php',
             dataType: 'html',
             data: { 'texto': $('#categoria').val() },
             // Antes de carregar os registros, mostra para o usuário que está

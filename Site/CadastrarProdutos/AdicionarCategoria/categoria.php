@@ -1,5 +1,5 @@
 <?php
-    require_once('conn.php');
+    require_once('../database/conn.php');
 
     if(isset($_POST['texto'])){
         $texto = $_POST['texto'];

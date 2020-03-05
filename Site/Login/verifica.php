@@ -2,7 +2,7 @@
 
     session_start();
 
-    include('conn.php');
+    include('../database/conn.php');
 
     $email = $_POST['email'];
     $password = $_POST['password'];
@@ -15,6 +15,8 @@
         $linha = $resultado->fetch_assoc();
         if($linha['senha'] == hash('sha256', $password)){
             $_SESSION ['login'] = true;
+            $_SESSION['email'] = $email;
+            $_SESSION['acesso'] = $linha['acesso'];
             if($linha['acesso'] == 0){
             header('Location: ../CadastrarProdutos/index.php');
             }else{
