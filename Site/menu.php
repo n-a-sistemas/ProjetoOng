@@ -23,8 +23,8 @@
                         Relatórios
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="../RelatorioFinanceiro/RelatorioFinanceiro.php">Relatório Financeiro</a>
-                            <a class="dropdown-item" href="../RelatorioDoacao/RelatorioDoacao.php">Relatório de doações</a>
+                            <a class="dropdown-item" href="../RelatorioFinanceiro/index.php">Relatório Financeiro</a>
+                            <a class="dropdown-item" href="../RelatorioDoacao/index.php">Relatório de doações</a>
                         </div>
                         </li>';
                         echo '<li class="nav-item">
@@ -61,4 +61,3 @@
     </nav>
     <link rel="icon" href="../logoigreja.png" type="image/png" sizes="16x16">
 </header>
-
