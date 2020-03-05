@@ -1,6 +1,6 @@
 <?php session_start();
 
-        $acesso = $_SESSION['acesso'];
+    $acesso = $_SESSION['acesso'];
 ?>
 
 <header>
@@ -23,7 +23,7 @@
                         Relatórios
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="../RelatorioFinanceiro/RelatorioFinanceiro.php">Relatório Financeiro</a>
+                            <a class="dropdown-item" href="../RelatorioFinanceiro/index.php">Relatório Financeiro</a>
                             <a class="dropdown-item" href="../RelatorioDoacao/RelatorioDoacao.php">Relatório de doações</a>
                         </div>
                         </li>';
@@ -33,7 +33,7 @@
                     }
                     else{
                         echo'<li class="nav-item">
-                            <a class="nav-link" href="../CadastrarProdutos/form.php">Cadastrar Produtos</a>
+                            <a class="nav-link" href="../CadastrarProdutos/index.php">Cadastrar Produtos</a>
                         </li>
     
                         <li class="nav-item">

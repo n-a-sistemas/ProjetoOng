@@ -73,6 +73,10 @@ if($result->num_rows > 0){
                 <li class="nav-item">
                     <a class="nav-link" id="profile-tab" data-toggle="tab" href="#perfil" role="tab" aria-controls="profile" aria-selected="false">Investimentos</a>
                 </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#graficos" role="tab" aria-controls="profile" aria-selected="false">Gráficos</a>
+                </li>
             </ul>
 
             <div class="tab-content ">
@@ -104,8 +108,12 @@ if($result->num_rows > 0){
                     </table>
                 </div>
 
-                <div class="tab-pane" id="perfil" role="tabpanel" aria-labelledby="profile-tab">
+                <div class="tab-pane" id="invest" role="tabpanel" aria-labelledby="profile-tab">
                     <?php include('investimentos/despesas.php'); ?>
+                </div>
+
+                <div class="tab-pane" id="graficos" role="tabpanel" aria-labelledby="profile-tab">
+                    <?php include('graficos.php'); ?>
                 </div>
             </div>
         </div>
