@@ -1,5 +1,5 @@
 <?php
-    include('conn.php');
+    include('../database/conn.php');
 
     $nome = $_POST['nome'];
     $senha = $_POST['senha'];

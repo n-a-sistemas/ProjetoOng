@@ -1,6 +1,6 @@
 <?php
 
-include('conn.php');
+include('../database/conn.php');
 
 $datainicial = $_GET['datainicial'];
 $datafinal = $_GET['datafinal'];

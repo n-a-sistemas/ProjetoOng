@@ -1,6 +1,6 @@
 <?php
 
-include('../conn.php');
+include('../../database/conn.php');
 
 if(isset($_POST['categoria'])){
     $categoria = $_POST['categoria'];

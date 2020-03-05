@@ -1,3 +1,21 @@
+<?php
+    include('../database/conn.php');
+    session_start();
+    $email = $_SESSION['email'];
+    $sql = "SELECT * FROM usuarios WHERE email = '$email'";
+    $resultado = $conn->query($sql);
+    if($resultado->num_rows == 1){
+        while($linha = $resultado->fetch_assoc()){
+            $nome = $linha['nome'];
+        }
+    }
+
+    if($_SESSION['acesso'] == true){
+        $tipo_usuario = "Administrador";
+    }else{
+        $tipo_usuario = "Usuário comum";
+    }
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -22,18 +40,15 @@
                 </div>
                 
                 <div class="form-group text-left">
-                    <label for="">Nome: </label>
-                    <span>ADMIN CANTINHO</span>
+                    <p><strong>Nome: </strong><?php echo $nome;?></p>
                 </div>
 
                 <div class="form-group text-left">
-                    <label for="">E-mail: </label>
-                    <span>admin.cantinho@email.com</span>
+                    <p><strong>Email: </strong><?php echo $email;?></p>
                 </div>
 
                 <div class="form-group text-left">
-                    <label for="">Tipo de usuário: </label>
-                    <span>Admin</span>
+                    <p><strong>Tipo de usuário: </strong><?php echo $tipo_usuario;?></p>
                 </div>
             </div>
             

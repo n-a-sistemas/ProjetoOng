@@ -1,6 +1,6 @@
-<?php session_start();
-
-        $acesso = $_SESSION['acesso'];
+<?php 
+    session_start();
+    $acesso = $_SESSION['acesso'];
 ?>
 
 <header>
@@ -28,31 +28,31 @@
                         </div>
                         </li>';
                         echo '<li class="nav-item">
-                        <a class="nav-link" href="../CadastrarUsuarios/form.php">Cadastrar Usuários</a>
+                        <a class="nav-link" href="../CadastrarUsuarios">Cadastrar Usuários</a>
                         </li>';                        
                     }
                     else{
                         echo'<li class="nav-item">
-                            <a class="nav-link" href="../CadastrarProdutos/index.php">Cadastrar Produtos</a>
+                            <a class="nav-link" href="../CadastrarProdutos">Cadastrar Produtos</a>
                         </li>
     
                         <li class="nav-item">
-                            <a class="nav-link" href="../CadastrarProdutos/formDoacoes.php">Cadastrar Doações</a>
+                            <a class="nav-link" href="../CadastrarDoacoes">Cadastrar Doações</a>
                         </li>  
                         <li class="nav-item">
-                            <a class="nav-link" href="../Caixa/form.php">Caixa</a>
+                            <a class="nav-link" href="../Caixa">Caixa</a>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link" href="../Estoque/form.php">Estoque</a>
+                        <a class="nav-link" href="../Estoque">Estoque</a>
                         </li>';
                     }
                 ?>
                 <li  class="nav-item">
-                    <a class="nav-link patual" href="../MeuPerfil/perfil.php">Meu perfil</a>
+                    <a class="nav-link patual" href="../MeuPerfil">Meu perfil</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="../Login/login.php">Sair</a>
+                    <a class="nav-link" href="../Login">Sair</a>
                 </li>
             </ul>
         </div>

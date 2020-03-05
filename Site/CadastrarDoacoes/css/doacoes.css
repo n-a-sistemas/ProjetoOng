@@ -1,0 +1,23 @@
+select{
+    height: 44px;
+    width: 300px;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 5px;
+    border-style: solid;
+}
+input{
+    border-radius: 5px;
+    height: 40px;
+    width: 300px;
+    font-size: 30px;
+    text-align: center;
+    font-weight: bold;
+    border-style: solid;
+}
+.primary{
+    margin-left: 245px;
+}
+button{
+    margin-left: -995px;
+}

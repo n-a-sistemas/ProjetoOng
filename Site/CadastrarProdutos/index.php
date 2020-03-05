@@ -31,7 +31,7 @@
                     <label for="categoria">Categoria</label>
                     <select name="categoria" id="categoria" class="form-control" required>
                         <?php
-                            require_once('conn.php');
+                            require_once('../database/conn.php');
                             $sql = "SELECT * FROM categorias";
                             $resultado = $conn->query($sql);
                             if($resultado->num_rows > 0){
