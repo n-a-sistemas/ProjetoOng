@@ -12,7 +12,7 @@
         $datafinal = date('Y-m-d');
     }
     if($datainicial > $datafinal){
-        header("Location: RelatorioDoacao.php");
+        header("Location: index.php");
     }
     
     $json = file_get_contents("http://localhost/ProjetoOng/Site/RelatorioDoacao/relatorioEncode.php?datainicial="
@@ -80,7 +80,7 @@
                         }
                     }
                     else{
-                        echo "NENHUM RESULTADO FOI ENCONTRADO PARA A SUA PESQUISA";
+                        echo "<p>" . "NENHUM RESULTADO FOI ENCONTRADO PARA A SUA PESQUISA" . "</p>";
                     }
                 ?>
             </tbody>
