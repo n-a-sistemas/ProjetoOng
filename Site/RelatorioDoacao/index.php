@@ -81,7 +81,11 @@
                         }
                     }
                     else{
+<<<<<<< HEAD
                         echo "<p>"."NENHUM RESULTADO FOI ENCONTRADO PARA A SUA PESQUISA"."</p>";
+=======
+                        echo "<p>" . "NENHUM RESULTADO FOI ENCONTRADO PARA A SUA PESQUISA" . "</p>";
+>>>>>>> eb41f2c82ce51d17abb874a8bb73d5668ffbf8f3
                     }
                 ?>
             </tbody>
