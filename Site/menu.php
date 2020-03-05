@@ -23,8 +23,8 @@
                         Relatórios
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="../RelatorioFinanceiro/RelatorioFinanceiro.php">Relatório Financeiro</a>
-                            <a class="dropdown-item" href="../RelatorioDoacao/RelatorioDoacao.php">Relatório de doações</a>
+                            <a class="dropdown-item" href="../RelatorioFinanceiro/index.php">Relatório Financeiro</a>
+                            <a class="dropdown-item" href="../RelatorioDoacao/index.php">Relatório de doações</a>
                         </div>
                         </li>';
                         echo '<li class="nav-item">
@@ -40,19 +40,19 @@
                             <a class="nav-link" href="../CadastrarProdutos/formDoacoes.php">Cadastrar Doações</a>
                         </li>  
                         <li class="nav-item">
-                            <a class="nav-link" href="../Caixa/form.php">Caixa</a>
+                            <a class="nav-link" href="../Caixa/index.php">Caixa</a>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link" href="../Estoque/form.php">Estoque</a>
+                        <a class="nav-link" href="../Estoque/index.php">Estoque</a>
                         </li>';
                     }
                 ?>
                 <li  class="nav-item">
-                    <a class="nav-link patual" href="../MeuPerfil/perfil.php">Meu perfil</a>
+                    <a class="nav-link patual" href="../MeuPerfil/index.php">Meu perfil</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="../Login/login.php">Sair</a>
+                    <a class="nav-link" href="../Login/index.php">Sair</a>
                 </li>
             </ul>
         </div>
@@ -61,4 +61,3 @@
     </nav>
     <link rel="icon" href="../logoigreja.png" type="image/png" sizes="16x16">
 </header>
-

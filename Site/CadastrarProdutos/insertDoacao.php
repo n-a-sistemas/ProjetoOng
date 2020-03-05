@@ -37,7 +37,7 @@ if($resultado->num_rows > 0){
 $sql = "UPDATE produtos SET quantidade = '$quantidade' WHERE id_produto = $id";
 
 if($conn->query($sql) == TRUE){
-   header("Location: ../Estoque/form.php");
+   header("Location: ../Estoque/index.php");
 }else{
    $conn->error();
 }
