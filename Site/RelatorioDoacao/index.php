@@ -1,4 +1,7 @@
 <?php
+
+    include '../database/conn.php';
+
     if(isset($_GET['datainicial'])){
         $datainicial = $_GET['datainicial'];
     }
@@ -12,10 +15,10 @@
         $datafinal = date('Y-m-d');
     }
     if($datainicial > $datafinal){
-        header("Location: RelatorioDoacaoForm.php");
+        header("Location: index.php");
     }
     
-    $json = file_get_contents("http://localhost/ProjetoOng/Site/RelatorioDoacao/relatorioEncode.php?datainicial="
+    $json = file_get_contents("http://localhost/ProjetoOng/Site/RelatorioDoacao/encode.php?datainicial="
     .$datainicial."&datafinal=".$datafinal);
     $data= json_decode($json, true);
 ?>
@@ -32,7 +35,7 @@
     <title>Relatório de Doações</title>
 </head>
 <body>
-    <?php include '../menu.php';?>
+    <?php //include '../menu.php';?>
     <div class="container primary">
         <div>
             <div class="container text-center col primary">
@@ -57,8 +60,7 @@
         <table class="table table-bordered">
             <thead class="table">
                 <tr>
-                <th scope="col">Id da Doação</th>
-                <th scope="col">Id do Produto</th>
+                <th scope="col">Nome</th>
                 <th scope="col">Categoria</th>
                 <th scope="col">Quantidade</th>
                 <th scope="col">Data</th>
@@ -70,8 +72,7 @@
                         foreach ($data as $row) {
                             ?>
                             <tr>
-                            <td scope="row"><?php echo $row['id_doacao'] ?></td>
-                            <td><?php echo $row['id_produto']?></td>
+                            <td><?php echo $row['nome']?></td>
                             <td><?php echo $row['categoria']?></td>
                             <td><?php echo $row['quantidade']?></td>
                             <td><?php echo $row['data']?></td>
@@ -80,7 +81,11 @@
                         }
                     }
                     else{
-                        echo "NENHUM RESULTADO FOI ENCONTRADO PARA A SUA PESQUISA";
+<<<<<<< HEAD
+                        echo "<p>"."NENHUM RESULTADO FOI ENCONTRADO PARA A SUA PESQUISA"."</p>";
+=======
+                        echo "<p>" . "NENHUM RESULTADO FOI ENCONTRADO PARA A SUA PESQUISA" . "</p>";
+>>>>>>> eb41f2c82ce51d17abb874a8bb73d5668ffbf8f3
                     }
                 ?>
             </tbody>

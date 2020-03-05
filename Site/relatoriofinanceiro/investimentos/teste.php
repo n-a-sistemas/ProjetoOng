@@ -1,5 +1,5 @@
 <?php
-include('../conn.php');
+include('../../database/conn.php');
 
 $datainicial = "";
 $datafinal = "";

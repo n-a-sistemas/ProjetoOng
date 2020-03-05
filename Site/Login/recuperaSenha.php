@@ -1,6 +1,6 @@
 <?php
 
-    include 'conn.php';
+    include '../database/conn.php';
     date_default_timezone_set('America/Sao_Paulo');
 
     $token = $_GET['token'];
@@ -12,7 +12,7 @@
             if(strtotime(date('Y-m-d H:i:s')) >= strtotime($linha['datafinal'])){
                 $del = "DELETE FROM token WHERE token = '$token'";
                 $conn->query($del);
-                header('Location: ../Login/login.php');
+                header('Location: index.php');
             }else{
                 $email = $linha['email'];
             }

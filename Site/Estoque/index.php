@@ -19,10 +19,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Cantinho Fraterno</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="../menu.css">
     <link rel="stylesheet" href="css/estoque.css">
+    <title>Estoque</title>
 </head>
 <body>
     <?php include '../menu.php';?>
@@ -55,25 +55,25 @@
                     </tr>
                 </thead>
                 <tbody>
-                <p>
-                <?php
-                if($dados == null){
-                    echo "NENHUM RESULTADO FOI ENCONTRADO PARA A SUA PESQUISA";
-                }
-                else{
-                    foreach($dados as $row){
-                    ?>
-                        <tr>
-                        <td scope="row"><?php echo $row['nome'] ?></td>
-                        <td><?php echo $row['categoria'] ?></td>
-                        <td><?php echo $row['quantidade'] ?></td>
-                        <td><?php echo $row['valor_unitario'] ?></td>
-                        </tr>
+                
                     <?php
+                    if($dados == null){
+                        echo "NENHUM RESULTADO FOI ENCONTRADO PARA A SUA PESQUISA";
                     }
-                }
-                ?>
-                </p>
+                    else{
+                        foreach($dados as $row){
+                        ?>
+                            <tr>
+                            <td><?php echo $row['nome'] ?></td>
+                            <td><?php echo $row['categoria'] ?></td>
+                            <td><?php echo $row['quantidade'] ?></td>
+                            <td><?php echo $row['valor_unitario'] ?></td>
+                            </tr>
+                        <?php
+                        }
+                    }
+                    ?>
+                
                 </tbody>
             </table>
         </div>

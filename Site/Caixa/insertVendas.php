@@ -1,6 +1,6 @@
 <?php
 
-include('conn.php');
+include('../database/conn.php');
 
 //$id = $_POST['codigo'];
 $id = $_POST['codigo'];

@@ -1,6 +1,6 @@
 <?php
 
-include("conn.php");
+include("../database/conn.php");
 
 $id = $_POST['produto'];
 $quantidade = $_POST['quantidade'];
@@ -37,7 +37,7 @@ if($resultado->num_rows > 0){
 $sql = "UPDATE produtos SET quantidade = '$quantidade' WHERE id_produto = $id";
 
 if($conn->query($sql) == TRUE){
-   header("Location: ../RelatorioDoacao/RelatorioDoacaoForm.php");
+   header("Location: ../Estoque/index.php");
 }else{
    $conn->error();
 }

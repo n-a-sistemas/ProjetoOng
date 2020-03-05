@@ -1,5 +1,5 @@
 <?php
-    include("conn.php");
+    include("../database/conn.php");
 
     $colunas = $_GET['colunas'];
     $pesquisar = $_GET['pesquisar'];

@@ -30,9 +30,21 @@
                 <div class="form-group text-left col-md-4">
                     <label for="categoria">Categoria</label>
                     <select name="categoria" id="categoria" class="form-control" required>
+                        <?php
+                            require_once('../database/conn.php');
+                            $sql = "SELECT * FROM categorias";
+                            $resultado = $conn->query($sql);
+                            if($resultado->num_rows > 0){
+                                while($linha = $resultado->fetch_assoc()){
+                                    echo "<option value=".$linha['id'].">".$linha['categoria']."</option>";
+                                }
+                            }
+                        ?>
+                        
                         <option value="1">Camisa</option>
                         <option value="2">Calça</option>
-                        <option value="3">Sapato</option> 
+                        <option value="3">Sapato</option>
+                        
                     </select>
                 </div>
 

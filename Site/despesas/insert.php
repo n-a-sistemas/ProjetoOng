@@ -1,6 +1,6 @@
 <?php
 
-include '../Caixa/conn.php';
+include '../database/conn.php';
 
 $nome = $_POST['nome'];
 $valor = $_POST['valor'];
