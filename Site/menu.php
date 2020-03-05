@@ -41,12 +41,12 @@
                         </li>  
                         <li class="nav-item">
                             <a class="nav-link" href="../Caixa">Caixa</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link" href="../Estoque">Estoque</a>
                         </li>';
                     }
                 ?>
+                <li class="nav-item">
+                        <a class="nav-link" href="../Estoque">Estoque</a>
+                </li>
                 <li  class="nav-item">
                     <a class="nav-link patual" href="../MeuPerfil">Meu perfil</a>
                 </li>
