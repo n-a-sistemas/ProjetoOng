@@ -25,7 +25,7 @@
         <form action="insertVendas.php" method="POST" enctype="multipart/form-data" class="row">
             <div class="col-12 col-lg-6">
                 <div class="form-group text-left col">
-                    <label for="codigo">Código do Produto: </label>
+                    <label for="codigo">Código do Produto</label>
                     <select name="codigo" id="codigo" class="form-control" required>
                     <?php
                             if($resultado->num_rows){
@@ -40,18 +40,24 @@
                 </div>
 
                 <div class="form-group text-left col">
-                    <label for="produto">Produto: </label>
-                    <input type="text" name="produto" id="produto" class="form-control">
+                    <label for="produto">Produto </label>
+                    <input type="text" name="produto" id="produto" class="form-control" required>
                 </div>
 
                 <div class="form-group text-left col">
-                    <label for="quantidade">Quantidade: </label>
-                    <input type="text" name="quantidade" id="quantidade" class="form-control">
+                    <label for="quantidade">Quantidade </label>
+                    <input type="text" name="quantidade" id="quantidade" class="form-control codigo" required>
                 </div>
 
-                <div class="form-group text-left col">
-                    <label for="valor">Valor total:</label>
-                    <input type="text" id="valor" name="valor" value="" class="form-control">
+                <div class=" text-left col-md-5">
+                    <label for="preco" class="d-inline">Valor total</label>
+                </div>
+
+                <div class="input-group text-left col-md-7">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><strong>R$</strong></span>
+                    </div>
+                    <input type="text" id="valor" name="valor" class="form-control dinheiro" placeholder="Digite apenas números..." required>
                 </div>
             </div>
 

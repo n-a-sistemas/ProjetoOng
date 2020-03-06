@@ -107,7 +107,6 @@
     $(document).ready(function() {
         $.validator.setDefaults({
             submitHandler: function () {
-            alert( "Formulário enviado com sucesso!!" );
             }
         });
         
