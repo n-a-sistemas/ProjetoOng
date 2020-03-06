@@ -39,12 +39,7 @@
                                     echo "<option value=".$linha['id'].">".$linha['categoria']."</option>";
                                 }
                             }
-                        ?>
-                        
-                        <option value="1">Camisa</option>
-                        <option value="2">Calça</option>
-                        <option value="3">Sapato</option>
-                        
+                        ?>                        
                     </select>
                 </div>
 
