@@ -6,7 +6,9 @@
         $datainicial = $_GET['datainicial'];
     }
     else{
-        $datainicial = "1900-01-01";
+        //$call = json_decode("http://localhost/ProjetoOng/Site/RelatorioDoacao/encode.php");
+        //$datainicial = min($call['data']);
+        $datainicial = '1900/1/1';
     }
     if(isset($_GET['datafinal'])){
         $datafinal = $_GET['datafinal'];
@@ -68,7 +70,7 @@
             </thead>
             <tbody>
                 <?php
-                    if(isset($_GET['datainicial']) || isset($_GET['datafinal'])){
+                    if($datainicial != null && $datafinal != null){
                         foreach ($data as $row) {
                             ?>
                             <tr>
@@ -81,11 +83,7 @@
                         }
                     }
                     else{
-<<<<<<< HEAD
-                        echo "<p>"."NENHUM RESULTADO FOI ENCONTRADO PARA A SUA PESQUISA"."</p>";
-=======
                         echo "<p>" . "NENHUM RESULTADO FOI ENCONTRADO PARA A SUA PESQUISA" . "</p>";
->>>>>>> eb41f2c82ce51d17abb874a8bb73d5668ffbf8f3
                     }
                 ?>
             </tbody>
