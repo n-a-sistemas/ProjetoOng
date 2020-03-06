@@ -36,14 +36,10 @@
                             $resultado = $conn->query($sql);
                             if($resultado->num_rows > 0){
                                 while($linha = $resultado->fetch_assoc()){
-                                    echo "<option value=".$linha['id'].">".$linha['categoria']."</option>";
+                                    echo "<option value=".$linha['categoria'].">".$linha['categoria']."</option>";
                                 }
                             }
                         ?>
-                        
-                        <option value="1">Camisa</option>
-                        <option value="2">Calça</option>
-                        <option value="3">Sapato</option>
                         
                     </select>
                 </div>

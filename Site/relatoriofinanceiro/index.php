@@ -8,7 +8,7 @@ if(isset($_GET['datainicial']) && isset($_GET['datafinal'])){
     $datafinal = $_GET['datafinal'];    
 }
 if($datainicial != "" && $datafinal != ""){
-    $json = file_get_contents('http://localhost/xampp/ProjetoOng/Site/relatoriofinanceiro/encode.php?datainicial=' . $datainicial . '&datafinal=' . $datafinal);
+    $json = file_get_contents('http://localhost/ProjetoOng/Site/relatoriofinanceiro/encode.php?datainicial=' . $datainicial . '&datafinal=' . $datafinal);
     $dados = json_decode($json, true);
 }
 
@@ -36,8 +36,8 @@ if($result->num_rows > 0){
     <link rel="stylesheet" href="../financeiro.css"/>
     <title>Relatório Financeiro</title>
 </head>
-<body>        
-    <?php include '../menu.php'; ?>
+<body>  
+    <?php include "../menu.php"?>      
     <div class="container">
         <div>
             <div class="container text-center col primary">
@@ -89,7 +89,7 @@ if($result->num_rows > 0){
                         <tbody>
                             <?php
                                 if(isset($_GET['datainicial']) || isset($_GET['datafinal'])){
-                                    var_dump($dados);
+                            
                                     foreach ($dados as $row) {
                                         echo "<tr>";
                                         echo "<td>".$row['nome']."</td>";

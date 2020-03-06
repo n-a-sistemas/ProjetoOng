@@ -1,6 +1,6 @@
 <?php
 
-include('conn.php');
+include('../database/conn.php');
 
 $diretorio = "imagens/";
 $codigo = $_POST['codigo'];

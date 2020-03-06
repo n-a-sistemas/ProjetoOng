@@ -2,7 +2,14 @@
 
     include '../database/conn.php';
 
-    if(isset($_GET['datainicial'])){
+    $datainicial = "";
+    $datafinal = "";
+    if(isset($_GET['datainicial']) && isset($_GET['datafinal'])){
+        $datainicial = $_GET['datainicial'];
+        $datafinal = $_GET['datafinal'];    
+}
+
+    /*if(isset($_GET['datainicial'])){
         $datainicial = $_GET['datainicial'];
     }
     else{
@@ -16,11 +23,15 @@
     }
     if($datainicial > $datafinal){
         header("Location: index.php");
-    }
+    }*/
     
     $json = file_get_contents("http://localhost/ProjetoOng/Site/RelatorioDoacao/encode.php?datainicial="
     .$datainicial."&datafinal=".$datafinal);
     $data= json_decode($json, true);
+
+    /*$filtro = "SELECT * FROM doacoes WHERE data BETWEEN '$datainicial 00:00:00' AND '$datafinal 23:59:59'";
+    $result = $conn->query($filtro);*/
+
 ?>
 
 <!DOCTYPE html>
@@ -35,7 +46,7 @@
     <title>Relatório de Doações</title>
 </head>
 <body>
-    <?php //include '../menu.php';?>
+    <?php include '../menu.php';?>
     <div class="container primary">
         <div>
             <div class="container text-center col primary">
@@ -60,8 +71,8 @@
         <table class="table table-bordered">
             <thead class="table">
                 <tr>
-                <th scope="col">Nome</th>
                 <th scope="col">Categoria</th>
+                <th scope="col">Nome</th>
                 <th scope="col">Quantidade</th>
                 <th scope="col">Data</th>
                 </tr>
@@ -72,8 +83,8 @@
                         foreach ($data as $row) {
                             ?>
                             <tr>
-                            <td><?php echo $row['nome']?></td>
                             <td><?php echo $row['categoria']?></td>
+                            <td><?php echo $row['nome']?></td>
                             <td><?php echo $row['quantidade']?></td>
                             <td><?php echo $row['data']?></td>
                             </tr>
@@ -81,11 +92,7 @@
                         }
                     }
                     else{
-<<<<<<< HEAD
                         echo "<p>"."NENHUM RESULTADO FOI ENCONTRADO PARA A SUA PESQUISA"."</p>";
-=======
-                        echo "<p>" . "NENHUM RESULTADO FOI ENCONTRADO PARA A SUA PESQUISA" . "</p>";
->>>>>>> eb41f2c82ce51d17abb874a8bb73d5668ffbf8f3
                     }
                 ?>
             </tbody>
