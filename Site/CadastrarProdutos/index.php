@@ -12,7 +12,7 @@
     <title>Cadastro de produtos</title>
 </head>
 <body>
-    <?php //include '../menu.php'; ?>
+    <?php include '../menu.php'; ?>
     <main>
         <div class="container text-center primary">
             <div class="text-left display-4 my-2">
