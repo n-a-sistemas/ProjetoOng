@@ -61,7 +61,7 @@
     <script src="jquery-validation/jquery.validate.min.js"></script>
     <script src="jquery-validation/additional-methods.min.js"></script>
     <script type="text/javascript">
-        $(document).ready(function () {
+        /*$(document).ready(function () {
         $.validator.setDefaults({
             submitHandler: function () {
             alert( "Usuário cadastrado com sucesso!!" );
@@ -106,7 +106,7 @@
             $(element).removeClass('is-invalid');
             }
         });
-        });
+        });*/
     </script>
 </body>
 </html>
