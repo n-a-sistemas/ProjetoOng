@@ -65,7 +65,7 @@
         $.validator.setDefaults({
             submitHandler: function () {
             alert( "Usuário cadastrado com sucesso!!" );
-            }
+            };
         });
         
         $('#quickForm').validate({
@@ -81,7 +81,6 @@
             },
             terms: {
                 required: true
-            },
             },
             messages: {
             email: {

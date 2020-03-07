@@ -12,7 +12,7 @@
     <title>Cadastro de produtos</title>
 </head>
 <body>
-    <?php include '../menu.php'; ?>
+    <?php //include '../menu.php'; ?>
     <main>
         <div class="container text-center primary">
             <div class="text-left display-4 my-2">
@@ -50,13 +50,13 @@
                 </div>
 
                 <div class=" text-left col-md-5">
-                    <label for="preco" class="d-inline">Preço</label>
+                    <label for="valor" class="d-inline">Preço</label>
                 </div>
                 <div class="input-group text-left col-md-7">
                     <div class="input-group-prepend">
                       <span class="input-group-text"><strong>R$</strong></span>
                     </div>
-                    <input type="text" id="preco" name="preco" class="form-control dinheiro" placeholder="Digite apenas números..." required>
+                    <input type="text" id="valor" name="valor" class="form-control dinheiro" placeholder="Digite apenas números..." required>
                 </div>
 
                 <div class="form-group col-auto text-left">
@@ -66,7 +66,7 @@
 
                 <div class="container form-group">
                     <div class="col-auto custom-file">
-                        <input class="form-control custom-file-input" id="customFile" type="file" name="imagemUpload"
+                        <input class="form-control custom-file-input" id="customFile" type="file" name="imagem"
                             accept="image/png, image/jpeg">
                         <label class="custom-file-label text-left" for="customFile">Insira uma imagem...</label>
                     </div>
