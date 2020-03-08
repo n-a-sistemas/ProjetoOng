@@ -22,7 +22,6 @@ if($result->num_rows > 0){
 }
 
 //select para investimentos
-
 ?> 
 
 <!DOCTYPE html>

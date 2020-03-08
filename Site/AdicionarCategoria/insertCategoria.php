@@ -21,6 +21,7 @@ if($categoria != ""){
         }
     }
     else{
-        echo "Categoria já cadastrada!";
+        echo "<h1>Categoria já cadastrada!</h1>";
+        echo "<a href='index.php'>Voltar para página anterior</a>";
     }    
 }
