@@ -15,6 +15,7 @@
         $linha = $resultado->fetch_assoc();
         if($linha['senha'] == hash('sha256', $password)){
             $_SESSION ['login'] = true;
+            $_SESSION['id_usuario'] = $id_usuario;
             $_SESSION['email'] = $email;
             $_SESSION['acesso'] = $linha['acesso'];
             if($linha['acesso'] == 0){

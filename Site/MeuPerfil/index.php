@@ -50,6 +50,9 @@
                 <div class="form-group text-left">
                     <p><strong>Tipo de usuário: </strong><?php echo $tipo_usuario;?></p>
                 </div>
+                <div>
+                    <button type="submit"><a href="atualizarPerfil">Alterar dados</a></button>
+                </div>
             </div>
             
         </div>
