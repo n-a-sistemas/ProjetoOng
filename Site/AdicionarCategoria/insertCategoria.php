@@ -1,6 +1,6 @@
 <?php
 
-include('../../database/conn.php');
+include('../database/conn.php');
 
 if(isset($_POST['categoria'])){
     $categoria = $_POST['categoria'];
@@ -15,7 +15,7 @@ if($categoria != ""){
     if($resultado->num_rows == 0){
         $sql = "INSERT INTO categorias (categoria) VALUES ('$categoria')";
         if($conn->query($sql) == TRUE){
-            header("Location: ../CadastrarProdutos");
+            header("Location: /CadastrarProdutos");
         }else{
             $conn->error;
         }
