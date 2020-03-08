@@ -23,6 +23,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="../menu.css"/>
+    <link rel="stylesheet" href="estilo.css">
     <title>Meu perfil</title>
 </head>
 <body>
@@ -51,7 +52,7 @@
                     <p><strong>Tipo de usuário: </strong><?php echo $tipo_usuario;?></p>
                 </div>
                 <div>
-                    <button type="submit"><a href="atualizarPerfil">Alterar dados</a></button>
+                    <button type="submit" class="btn btn-lg btn-outline-info my-4 mx-4"><a href="atualizarPerfil">Alterar dados</a></button>
                 </div>
             </div>
             
