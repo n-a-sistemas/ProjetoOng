@@ -15,7 +15,7 @@ if($categoria != ""){
     if($resultado->num_rows == 0){
         $sql = "INSERT INTO categorias (categoria) VALUES ('$categoria')";
         if($conn->query($sql) == TRUE){
-            header("Location: ../index.php");
+            header("Location: ../CadastrarProdutos");
         }else{
             $conn->error;
         }

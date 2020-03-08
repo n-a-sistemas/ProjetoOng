@@ -9,7 +9,7 @@
     $senha = hash('sha256', $senha);
     $sql = "INSERT INTO usuarios(nome, email, senha, acesso) VALUES ('$nome', '$email', '$senha', '$user')";
     if($conn->query($sql) == TRUE){
-        header('Location: index.php');
+        header('Location: ../CadastrarUsuarios');
     }else{
         echo $conn->error;
     }

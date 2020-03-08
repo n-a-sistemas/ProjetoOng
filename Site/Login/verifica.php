@@ -19,9 +19,9 @@
             $_SESSION['email'] = $email;
             $_SESSION['acesso'] = $linha['acesso'];
             if($linha['acesso'] == 0){
-            header('Location: ../CadastrarProdutos/index.php');
+            header('Location: ../CadastrarProdutos');
             }else{
-                header('Location: ../RelatorioFinanceiro/index.php');
+                header('Location: ../RelatorioFinanceiro');
             }
         }
         else{

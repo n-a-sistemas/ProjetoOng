@@ -12,7 +12,7 @@
             if(strtotime(date('Y-m-d H:i:s')) >= strtotime($linha['datafinal'])){
                 $del = "DELETE FROM token WHERE token = '$token'";
                 $conn->query($del);
-                header('Location: index.php');
+                header('Location: ../Login');
             }else{
                 $email = $linha['email'];
             }

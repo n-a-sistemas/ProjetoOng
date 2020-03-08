@@ -16,7 +16,7 @@ $valor = $_POST['valor'];
 move_uploaded_file($_FILES['imagemUpload']['tmp_name'], $imagem);
 
 if(empty($codigo) || empty($categoria) || empty($nome) || empty($valor)){
-    header("Location: index.php");
+    header("Location: ../CadastrarProdutos");
 }else{
 
     $sql = "SELECT * FROM produtos WHERE nome = '$nome'";
@@ -27,7 +27,7 @@ if(empty($codigo) || empty($categoria) || empty($nome) || empty($valor)){
             $result = $linha['nome'];
         }
         if ($result == $nome){
-            header("Location: index.php");
+            header("Location: ../CadastrarProdutos");
             echo "Produto já cadastrado";
         }
     }
@@ -36,15 +36,15 @@ if(empty($codigo) || empty($categoria) || empty($nome) || empty($valor)){
         $conn->query($sql);
         $conn->error;
         if($conn->query($sql) ==TRUE){
-            header("Location: ../Estoque/index.php");
+            header("Location: ../Estoque");
         }else{
             echo $conn->error;
         }
         /*if(empty($codigo) || empty($categoria) || empty($nome) || empty($valor)){
-            header("Location: ../CadastrarProdutos/index.php");
+            header("Location: ../CadastrarProdutos");
         }
         elseif ($conn->query($sql) == TRUE ) {
-            header("Location: ../Estoque/index.php");
+            header("Location: ../Estoque");
         }
         else{
             echo "Erro: " . $conn->error;
