@@ -3,4 +3,4 @@
 
     session_unset();
 
-    header('Location: ../Login/index.php');
+    header('Location: ../Login');
