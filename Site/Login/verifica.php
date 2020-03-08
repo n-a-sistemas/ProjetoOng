@@ -25,7 +25,9 @@
         }
         else{
             //substituir por cancelamento
+            
             header('Location: index.php');
+            echo $conn->error;
         }
     }else{
         //substituir
