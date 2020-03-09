@@ -47,6 +47,7 @@
                 </picture>
             </div>
         </form>
+        
         <div class="modal fade modal-centered" id="myModal">
             <div class="modal-dialog">
                 <div class="modal-content">

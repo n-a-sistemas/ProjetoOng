@@ -7,7 +7,7 @@
     <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow">
           
         <a class="navbar-brand" href="#">
-            <img src="../logocantinho.png" width="120" class="img-fluid d-inline-block" alt="">
+            <img src="logocantinho.png" width="120" class="img-fluid d-inline-block" alt="">
         </a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
@@ -23,40 +23,40 @@
                         Relatórios
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="../RelatorioFinanceiro/index.php">Relatório Financeiro</a>
-                            <a class="dropdown-item" href="../RelatorioDoacao/index.php">Relatório de doações</a>
+                            <a class="dropdown-item" href="../../RelatorioFinanceiro/index.php">Relatório Financeiro</a>
+                            <a class="dropdown-item" href="../../RelatorioDoacao/index.php">Relatório de doações</a>
                         </div>
                         </li>';
                         echo '<li class="nav-item">
-                        <a class="nav-link" href="../CadastrarUsuarios">Cadastrar Usuários</a>
+                        <a class="nav-link" href="../../CadastrarUsuarios">Cadastrar Usuários</a>
                         </li>';                        
                     }
                     else{
                         echo'<li class="nav-item">
-                            <a class="nav-link" href="../CadastrarProdutos">Cadastrar Produtos</a>
+                            <a class="nav-link" href="../../CadastrarProdutos">Cadastrar Produtos</a>
                         </li>
     
                         <li class="nav-item">
-                            <a class="nav-link" href="../CadastrarDoacoes">Cadastrar Doações</a>
+                            <a class="nav-link" href="../../CadastrarDoacoes">Cadastrar Doações</a>
                         </li>  
                         <li class="nav-item">
-                            <a class="nav-link" href="../Caixa">Caixa</a>
+                            <a class="nav-link" href="../../Caixa">Caixa</a>
                         </li>';
                     }
                 ?>
                 <li class="nav-item">
-                        <a class="nav-link" href="../Estoque">Estoque</a>
+                        <a class="nav-link" href="../../Estoque">Estoque</a>
                 </li>
                 <li  class="nav-item">
-                    <a class="nav-link" href="../MeuPerfil">Meu perfil</a>
+                    <a class="nav-link patual" href="../../MeuPerfil">Meu perfil</a>
                 </li>
 
                 <li  class="nav-item">
-                    <a class="nav-link" href="../despesas/form.php">Despesas</a>
+                    <a class="nav-link" href="../../despesas/form.php">Despesas</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="../Login">Sair</a>
+                    <a class="nav-link" href="../../Login">Sair</a>
                 </li>
             </ul>
         </div>
