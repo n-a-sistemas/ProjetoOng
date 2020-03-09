@@ -33,22 +33,11 @@ if(empty($codigo) || empty($categoria) || empty($nome) || empty($valor)){
     }
     else{
         $sql = "INSERT INTO produtos(codigo, categoria, nome, imagem, descricao, valor_unitario) VALUES ('$codigo', '$categoria', '$nome', '$imagem', '$descricao', '$valor')";
-        $conn->query($sql);
-        $conn->error;
         if($conn->query($sql) ==TRUE){
             header("Location: ../Estoque");
         }else{
             echo $conn->error;
         }
-        /*if(empty($codigo) || empty($categoria) || empty($nome) || empty($valor)){
-            header("Location: ../CadastrarProdutos");
-        }
-        elseif ($conn->query($sql) == TRUE ) {
-            header("Location: ../Estoque");
-        }
-        else{
-            echo "Erro: " . $conn->error;
-        }*/
     }
 }
 
