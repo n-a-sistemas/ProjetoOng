@@ -1,9 +1,8 @@
 <?php
     include("../database/conn.php");
 
-    $colunas = $_GET['colunas'];
     $pesquisar = $_GET['pesquisar'];
-    $sql = "SELECT * FROM produtos WHERE $colunas LIKE '".$pesquisar."%'";
+    $sql = "SELECT * FROM produtos WHERE nome LIKE '%".$pesquisar."%'";
     $resultado = $conn->query($sql);
 
     $produtos=array();

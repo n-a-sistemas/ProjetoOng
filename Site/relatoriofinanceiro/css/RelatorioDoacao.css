@@ -1,0 +1,21 @@
+label{
+    margin-left: 10px;
+}
+input{
+    width: 200px;
+    margin-left: 100px;
+    border: 1px;
+    border-style: groove;
+    border-radius: 100px;
+}
+button{
+    margin-left: 142px;
+}
+thead{
+    background-color: #B4D1FF;
+}
+p{
+    font-size: large;
+    font-weight: bold;
+    color: #ff3845;
+}
