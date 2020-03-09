@@ -43,7 +43,6 @@
                         
                     </select>
                 </div>
-
                 <div class="form-group col-auto text-left">
                     <label for="nome">Nome</label>
                     <input type="text" id="nome" name="nome" class="form-control" required>
@@ -74,6 +73,9 @@
 
                 <button type="submit" class="btn btn-lg btn-outline-success my-4 mx-4">Cadastrar</button>
                 <button type="reset" class="btn btn-lg btn-outline-danger my-4 mx-4">Cancelar</button>
+                <a href="../AdicionarCAtegoria/index.php" class="float-left">
+                    <button type="button" class="btn btn-lg btn-outline-primary my-4 mx-4 categoria">Categorias</button>
+                </a>
             </form>
         </div>
     </main>
