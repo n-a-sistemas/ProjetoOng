@@ -104,7 +104,7 @@
     <script src="jquery-validation/additional-methods.min.js"></script>
 
     <script type="text/javascript">
-    $(document).ready(function() {
+    /*$(document).ready(function() {
         $.validator.setDefaults({
             submitHandler: function () {
             }
@@ -148,7 +148,7 @@
                 }
             }
         });
-    });
+    });*/
     </script>
 </body>
 
