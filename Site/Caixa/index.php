@@ -34,9 +34,8 @@
                             if($resultado->num_rows){
                                 while($linha=$resultado->fetch_assoc()){
                                     ?>
-                        <option value="<?php echo $linha['id_produto']?>"><?php echo $linha['codigo'];?> -
-                            <?php echo $linha['nome'];?></option>
-                        <?php
+                                    <option value="<?php echo $linha['id_produto']?>"><?php echo $linha['codigo'];?> - <?php echo $linha['nome'];?></option>
+                                    <?php
                                 }
                             }
                         ?>
@@ -44,8 +43,8 @@
                 </div>
 
                 <div class="form-group text-left col">
-                    <label for="quantidade">Quantidade </label>
-                    <input type="text" name="quantidade" id="quantidade" class="form-control codigo" required>
+                    <label for="quantidade">Quantidade: </label>
+                    <input type="text" name="quantidade" id="quantidade" class="form-control">
                 </div>
 
                 <div class=" text-left col-md-5">
