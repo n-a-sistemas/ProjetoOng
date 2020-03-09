@@ -5,7 +5,8 @@ include('../database/conn.php');
 $id = $_POST['codigo'];
 $quantidade = $_POST['quantidade'];
 $valor = $_POST['valor'];
-
+$valor = str_replace('.','',$valor);
+$valor = str_replace(',','.', $valor);
 date_default_timezone_set('America/Sao_Paulo');
 $data = date('Y-m-d H:i:s');
 

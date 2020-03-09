@@ -15,7 +15,7 @@ if($categoria != ""){
     if($resultado->num_rows == 0){
         $sql = "INSERT INTO categorias (categoria) VALUES ('$categoria')";
         if($conn->query($sql) == TRUE){
-            header("Location: /CadastrarProdutos");
+            header("Location: index.php");
         }else{
             $conn->error;
         }
@@ -23,5 +23,8 @@ if($categoria != ""){
     else{
         echo "<h1>Categoria já cadastrada!</h1>";
         echo "<a href='index.php'>Voltar para página anterior</a>";
-    }    
+    }
+}
+else{
+    header("Location: index.php");
 }
