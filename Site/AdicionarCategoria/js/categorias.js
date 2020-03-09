@@ -1,34 +1,31 @@
 $(document).ready(function(){
     $.ajax({
         type: 'POST',
-        url: 'http://localhost/ProjetoOng/Site/CadastrarProdutos/AdicionarCategoria/categoria.php',
+        url: 'http://localhost/ProjetoOng/Site/AdicionarCategoria/categoria.php',
         dataType: 'html',
         // Antes de carregar os registros, mostra para o usuário que está
         // sendo carregado.
-        beforeSend: function (xhr) {
-            $('#categorias').attr('disabled', 'disabled');
-            $('#categorias').html('<li>Carregando...</li>');
+        beforeSend: function () {
+            $('#categorias').html('<tr><td>Carregando...</td></tr>');
         },
         // Após carregar, coloca a lista dentro do select de categorias.
         success: function (data) {
             $('#categorias').empty();
             // Adiciona o retorno no campo, habilita e da foco
             $('#categorias').append(data);
-            $('#categorias').removeAttr('disabled');
         }
     });
     $('#categoria').change(function () {
         $.ajax({
             type: 'POST',
-            url: 'http://localhost/ProjetoOng/Site/CadastrarProdutos/AdicionarCategoria/categoria.php',
+            url: 'http://localhost/ProjetoOng/Site/AdicionarCategoria/categoria.php',
             dataType: 'html',
             data: { 'texto': $('#categoria').val() },
             // Antes de carregar os registros, mostra para o usuário que está
             // sendo carregado.
-            beforeSend: function (xhr) {
-                $('#categorias').attr('disabled', 'disabled');
+            beforeSend: function () {
                 $('#categorias').empty();
-                $('#categorias').html('<li>Carregando...</li>');
+                $('#categorias').html('<tr><td>Carregando...</td></tr>');
             },
             // Após carregar, coloca a lista dentro do select de categorias.
             success: function (data) {
@@ -36,18 +33,32 @@ $(document).ready(function(){
                     $('#categorias').empty();
                     // Adiciona o retorno no campo, habilita e da foco
                     $('#categorias').append(data);
-                    $('#categorias').removeAttr('disabled');
-                } 
+                }
                 else{
-                    $('#categorias').empty();
+                    $.ajax({
+                        type: 'POST',
+                        url: 'http://localhost/ProjetoOng/Site/AdicionarCategoria/categoria.php',
+                        dataType: 'html',
+                        // Antes de carregar os registros, mostra para o usuário que está
+                        // sendo carregado.
+                        beforeSend: function () {
+                            $('#categorias').html('<tr><td>Carregando...</td></tr>');
+                        },
+                        // Após carregar, coloca a lista dentro do select de categorias.
+                        success: function (data) {
+                            $('#categorias').empty();
+                            // Adiciona o retorno no campo, habilita e da foco
+                            $('#categorias').append(data);
+                        }
+                    });
                 }
             }
         });
     });
 });
 function validaCategoria(){
-    var li = document.getElementsByTagName('li');
-    if(li.length == 0){
+    var categoria = document.getElementsByTagName('tr');
+    if(categoria.length == 1){
         return true;
     }
     else{
