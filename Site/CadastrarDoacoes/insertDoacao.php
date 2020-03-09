@@ -18,12 +18,13 @@ if($conn->query($sql)){
 
 $sql = "INSERT INTO item_doacoes(id_doacao, id_produto, quantidade) VALUES ('$idDoacao', '$id', '$quantidade')";
 
-if($conn->query($sql)){
-
+if($conn->query($sql) == TRUE){
+   header("Location: ../Estoque");
 }else {
    echo $conn->error;
 }
 
+/*
 $sql = "SELECT quantidade FROM produtos WHERE id_produto = '$id'";
 
 $resultado = $conn->query($sql);
@@ -32,12 +33,12 @@ if($resultado->num_rows > 0){
    while($linha=$resultado->fetch_assoc()){
       $quantidade += $linha['quantidade'];
    }
-}
+}*/
 
 $sql = "UPDATE produtos SET quantidade = '$quantidade' WHERE id_produto = $id";
 
 if($conn->query($sql) == TRUE){
-   header("Location: ../Estoque/index.php");
+   header("Location: ../Estoque");
 }else{
-   $conn->error();
+   $conn->error;
 }

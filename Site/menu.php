@@ -41,12 +41,12 @@
                         </li>  
                         <li class="nav-item">
                             <a class="nav-link" href="../Caixa">Caixa</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link" href="../Estoque">Estoque</a>
                         </li>';
                     }
                 ?>
+                <li class="nav-item">
+                        <a class="nav-link" href="../Estoque">Estoque</a>
+                </li>
                 <li  class="nav-item">
                     <a class="nav-link patual" href="../MeuPerfil">Meu perfil</a>
                 </li>
@@ -56,8 +56,6 @@
                 </li>
             </ul>
         </div>
-
-        <!-- https://work.smarchal.com/twbscolor/ Trocar cor do nav -->
     </nav>
     <link rel="icon" href="../logoigreja.png" type="image/png" sizes="16x16">
 </header>

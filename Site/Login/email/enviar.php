@@ -25,14 +25,14 @@ $mail ->Username = 'ti33senacsc@gmail.com'; // colocar email
 $mail ->Password = 'senac123';
 $mail ->Port = '587';
 
-$assunto = "Redefinição de senha";
-$corpo = "Para redefinir sua senha, clique no link a seguir: http://localhost/ProjetoOng/Site/Login/recuperaSenha.php?token=" . $token;
+$assunto = "Redefinir senha";
+$corpo = "Para redefinir sua senha ação, clique no link a seguir: http://localhost/ProjetoOng/Site/Login/recuperaSenha.php?token=" . $token;
 
 $mail ->setFrom('ti33senacsc@gmail.com');
 $mail ->addAddress($email);
 
 $mail ->isHTML(true);
-$mail ->Subject=$assunto;
+$mail ->Subject=utf8_decode($assunto);
 
 $mail ->Body=$corpo;
 

@@ -1,9 +1,21 @@
 <?php
-    if(isset($_GET['datainicial'])){
+
+    include '../database/conn.php';
+
+    $datainicial = "";
+    $datafinal = "";
+    if(isset($_GET['datainicial']) && isset($_GET['datafinal'])){
+        $datainicial = $_GET['datainicial'];
+        $datafinal = $_GET['datafinal'];    
+}
+
+    /*if(isset($_GET['datainicial'])){
         $datainicial = $_GET['datainicial'];
     }
     else{
-        $datainicial = "1900-01-01";
+        //$call = json_decode("http://localhost/ProjetoOng/Site/RelatorioDoacao/encode.php");
+        //$datainicial = min($call['data']);
+        $datainicial = '1900/1/1';
     }
     if(isset($_GET['datafinal'])){
         $datafinal = $_GET['datafinal'];
@@ -13,11 +25,15 @@
     }
     if($datainicial > $datafinal){
         header("Location: index.php");
-    }
+    }*/
     
-    $json = file_get_contents("http://localhost/ProjetoOng/Site/RelatorioDoacao/relatorioEncode.php?datainicial="
+    $json = file_get_contents("http://localhost/ProjetoOng/Site/RelatorioDoacao/encode.php?datainicial="
     .$datainicial."&datafinal=".$datafinal);
     $data= json_decode($json, true);
+
+    /*$filtro = "SELECT * FROM doacoes WHERE data BETWEEN '$datainicial 00:00:00' AND '$datafinal 23:59:59'";
+    $result = $conn->query($filtro);*/
+
 ?>
 
 <!DOCTYPE html>
@@ -57,30 +73,27 @@
         <table class="table table-bordered">
             <thead class="table">
                 <tr>
-                <th scope="col">Id da Doação</th>
-                <th scope="col">Id do Produto</th>
                 <th scope="col">Categoria</th>
+                <th scope="col">Nome</th>
                 <th scope="col">Quantidade</th>
                 <th scope="col">Data</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
-                    if(isset($_GET['datainicial']) || isset($_GET['datafinal'])){
+                    if($datainicial != null && $datafinal != null){
                         foreach ($data as $row) {
                             ?>
                             <tr>
-                            <td scope="row"><?php echo $row['id_doacao'] ?></td>
-                            <td><?php echo $row['id_produto']?></td>
                             <td><?php echo $row['categoria']?></td>
+                            <td><?php echo $row['nome']?></td>
                             <td><?php echo $row['quantidade']?></td>
                             <td><?php echo $row['data']?></td>
                             </tr>
                             <?php
                         }
-                    }
-                    else{
-                        echo "<p>" . "NENHUM RESULTADO FOI ENCONTRADO PARA A SUA PESQUISA" . "</p>";
+                    }else{
+                        echo "<p>"."NENHUM RESULTADO FOI ENCONTRADO PARA A SUA PESQUISA"."</p>";
                     }
                 ?>
             </tbody>
