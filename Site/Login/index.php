@@ -24,12 +24,12 @@
 
             <div class="form-group text-left">
                 <label for="email">Email</label>
-                <input type="text" class="form-control" name="email" id="email">
+                <input type="text" class="form-control" name="email" id="email" required>
             </div>
 
             <div class="form-group text-left">
                 <label for="password">Senha</label>
-                <input type="password" class="form-control" name="password" id="password">
+                <input type="password" class="form-control" name="password" id="password" required>
             </div>
 
             <div class="my-2">
@@ -62,7 +62,7 @@
                         <form action="email/enviar.php" method="POST" id="quickForm">
                             <div class="form-group text-left">
                                 <label for="email">E-mail</label>
-                                <input type="email" id="email" name="emailmodal" class="form-control">
+                                <input type="email" id="email" name="emailmodal" class="form-control" required>
                             </div>
                             <div class="modal-footer">
                                 <button type="submit" class="btn btn-lg btn-outline-success">Enviar</button>
@@ -112,39 +112,40 @@
         
         $('#quickForm').validate({
             rules: {
-            email: {
-                required: true,
-                email: true,
-            },
-            password: {
-                required: true,
-                minlength: 5
-            },
-            terms: {
-                required: true
-            },
-            
-            messages: {
-            email: {
-                required: "Insira um endereço de e-mail",
-                email: "Insira um endereço de e-mail válido"
-            },
-            password: {
-                required: "Insira sua senha",
-                minlength: "Sua senha deve ter pelo menos 5 caracteres"
-            },
-            terms: "Por favor, aceite os termos."
-            },
-            errorElement: 'span',
-            errorPlacement: function (error, element) {
-            error.addClass('invalid-feedback');
-            element.closest('.form-group').append(error);
-            },
-            highlight: function (element, errorClass, validClass) {
-            $(element).addClass('is-invalid');
-            },
-            unhighlight: function (element, errorClass, validClass) {
-            $(element).removeClass('is-invalid');
+                email: {
+                    required: true,
+                    email: true,
+                },
+                password: {
+                    required: true,
+                    minlength: 5
+                },
+                terms: {
+                    required: true
+                },
+                
+                messages: {
+                email: {
+                    required: "Insira um endereço de e-mail",
+                    email: "Insira um endereço de e-mail válido"
+                },
+                password: {
+                    required: "Insira sua senha",
+                    minlength: "Sua senha deve ter pelo menos 5 caracteres"
+                },
+                terms: "Por favor, aceite os termos."
+                },
+                errorElement: 'span',
+                errorPlacement: function (error, element) {
+                error.addClass('invalid-feedback');
+                element.closest('.form-group').append(error);
+                },
+                highlight: function (element, errorClass, validClass) {
+                $(element).addClass('is-invalid');
+                },
+                unhighlight: function (element, errorClass, validClass) {
+                $(element).removeClass('is-invalid');
+                }
             }
         });
     });

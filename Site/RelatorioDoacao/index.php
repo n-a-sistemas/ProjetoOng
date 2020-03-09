@@ -92,8 +92,7 @@
                             </tr>
                             <?php
                         }
-                    }
-                    else{
+                    }else{
                         echo "<p>"."NENHUM RESULTADO FOI ENCONTRADO PARA A SUA PESQUISA"."</p>";
                     }
                 ?>

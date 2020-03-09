@@ -11,23 +11,7 @@
 </head>
 <body>
     <?php include '../menu.php';?>
-    <!--<div>
-        <form action="insertCategoria.php" method="POST" onsubmit="validaCategoria();">
-            <div>
-                <label for="a">Categoria</label>
-                <input type="text" id="categoria" name="categoria">
-            </div>
-            <div>
-                <ul id="categorias">
-
-                </ul>
-            </div>
-            <div>
-                <button type="submit">Enviar</button>
-            </div>
-        </form>
-    </div>-->
-    <script src="../../js/categorias.js">
+    <script src="./js/categorias.js">
     </script>
     <br/>
     <div class="container primary">
@@ -35,14 +19,19 @@
             <h1>Categorias</h1>
             <hr/>
         </div>
-        <form class="form-inline my-5 my-lg-0" method="GET">
-            <div class="form-group">
-                <input class="form-control d-flex justify-content-end mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar" name="pesquisar">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
+        <form action="insertCategoria.php" class="form-inline my-5 my-lg-0" method="POST" onsubmit="validaCategoria();">
+            <div>
+                <input class="form-control d-flex justify-content-end mr-sm-2" type="search" placeholder="Categoria" aria-label="Categoria" name="categoria">
+            </div>
+            <div>
                 <button class="btn btn-outline-success my-2 my-sm-0 cat" type="submit">Adicionar</button>
-                <button class="btn btn-outline-danger my-2 my-sm-0 catt" type="submit">Remover</button>
+            </div>
+            <div>
             </div>
         </form>
+        <div>
+            
+        </div>
         <div class="table-responsive">
             <table class="table table-bordered">
                 <thead class="table">
@@ -50,7 +39,6 @@
                     <th scope="col">#</th>
                     <th scope="col">Nome</th>
                     <th scope="col">Id</th>
-                    <th scope="col">Descrição</th>
                     </tr>
                 </thead>
                 <tbody>

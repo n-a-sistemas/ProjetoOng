@@ -1,50 +1,47 @@
-<div class="wrapper">
-    <div class="content-wrapper">
-        <!-- Main content -->
-        <section class="content">
-            <div class="container-fluid">
-                <div class="row">
+<!--Main content -->
 
-                    <div class="col-auto d-flex align-items-stretch">
-                        <!-- Grafico 1 -->
-                        <div class="col-7">
-                            <div class="card card-primary d-flex d-inline">
-                                <div class="card-header">
-                                    <h3 class="card-title">Vendas</h3>
-                                </div>
-                                <div class="card-body">
-                                    <div class="chart">
-                                        <canvas id="barChart"
-                                            style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
-                                    </div>
-                                </div> <!-- /.card-body -->
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
 
-                            </div> <!-- /.card -->
-                            
-                        </div> <!--/.col-7-->
+            <div class="d-flex align-items-stretch">
+                <!-- Grafico 1 -->
+                <div class="col-7">
+                    <div class="card card-primary d-flex d-inline">
+                        <div class="card-header">
+                            <h3 class="card-title">Vendas</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="chart">
+                                <canvas id="barChart"
+                                    style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                            </div>
+                        </div> <!-- /.card-body -->
 
-                        <div class="col-7">
-                            <div class="card card-primary d-flex d-inline">
-                                <div class="card-header">
-                                    <h3 class="card-title">Investimentos</h3>
-                                </div>
-                                <div class="card-body">
-                                    <div class="chart">
-                                        <canvas id="barInvest"
-                                            style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
-                                    </div>
-                                </div> <!-- /.card-body -->
-                            </div> <!-- /.card -->
-                        </div> <!--/.col-7-->
+                    </div> <!-- /.card -->
 
-                    </div> <!-- /.row -->
+                </div>
+                <!--/.col-7-->
 
-                </div><!-- /.container-fluid -->
+                <div class="col-7">
+                    <div class="card card-primary d-flex d-inline">
+                        <div class="card-header">
+                            <h3 class="card-title">Investimentos</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="chart">
+                                <canvas id="barInvest"
+                                    style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                            </div>
+                        </div> <!-- /.card-body -->
+                    </div> <!-- /.card -->
+                </div>
+                <!--/.col-7-->
 
             </div> <!-- /.row -->
 
-        </section> <!-- /.content -->
+        </div><!-- /.container-fluid -->
 
-    </div> <!--./content-wrapper-->
+    </div> <!-- /.row -->
 
-</div> <!--./wrapper-->
+</section> <!-- /.content -->

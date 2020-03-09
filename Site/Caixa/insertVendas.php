@@ -2,7 +2,6 @@
 
 include('../database/conn.php');
 
-//$id = $_POST['codigo'];
 $id = $_POST['codigo'];
 $quantidade = $_POST['quantidade'];
 $valor = $_POST['valor'];
@@ -36,16 +35,22 @@ if($resultado->num_rows == 1){
     }
 }
 
-$quantidadefinal = $quantidadefinal - $quantidade;
 
-$sql = "UPDATE produtos SET `quantidade` = '".$quantidadefinal."' WHERE id_produto = '".$id."'";
-
-if($conn->query($sql) == TRUE){
-    //header("Location: ../menu.php");
+if($quantidade <= $quantidadefinal){
+    $quantidadefinal = $quantidadefinal - $quantidade;
+    
+    $sql = "UPDATE produtos SET `quantidade` = '".$quantidadefinal."' WHERE id_produto = '".$id."'";
+    
+    if($conn->query($sql) == TRUE){
+        //header("Location: ../menu.php");
+    }else{
+       echo $conn->error;
+    }
+    
+    $conn->close();
+    
+    header('Location: ../Estoque');
 }else{
-   echo $conn->error;
+    header('Location: ../Caixa');
 }
 
-$conn->close();
-
-header('Location: ../Estoque/form.php');
