@@ -31,17 +31,12 @@
                             if($resultado->num_rows){
                                 while($linha=$resultado->fetch_assoc()){
                                     ?>
-                                    <option value="<?php echo $linha['id_produto']?>"><?php echo $linha['codigo']?></option>
+                                    <option value="<?php echo $linha['id_produto']?>"><?php echo $linha['codigo'];?> - <?php echo $linha['nome'];?></option>
                                     <?php
                                 }
                             }
                         ?>
                     </select>
-                </div>
-
-                <div class="form-group text-left col">
-                    <label for="produto">Produto: </label>
-                    <input type="text" name="produto" id="produto" class="form-control">
                 </div>
 
                 <div class="form-group text-left col">
