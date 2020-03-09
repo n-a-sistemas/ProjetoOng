@@ -10,7 +10,7 @@ $imagem = $diretorio . basename($_FILES['imagemUpload']['name']);
 $tipo = strtolower(pathinfo($imagem, PATHINFO_EXTENSION));
 $descricao = $_POST['descricao'];
 $valor = $_POST['valor'];
-//number_format($valor,2, '.', ',');
+number_format($valor,2, '.', ',');
 
 
 move_uploaded_file($_FILES['imagemUpload']['tmp_name'], $imagem);
