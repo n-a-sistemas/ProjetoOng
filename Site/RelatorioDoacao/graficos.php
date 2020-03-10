@@ -1,8 +1,6 @@
 <!--Main content -->
-<!--
 <section class="content">
     <div class="container">
--->
 
         <div class="row">
             <div class="d-flex align-items-stretch">
@@ -42,8 +40,5 @@
             </div> <!-- /.row -->
 
         </div><!-- /.container-fluid -->
-<!--
-
-    </div>  /.row
-
-</section>  /.content-->
+    </div>
+</section>
