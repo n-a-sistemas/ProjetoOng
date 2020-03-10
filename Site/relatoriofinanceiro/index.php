@@ -79,7 +79,7 @@ if($result->num_rows > 0){
                 </li>
             </ul>
 
-            <div class="tab-content ">
+            <div class="tab-content">
                 <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">
         
                     <table class="table table-bordered table-hover rounded shadow">
