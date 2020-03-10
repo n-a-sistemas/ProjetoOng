@@ -1,21 +1,10 @@
 <?php
-
     include '../database/conn.php';
-
-    $datainicial = "";
-    $datafinal = "";
-    if(isset($_GET['datainicial']) && isset($_GET['datafinal'])){
-        $datainicial = $_GET['datainicial'];
-        $datafinal = $_GET['datafinal'];    
-}
-
-    /*if(isset($_GET['datainicial'])){
+    if(isset($_GET['datainicial'])){
         $datainicial = $_GET['datainicial'];
     }
     else{
-        //$call = json_decode("http://localhost/ProjetoOng/Site/RelatorioDoacao/encode.php");
-        //$datainicial = min($call['data']);
-        $datainicial = '1900/1/1';
+        $datainicial = '1800/1/1';
     }
     if(isset($_GET['datafinal'])){
         $datafinal = $_GET['datafinal'];
@@ -25,15 +14,11 @@
     }
     if($datainicial > $datafinal){
         header("Location: index.php");
-    }*/
+    }
     
     $json = file_get_contents("http://localhost/ProjetoOng/Site/RelatorioDoacao/encode.php?datainicial="
     .$datainicial."&datafinal=".$datafinal);
     $data= json_decode($json, true);
-
-    /*$filtro = "SELECT * FROM doacoes WHERE data BETWEEN '$datainicial 00:00:00' AND '$datafinal 23:59:59'";
-    $result = $conn->query($filtro);*/
-
 ?>
 
 <!DOCTYPE html>
@@ -74,7 +59,7 @@
             <div>
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#doacao" role="tab" aria-controls="home" aria-selected="true">Doações</a>
+                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#doacoes" role="tab" aria-controls="home" aria-selected="true">Doações</a>
                     </li>
 
                     <li class="nav-item">
@@ -83,7 +68,7 @@
                 </ul>
 
                 <div class="tab-content ">
-                    <div class="tab-pane active" id="barChart" role="tabpanel" aria-labelledby="home-tab">
+                    <div class="tab-pane active" id="doacoes" role="tabpanel" aria-labelledby="home-tab">
             
                         <table class="table table-bordered table-hover rounded shadow">
                             <thead class="table">
