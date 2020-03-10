@@ -1,10 +1,10 @@
 <!--Main content -->
 <section class="content">
     <div class="container-fluid">
-        <div class="row">
+        <!--<div class="row">-->
             <div class="d-flex align-items-stretch">
                 <!-- Grafico 1 -->
-                <div class="col-12">
+                <div class="col-auto">
                     <div class="card card-primary d-flex d-inline">
                         <div class="card-header">
                             <h3 class="card-title">Doações</h3>
@@ -15,12 +15,9 @@
                                     style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
                             </div>
                         </div> <!-- /.card-body -->
-
                     </div> <!-- /.card -->
-
                 </div>
                 <!--/.col-7-->
-
                 <!--<div class="col-7">
                     <div class="card card-primary d-flex d-inline">
                         <div class="card-header">
@@ -36,7 +33,7 @@
                 </div>-->
                 <!--/.col-7-->
 
-            </div> <!-- /.row -->
+            <!--</div>--> <!-- /.row -->
 
         </div><!-- /.container-fluid -->
     </div>

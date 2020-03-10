@@ -1,4 +1,8 @@
 <?php
+    session_start();
+    if(!isset($_SESSION['id_usuario'])){
+        header('Location: ../Login');
+    }
     include '../database/conn.php';
     if(isset($_GET['datainicial'])){
         $datainicial = $_GET['datainicial'];
@@ -57,6 +61,19 @@
             </form>
         
 
+        </div>
+        <!--
+        <form action="" class="form-inline" method="GET">
+            <div class="form-group ">
+                <label for="" class="mx-2">Data Inicial: </label>
+                <input type="date" name="datainicial" class="mx-1 form-control" id="datainicial">
+            </div>
+            <div class="form-group ">
+                <label for="datafinal" class="mx-2">Data Final: </label>
+                <input type="date" name="datafinal" class="mx-1 form-control" id="datafinal">
+            </div>
+            <button type="submit" class="btn btn-lg btn-outline-success mx-2">Procurar</button>
+        </form>-->
         <div class="container">
             <div>
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -68,8 +85,7 @@
                         <a class="nav-link" id="profile-tab" data-toggle="tab" href="#graficos" role="tab" aria-controls="profile" aria-selected="false">Gráficos</a>
                     </li>
                 </ul>
-
-                <div class="tab-content ">
+                <div class="tab-content">
                     <div class="tab-pane active" id="doacoes" role="tabpanel" aria-labelledby="home-tab">
             
                         <table class="table table-bordered table-hover rounded shadow">
@@ -101,10 +117,10 @@
                             </tbody>
                         </table>
                     </div>
-
                     <div class="tab-pane" id="graficos" role="tabpanel" aria-labelledby="profile-tab">
                         <?php include('graficos.php'); ?>
                     </div>
+                </div>
             </div>
         </div>
     </div>
