@@ -74,7 +74,7 @@
             <div>
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#doacao" role="tab" aria-controls="home" aria-selected="true">Doações</a>
+                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#doacoes" role="tab" aria-controls="home" aria-selected="true">Doações</a>
                     </li>
 
                     <li class="nav-item">
@@ -83,7 +83,7 @@
                 </ul>
 
                 <div class="tab-content ">
-                    <div class="tab-pane active" id="barChart" role="tabpanel" aria-labelledby="home-tab">
+                    <div class="tab-pane active" id="doacoes" role="tabpanel" aria-labelledby="home-tab">
             
                         <table class="table table-bordered table-hover rounded shadow">
                             <thead class="table">
