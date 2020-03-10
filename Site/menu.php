@@ -23,8 +23,8 @@
                         Relatórios
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="../RelatorioFinanceiro/index.php">Relatório Financeiro</a>
-                            <a class="dropdown-item" href="../RelatorioDoacao/index.php">Relatório de doações</a>
+                            <a class="dropdown-item" href="../RelatorioFinanceiro">Relatório Financeiro</a>
+                            <a class="dropdown-item" href="../RelatorioDoacao">Relatório de doações</a>
                         </div>
                         </li>';
                         echo '<li class="nav-item">
@@ -52,7 +52,7 @@
                 </li>
 
                 <li  class="nav-item">
-                    <a class="nav-link" href="../despesas/form.php">Despesas</a>
+                    <a class="nav-link" href="../despesas">Despesas</a>
                 </li>
 
                 <li class="nav-item">

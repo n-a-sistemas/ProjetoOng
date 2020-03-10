@@ -1,4 +1,8 @@
 <?php
+session_start();
+if(!isset($_SESSION['id_usuario'])){
+    header('Location: ../Login');
+}
     include '../database/conn.php';
     $sql="SELECT * FROM produtos";
     $resultado=$conn->query($sql);
@@ -15,6 +19,7 @@
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
     <link rel="stylesheet" href="../menu.css" />
     <link rel="stylesheet" href="../css/estilo-caixa.css" />
+    <script src="../AdicionarCategoria/js/jquery-3.4.1.min.js"></script>
     <title>Caixa</title>
 </head>
 
@@ -24,7 +29,7 @@
         <div class="display-4 my-2 text-left">
             <h1>Caixa</h1>
             <hr />
-        </div>
+    </div>
         <form action="insertVendas.php" method="POST" enctype="multipart/form-data" class="row">
             <div class="col-12 col-lg-6">
                 <div class="form-group text-left col">
@@ -41,6 +46,11 @@
                         ?>
                     </select>
                 </div>
+                
+                <div class="form-group text-left col">
+                    <label for="preco_unitario">Preço Unitário: </label>
+                    <input type="text" name="preco_unitario" id="preco_unitario" value="" class="form-control" disabled>
+                </div>
 
                 <div class="form-group text-left col">
                     <label for="quantidade">Quantidade: </label>
@@ -56,7 +66,7 @@
                         <span class="input-group-text"><strong>R$</strong></span>
                     </div>
                     <input type="text" id="valor" name="valor" class="form-control dinheiro"
-                        placeholder="Digite apenas números..." required>
+                        placeholder="Digite apenas números..." required disabled>
                 </div>
             </div>
 
@@ -99,9 +109,7 @@
 
         </form>
     </div>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
+   
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
         crossorigin="anonymous"></script>
@@ -110,6 +118,7 @@
         crossorigin="anonymous"></script>
     <script src="../Mascaras/js/jquery.mask.min.js" type="text/javascript"></script>
     <script src="../CadastrarProdutos/js/mask-val.js"></script>
+    <script src="calculo.js"></script>
 </body>
 
 </html>

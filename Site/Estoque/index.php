@@ -1,4 +1,8 @@
 <?php
+    session_start();
+    if(!isset($_SESSION['id_usuario'])){
+        header('Location: ../Login');
+    }
     if(isset($_GET['colunas'])){
         $colunas = $_GET['colunas'];
     }else{
@@ -67,7 +71,7 @@
                             <td><?php echo $row['nome'] ?></td>
                             <td><?php echo $row['categoria'] ?></td>
                             <td><?php echo $row['quantidade'] ?></td>
-                            <td><?php echo $row['valor_unitario'] ?></td>
+                            <td>R$ <?php echo $row['valor_unitario'] ?></td>
                             </tr>
                         <?php
                         }
