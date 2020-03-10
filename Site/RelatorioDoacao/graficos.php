@@ -1,5 +1,4 @@
 <!--Main content -->
-
 <section class="content">
     <div class="container-fluid">
         <div class="row">
@@ -40,7 +39,5 @@
             </div> <!-- /.row -->
 
         </div><!-- /.container-fluid -->
-
-    </div> <!-- /.row -->
-
-</section> <!-- /.content -->
+    </div>
+</section>
