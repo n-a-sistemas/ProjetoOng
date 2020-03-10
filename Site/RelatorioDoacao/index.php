@@ -35,26 +35,28 @@
 <body>
     <?php include '../menu.php';?>
     <div class="container primary">
-        <div>
-            <div class="container text-center col primary">
-                <div class="display-4 my-5 text-left">
-                    <h1>Relatório de Doações</h1>
-                    <hr/>
+            <div>
+                <div class="container text-center col primary">
+                    <div class="display-4 my-5 text-left">
+                        <h1>Relatório de Doações</h1>
+                        <hr/>
+                    </div>
                 </div>
             </div>
-        </div>
-        <form action="" class="form-inline" method="GET">
-            <div class="form-group ">
-                <label for="" class="mx-2">Data Inicial: </label>
-                <input type="date" name="datainicial" class="mx-1 form-control" id="datainicial">
-            </div>
-            <div class="form-group ">
-                <label for="datafinal" class="mx-2">Data Final: </label>
-                <input type="date" name="datafinal" class="mx-1 form-control" id="datafinal">
-            </div>
-            <button type="submit" class="btn btn-lg btn-outline-success mx-2">Procurar</button>
-        </form>
-        </div>
+
+            <form action="" class="form-inline" method="GET">
+                <div class="form-group ">
+                    <label for="" class="mx-2">Data Inicial: </label>
+                    <input type="date" name="datainicial" class="mx-1 form-control" id="datainicial">
+                </div>
+                <div class="form-group ">
+                    <label for="datafinal" class="mx-2">Data Final: </label>
+                    <input type="date" name="datafinal" class="mx-1 form-control" id="datafinal">
+                </div>
+                <button type="submit" class="btn btn-lg btn-outline-success mx-2">Procurar</button>
+            </form>
+        
+
         <div class="container">
             <div>
                 <ul class="nav nav-tabs" id="myTab" role="tablist">

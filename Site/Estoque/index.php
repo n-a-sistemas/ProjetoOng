@@ -1,16 +1,11 @@
 <?php
-    if(isset($_GET['colunas'])){
-        $colunas = $_GET['colunas'];
-    }else{
-        $colunas = "nome";
-    }
     if(isset($_GET['pesquisar'])){
         $pesquisar = $_GET['pesquisar'];
     }else{
         $pesquisar = "";
     }
-    
-    $json = file_get_contents("http://localhost/ProjetoOng/Site/Estoque/encode.php?pesquisar=".$pesquisar."&colunas=".$colunas);
+    if($pesquisar != "")
+    $json = file_get_contents("http://localhost/ProjetoOng/Site/Estoque/encode.php?pesquisar=". $pesquisar);
     $dados = json_decode($json, true);
 ?>
 <!DOCTYPE html>
@@ -25,7 +20,7 @@
     <title>Estoque</title>
 </head>
 <body>
-    <?php include '../menu.php';?>
+    <?php //include '../menu.php';?>
     <br/>
     <div class="container primary">
         <div class="display-4 my-5 text-left col primary">
@@ -38,10 +33,10 @@
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
             </div>
             <div class="form-group">
-                <select name="colunas">
+                <!--<select name="colunas">
                     <option value="nome" selected>Nome</option>
                     <option value="categoria">Categoria</option>
-                </select>
+                </select>-->
             </div>
         </form>
         <div class="table-responsive">
