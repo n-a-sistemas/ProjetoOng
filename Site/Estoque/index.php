@@ -56,6 +56,7 @@
                     <th scope="col">Categoria</th>
                     <th scope="col">Quantidade</th>
                     <th scope="col">Preço</th>
+                    <th scope="col">#</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -72,7 +73,7 @@
                             <td><?php echo $row['categoria'] ?></td>
                             <td><?php echo $row['quantidade'] ?></td>
                             <td>R$ <?php echo $row['valor_unitario'] ?></td>
-                            <td><a href="delete.php?id=">Deletar</a></td>
+                            <td> <a href="index.php">Remover</a> </td>
                             </tr>
                         <?php
                         }
