@@ -81,6 +81,7 @@ if($resultadx->num_rows > 0){
             </div>
 
             <button type="submit" class="btn btn-lg btn-outline-success mx-2">Procurar</button>
+            <button onclick="impressao();" class="btn btn-lg btn-outline-info mx-2">Imprimir</button>
 
         </form>
 

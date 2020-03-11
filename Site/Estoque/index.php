@@ -13,10 +13,8 @@
     }else{
         $pesquisar = "";
     }
-    if($pesquisar != ""){
-        $json = file_get_contents("http://localhost/ProjetoOng/Site/Estoque/encode.php?pesquisar=". $pesquisar);
-        $dados = json_decode($json, true);
-    }
+    $json = file_get_contents("http://localhost/ProjetoOng/Site/Estoque/encode.php?pesquisar=". $pesquisar."&colunas=".$colunas);
+    $dados = json_decode($json, true);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -40,14 +38,15 @@
         <form class="form-inline my-5 my-lg-0" method="GET">
             <div class="form-group">
                 <input class="form-control d-flex justify-content-end mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar" name="pesquisar">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
+                <button class="btn btn-lg btn-outline-success mx-2 my-sm-0" type="submit">Pesquisar</button>
             </div>
             <div class="form-group">
-                <!--<select name="colunas">
+                <select name="colunas">
                     <option value="nome" selected>Nome</option>
                     <option value="categoria">Categoria</option>
-                </select>-->
+                </select>
             </div>
+            <button onclick="impressao();" class="btn btn-lg btn-outline-info mx-2">Imprimir</button>
         </form>
         <div class="table-responsive">
             <table class="table table-bordered">

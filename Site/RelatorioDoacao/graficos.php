@@ -2,7 +2,7 @@
 <section class="content">
     <div class="container-fluid">
         <!--<div class="row">-->
-            <div class="d-flex align-items-stretch">
+            <div class="align-items-stretch">
                 <!-- Grafico 1 -->
                 <div class="col-auto">
                     <div class="card card-primary d-flex d-inline">
