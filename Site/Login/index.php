@@ -9,6 +9,7 @@
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="menu.css">
     <link rel="stylesheet" href="css/estilo1.css">
+    <script type="text/javascript" src="valida.js"></script>
     <title>Login</title>
 </head>
 
@@ -16,7 +17,7 @@
 
     <div class="container text-center fundo">
         <form action="verifica.php" id="quickForm" method="POST"
-            class="col-12 col-lg-5 my-2 mx-auto border rounded-top shadow">
+            class="col-12 col-lg-5 my-2 mx-auto border rounded-top shadow" onsubmit="return validaLogin();">
             <div class="text-center rounded my-4">
                 <h1 class="display-4">Login</h1>
                 <div class="dropdown-divider"></div>
@@ -24,12 +25,12 @@
 
             <div class="form-group text-left">
                 <label for="email">Email</label>
-                <input type="text" class="form-control" name="email" id="email" required>
+                <input type="text" class="form-control" name="email" id="email">
             </div>
 
             <div class="form-group text-left">
                 <label for="password">Senha</label>
-                <input type="password" class="form-control" name="password" id="password" required>
+                <input type="password" class="form-control" name="password" id="senha">
             </div>
 
             <div class="my-2">
@@ -63,7 +64,7 @@
                         <form action="email/enviar.php" method="POST" id="quickForm">
                             <div class="form-group text-left">
                                 <label for="email">E-mail</label>
-                                <input type="email" id="email" name="emailmodal" class="form-control" required>
+                                <input type="email" id="email" name="emailmodal" class="form-control" require>
                             </div>
                             <div class="modal-footer">
                                 <button type="submit" class="btn btn-lg btn-outline-success">Enviar</button>
@@ -100,56 +101,6 @@
     </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-    </script>
-    <script src="jquery-validation/jquery.validate.min.js"></script>
-    <script src="jquery-validation/additional-methods.min.js"></script>
-
-    <script type="text/javascript">
-    /*$(document).ready(function() {
-        $.validator.setDefaults({
-            submitHandler: function () {
-            }
-        });
-        
-        $('#quickForm').validate({
-            rules: {
-                email: {
-                    required: true,
-                    email: true,
-                },
-                password: {
-                    required: true,
-                    minlength: 5
-                },
-                terms: {
-                    required: true
-                },
-                
-                messages: {
-                email: {
-                    required: "Insira um endereço de e-mail",
-                    email: "Insira um endereço de e-mail válido"
-                },
-                password: {
-                    required: "Insira sua senha",
-                    minlength: "Sua senha deve ter pelo menos 5 caracteres"
-                },
-                terms: "Por favor, aceite os termos."
-                },
-                errorElement: 'span',
-                errorPlacement: function (error, element) {
-                error.addClass('invalid-feedback');
-                element.closest('.form-group').append(error);
-                },
-                highlight: function (element, errorClass, validClass) {
-                $(element).addClass('is-invalid');
-                },
-                unhighlight: function (element, errorClass, validClass) {
-                $(element).removeClass('is-invalid');
-                }
-            }
-        });
-    });*/
     </script>
 </body>
 

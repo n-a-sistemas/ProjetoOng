@@ -166,15 +166,16 @@ if($resultadx->num_rows > 0){
         </div>
     </div>
     <script>
-    $('#myTab').on('click', function(e) {
-        e.preventDefault()
-        $(this).tab('show')
-    });
+        $('#myTab').on('click', function(e) {
+            e.preventDefault()
+            $(this).tab('show')
+        });
 
-    $(function() {
-        $('#myTab li:last-child a').tab('show')
-    });
+        $(function() {
+            $('#myTab li:last-child a').tab('show')
+        });
     </script>
+
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
     </script>
@@ -186,6 +187,7 @@ if($resultadx->num_rows > 0){
     </script>
     <script type="text/javascript" src="chart.js/Chart.min.js"></script>
     <script type="text/javascript" src="abas.js"></script>
+    <script type="text/javascript" src="impressao.js"></script>
 
 </body>
 
