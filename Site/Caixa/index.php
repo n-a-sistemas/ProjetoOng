@@ -79,32 +79,53 @@ if(!isset($_SESSION['id_usuario'])){
                     <div class="input-group-prepend">
                         <span class="input-group-text"><strong>R$</strong></span>
                     </div>
-                    <input type="text" id="valor_compra" name="valor_compra" value="0" class="form-control dinheiro" required
-                        disabled>
+                    <input type="text" id="valor_compra" name="valor_compra" value="0" class="form-control dinheiro"
+                        required disabled>
                 </div>
             </div>
 
-            <div class="col-12 col-lg-6 mt-2 text-center">
-                <img class="img-fluid" width="90px" id="fotoCx" src="camiseta.png" alt="">
+            <div class="d-flex justify-items-center flex-column mt-3">
+
+                <div class="col-12 col-md-12">
+                    <img class="img-fluid  mb-4" width="90px" id="fotoCx" src="camiseta.png" alt="">
+                    <table class="table table-bordered table-responsive table-hover rounded shadow">
+                        <thead>
+                            <tr>
+                                <th scope="col">Nome</th>
+                                <th scope="col">Quantidade</th>
+                                <th scope="col">Preço total da peça(R$)</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="compra">
+
+                        </tbody>
+                    </table>
+
+                </div>
             </div>
 
-            <button type="button" id="confirmar" class="btn btn-lg btn-outline-info my-4 mx-4">Confirmar</button>
-            <button type="button" id="finalizar" class="btn btn-lg btn-outline-success my-4 mx-4">Finalizar compra</button>
+
+            <!-- TESTES 
+
+            -->
+
+
+
+
+
+
+
+
+
+
+            <button type="button" id="confirmar" class="btn btn-lg btn-outline-info my-4 mx-4">Adicionar
+                produto</button>
+            <button type="button" id="finalizar" class="btn btn-lg btn-outline-success my-4 mx-4">Finalizar
+                compra</button>
             <button type="reset" id="cancelar" class="btn btn-lg btn-outline-danger my-4 mx-4">Cancelar</button>
         </form>
-        <div class="col-12 col-lg-6 mt-2 text-center">
-                <table class="table table-bordered table-hover rounded shadow">
-                    <thead>
-                        <tr>
-                            <th scope="col">Nome</th>
-                            <th scope="col">Quantidade</th>
-                            <th scope="col">Preço total da peça(R$)</th>
-                        </tr>
-                    </thead>
-                    <tbody id="compra">
-                    </tbody>
-                </table>
-            </div>
+
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
