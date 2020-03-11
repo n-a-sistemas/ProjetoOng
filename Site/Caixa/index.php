@@ -30,7 +30,7 @@ if(!isset($_SESSION['id_usuario'])){
             <h1>Caixa</h1>
             <hr />
         </div>
-        <form action="#" method="POST" enctype="multipart/form-data" class="row">
+        <form  method="POST" enctype="multipart/form-data" class="row" onsubmit="return enviarCompra();">
             <div class="col-12 col-lg-6">
                 <div class="form-group text-left col">
                     <label for="codigo">Código e nome do produto</label>
@@ -82,6 +82,11 @@ if(!isset($_SESSION['id_usuario'])){
                     <input type="text" id="valor_compra" name="valor_compra" value="0" class="form-control dinheiro"
                         required disabled>
                 </div>
+                <div>
+                    <input type="hidden" name="array_nome" value="">
+                    <input type="hidden" name="array_quantidade" value="">
+                    <input type="hidden" name="preco_final" value="">
+                </div>
             </div>
 
             <div class="d-flex justify-items-center flex-column mt-3">
@@ -121,7 +126,7 @@ if(!isset($_SESSION['id_usuario'])){
 
             <button type="button" id="confirmar" class="btn btn-lg btn-outline-info my-4 mx-4">Adicionar
                 produto</button>
-            <button type="button" id="finalizar" class="btn btn-lg btn-outline-success my-4 mx-4">Finalizar
+            <button type="submit" id="finalizar" class="btn btn-lg btn-outline-success my-4 mx-4">Finalizar
                 compra</button>
             <button type="reset" id="cancelar" class="btn btn-lg btn-outline-danger my-4 mx-4">Cancelar</button>
         </form>

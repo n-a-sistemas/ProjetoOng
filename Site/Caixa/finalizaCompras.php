@@ -3,16 +3,18 @@
     date_default_timezone_set('America/Sao_Paulo');
     $data = date('Y-m-d H:i:s');
 
-    $id = $_POST['codigo'];
     $quantidade = $_POST['quantidade'];
     $valor = $_POST['valor'];
     for($i=0; $i < $valor; $i++){
         $valor = str_replace('.','',$valor);
         $valor = str_replace(',','.', $valor);
     }
+    echo $quantidade;
+    /*
     echo $id[1] . "<br>";
     echo $quantidade[1] . "<br>";
     echo $valor . "<br>";
+    */
     /*
     $sql = "INSERT INTO vendas (data, valor_total) VALUES ('$data', '$valor')";
 
