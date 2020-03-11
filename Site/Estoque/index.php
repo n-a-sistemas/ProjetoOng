@@ -13,9 +13,10 @@
     }else{
         $pesquisar = "";
     }
-    if($pesquisar != "")
-    $json = file_get_contents("http://localhost/ProjetoOng/Site/Estoque/encode.php?pesquisar=". $pesquisar);
-    $dados = json_decode($json, true);
+    if($pesquisar != ""){
+        $json = file_get_contents("http://localhost/ProjetoOng/Site/Estoque/encode.php?pesquisar=". $pesquisar);
+        $dados = json_decode($json, true);
+    }
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -29,7 +30,7 @@
     <title>Estoque</title>
 </head>
 <body>
-    <?php //include '../menu.php';?>
+    <?php include '../menu.php';?>
     <br/>
     <div class="container primary">
         <div class="display-4 my-5 text-left col primary">

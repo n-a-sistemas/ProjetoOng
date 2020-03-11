@@ -29,8 +29,8 @@ if(!isset($_SESSION['id_usuario'])){
         <div class="display-4 my-2 text-left">
             <h1>Caixa</h1>
             <hr />
-    </div>
-        <form action="insertVendas.php" method="POST" enctype="multipart/form-data" class="row">
+        </div>
+        <form action="#" method="POST" enctype="multipart/form-data" class="row">
             <div class="col-12 col-lg-6">
                 <div class="form-group text-left col">
                     <label for="codigo">Código e nome do produto</label>
@@ -39,14 +39,15 @@ if(!isset($_SESSION['id_usuario'])){
                             if($resultado->num_rows){
                                 while($linha=$resultado->fetch_assoc()){
                                     ?>
-                                    <option value="<?php echo $linha['id_produto']?>"><?php echo $linha['codigo'];?> - <?php echo $linha['nome'];?></option>
-                                    <?php
+                        <option value="<?php echo $linha['id_produto']?>"><?php echo $linha['codigo'];?> -
+                            <?php echo $linha['nome'];?></option>
+                        <?php
                                 }
                             }
                         ?>
                     </select>
                 </div>
-                
+
                 <div class="form-group text-left col">
                     <label for="preco_unitario">Preço Unitário: </label>
                     <input type="text" name="preco_unitario" id="preco_unitario" value="" class="form-control" disabled>
@@ -54,19 +55,32 @@ if(!isset($_SESSION['id_usuario'])){
 
                 <div class="form-group text-left col">
                     <label for="quantidade">Quantidade: </label>
-                    <input type="text" name="quantidade" id="quantidade" class="form-control">
+                    <input type="number" name="quantidade" id="quantidade" class="form-control" value="1" min="1"
+                        max="100">
                 </div>
 
                 <div class=" text-left col-md-5">
-                    <label for="preco" class="d-inline">Valor total</label>
+                    <label for="valor_peca" class="d-inline">Valor total da peça</label>
                 </div>
 
                 <div class="input-group text-left col-md-7">
                     <div class="input-group-prepend">
                         <span class="input-group-text"><strong>R$</strong></span>
                     </div>
-                    <input type="text" id="valor" name="valor" class="form-control dinheiro"
-                        placeholder="Digite apenas números..." required disabled>
+                    <input type="text" id="valor_peca" name="valor_peca" class="form-control dinheiro" required
+                        disabled>
+                </div>
+
+                <div class=" text-left col-md-5">
+                    <label for="valor_compra" class="d-inline">Valor total da compra</label>
+                </div>
+
+                <div class="input-group text-left col-md-7">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><strong>R$</strong></span>
+                    </div>
+                    <input type="text" id="valor_compra" name="valor_compra" value="0" class="form-control dinheiro" required
+                        disabled>
                 </div>
             </div>
 
@@ -74,48 +88,31 @@ if(!isset($_SESSION['id_usuario'])){
                 <img class="img-fluid" width="90px" id="fotoCx" src="camiseta.png" alt="">
             </div>
 
-
-            <button type="submit" class="btn btn-lg btn-outline-info my-4 mx-4">Confirmar</button>
-            <button type="reset" class="btn btn-lg btn-outline-success my-4 mx-4">Finalizar compra</button>
-            <button type="reset" class="btn btn-lg btn-outline-danger my-4 mx-4">Cancelar</button>
-
-            <div class="col-12 col-lg-6 mt-2 text-center">
+            <button type="button" id="confirmar" class="btn btn-lg btn-outline-info my-4 mx-4">Confirmar</button>
+            <button type="button" id="finalizar" class="btn btn-lg btn-outline-success my-4 mx-4">Finalizar compra</button>
+            <button type="reset" id="cancelar" class="btn btn-lg btn-outline-danger my-4 mx-4">Cancelar</button>
+        </form>
+        <div class="col-12 col-lg-6 mt-2 text-center">
                 <table class="table table-bordered table-hover rounded shadow">
                     <thead>
                         <tr>
                             <th scope="col">Nome</th>
                             <th scope="col">Quantidade</th>
-                            <th scope="col">Valor unitário</th>
+                            <th scope="col">Preço total da peça(R$)</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <?php
-                                if(isset($_GET['datainicial']) || isset($_GET['datafinal'])){
-                            
-                                    foreach ($dados as $row) {
-                                        echo "<tr>";
-                                        echo "<td>".$row['nome']."</td>";
-                                        echo "<td>".$row['quantidade']."</td>";
-                                        echo "<td>".$row['valor_total']."</td>";
-                                        echo "</tr>"; 
-                                    }
-                                    echo "</tr><td>Valor total: " . $preco ."</td></tr>";
-                                }
-                            ?>
+                    <tbody id="compra">
                     </tbody>
                 </table>
             </div>
-
-
-        </form>
     </div>
-   
+
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
     <script src="../Mascaras/js/jquery.mask.min.js" type="text/javascript"></script>
     <script src="../CadastrarProdutos/js/mask-val.js"></script>
     <script src="calculo.js"></script>
