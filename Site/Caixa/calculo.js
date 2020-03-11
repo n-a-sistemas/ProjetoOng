@@ -84,35 +84,6 @@ $(document).ready(function () {
             }
         });
     });
-    $('#finalizar').click(function(){
-        var nome = document.getElementsByClassName('nome');
-        var quantidade = document.getElementsByClassName('quantidade');
-        var valor = document.getElementById('valor_compra').value;
-
-        var array_nome = Array();
-        for(var i = 0; i < nome.length; i++){
-            array_nome.push(nome[i].innerHTML); 
-        }
-        
-        var array_quantidade = Array();
-        for(var i = 0; i < quantidade.length; i++){
-            array_quantidade.push(quantidade[i].innerHTML); 
-        }
-        alert(array_nome);
-        $.ajax({
-            type: 'POST',
-            url: 'http://localhost/ProjetoOng/Site/Caixa/finalizarCompras.php',
-            dataType: 'html',
-            data: { 'nome': array_nome, 'quantidade': array_quantidade, 'valor':valor },
-            // Após carregar, coloca a lista dentro do select de categorias.
-            success: function (data) {
-                // Adiciona o retorno no campo, habilita e da foco
-                //if(data){alert('compra finalizada');}
-                //else{ alert('erro');}
-                alert(data);
-            }
-        });
-    });
     function calculaCompra(){
         var compra_total = 0.00;
         var total = document.getElementsByClassName('total');
@@ -122,3 +93,24 @@ $(document).ready(function () {
         $("#valor_compra").val(compra_total.toFixed(2));
     }
 });
+function enviarCompra(){
+    var nome = document.getElementsByClassName('nome');
+    var quantidade = document.getElementsByClassName('quantidade');
+    var valor = document.getElementById('valor_compra').value;
+
+    var array_nome = Array();
+    for(var i = 0; i < nome.length; i++){
+        array_nome.push(nome[i].innerHTML); 
+    }
+    
+    var array_quantidade = Array();
+    for(var i = 0; i < quantidade.length; i++){
+        array_quantidade.push(quantidade[i].innerHTML); 
+    }
+    
+    var form_nome = document.getElementById('array_nome');
+    var form_quantidade = document.getElementById('array_quantidade');
+    var form_preco = document.getElementById('preco_final');
+
+    form_nome.value = array_nome[0];
+}
