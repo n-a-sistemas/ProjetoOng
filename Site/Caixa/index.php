@@ -92,7 +92,7 @@ if(!isset($_SESSION['id_usuario'])){
             <div class="d-flex justify-items-center flex-column mt-3">
 
                 <div class="col-12 col-md-12">
-                    <img class="img-fluid  mb-4" width="90px" id="fotoCx" src="camiseta.png" alt="">
+                    <img class="img-fluid  mb-4" width="90px" src="imagens/camiseta azul.jpg" id="fotoCx" alt="">
                     <table class="table table-bordered table-responsive table-hover rounded shadow">
                         <thead>
                             <tr>
@@ -103,7 +103,6 @@ if(!isset($_SESSION['id_usuario'])){
                         </thead>
 
                         <tbody id="compra">
-
                         </tbody>
                     </table>
 

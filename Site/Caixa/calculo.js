@@ -12,9 +12,21 @@ $(document).ready(function () {
         // Após carregar, coloca a lista dentro do select de categorias.
         success: function (data) {
             // Adiciona o retorno no campo, habilita e da foco
-            $('#preco_unitario').val(data);
-            $('#valor_peca').val(data);
+            var preco = parseFloat(data);
+            $('#preco_unitario').val(preco.toFixed(2));
+            $('#valor_peca').val(preco.toFixed(2));
             $('#quantidade').val(1);
+        }
+    });
+    $.ajax({
+        type: 'POST',
+        url: 'http://localhost/ProjetoOng/Site/Caixa/produtoPreco.php',
+        dataType: 'html',
+        data: { 'id': $('#codigo').val(), 'imagem': 1 },
+        // Após carregar, coloca a lista dentro do select de categorias.
+        success: function (data) {
+            // Adiciona o retorno no campo, habilita e da foco
+            $('#fotoCx').attr('src', '../CadastrarProdutos/'+data);
         }
     });
     $('#codigo').change(function () {
@@ -31,9 +43,21 @@ $(document).ready(function () {
             // Após carregar, coloca a lista dentro do select de categorias.
             success: function (data) {
                 // Adiciona o retorno no campo, habilita e da foco
-                $('#preco_unitario').val(data);
-                $('#valor_peca').val(data);
+                var preco = parseFloat(data);
+                $('#preco_unitario').val(preco.toFixed(2));
+                $('#valor_peca').val(preco.toFixed(2));
                 $('#quantidade').val(1);
+            }
+        });
+        $.ajax({
+            type: 'POST',
+            url: 'http://localhost/ProjetoOng/Site/Caixa/produtoPreco.php',
+            dataType: 'html',
+            data: { 'id': $('#codigo').val(), 'imagem': 1 },
+            // Após carregar, coloca a lista dentro do select de categorias.
+            success: function (data) {
+                // Adiciona o retorno no campo, habilita e da foco
+                $('#fotoCx').attr('src', '../CadastrarProdutos/'+data);
             }
         });
     });
@@ -82,6 +106,9 @@ $(document).ready(function () {
                 }
                 calculaCompra();
             }
+        });
+        $('#cancelar').click(function(){
+            $('#compra').empty();
         });
     });
     function calculaCompra(){

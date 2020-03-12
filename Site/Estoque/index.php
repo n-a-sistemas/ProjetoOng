@@ -13,7 +13,7 @@
     }else{
         $pesquisar = "";
     }
-    $json = file_get_contents("http://localhost/xampp/ProjetoOng/Site/Estoque/encode.php?pesquisar=". $pesquisar."&colunas=".$colunas);
+    $json = file_get_contents("http://localhost/ProjetoOng/Site/Estoque/encode.php?pesquisar=". $pesquisar."&colunas=".$colunas);
     $dados = json_decode($json, true);
 ?>
 <!DOCTYPE html>
@@ -73,7 +73,7 @@
                             <td><?php echo $row['categoria'] ?></td>
                             <td><?php echo $row['quantidade'] ?></td>
                             <td>R$ <?php echo $row['valor_unitario'] ?></td>
-                            <td> <a href="index.php">Remover</a> </td>
+                            <td> <a href="delete.php?id='<?php echo $row['id_produto'];?>'">Remover</a> </td>
                             </tr>
                         <?php
                         }

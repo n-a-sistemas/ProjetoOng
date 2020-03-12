@@ -7,16 +7,15 @@ $codigo = $_POST['codigo'];
 $categoria = $_POST['categoria'];
 $nome = $_POST['nome'];
 $imagem = "";
-if(isset($_FILES['imagemUpload'])){
-    $imagem = $diretorio . basename($_FILES['imagemUpload']['name']);
+if($_FILES['imagem']['name'] != ""){
+    $imagem = $diretorio . basename($_FILES['imagem']['name']);
+    $tipo = strtolower(pathinfo($imagem, PATHINFO_EXTENSION));
+    move_uploaded_file($_FILES['imagem']['tmp_name'], $imagem);
 }
-$tipo = strtolower(pathinfo($imagem, PATHINFO_EXTENSION));
 $descricao = $_POST['descricao'];
 $valor = $_POST['valor'];
 $valor = str_replace('.','', $valor);
 $valor = str_replace(',','.', $valor);
-
-move_uploaded_file($_FILES['imagemUpload']['tmp_name'], $imagem);
 
 if(empty($codigo) || empty($categoria) || empty($nome) || empty($valor)){
     header("Location: ../CadastrarProdutos");
