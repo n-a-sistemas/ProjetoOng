@@ -109,8 +109,10 @@ function enviarCompra(){
     }
     
     var form_nome = document.getElementById('array_nome');
+    form_nome.value = array_nome;
     var form_quantidade = document.getElementById('array_quantidade');
+    form_quantidade.value = array_quantidade;
     var form_preco = document.getElementById('preco_final');
-
-    form_nome.value = array_nome[0];
+    form_preco.value = valor;
+    return true;
 }

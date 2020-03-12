@@ -30,7 +30,7 @@ if(!isset($_SESSION['id_usuario'])){
             <h1>Caixa</h1>
             <hr />
         </div>
-        <form  method="POST" enctype="multipart/form-data" class="row" onsubmit="return enviarCompra();">
+        <form action="finalizaCompras.php" method="POST" enctype="multipart/form-data" class="row" onsubmit="return enviarCompra();">
             <div class="col-12 col-lg-6">
                 <div class="form-group text-left col">
                     <label for="codigo">Código e nome do produto</label>
@@ -83,9 +83,9 @@ if(!isset($_SESSION['id_usuario'])){
                         required disabled>
                 </div>
                 <div>
-                    <input type="hidden" name="array_nome" value="">
-                    <input type="hidden" name="array_quantidade" value="">
-                    <input type="hidden" name="preco_final" value="">
+                    <input type="hidden" name="array_nome" id="array_nome" value="">
+                    <input type="hidden" name="array_quantidade" id="array_quantidade" value="">
+                    <input type="hidden" name="preco_final" id="preco_final" value="">
                 </div>
             </div>
 
