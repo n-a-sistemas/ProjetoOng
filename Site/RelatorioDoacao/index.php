@@ -8,7 +8,7 @@
         $datainicial = $_GET['datainicial'];
     }
     else{
-        $datainicial = '1800/1/1';
+        $datainicial = '1900/1/1';
     }
     if(isset($_GET['datafinal'])){
         $datafinal = $_GET['datafinal'];
@@ -16,7 +16,7 @@
     else{
         $datafinal = date('Y-m-d');
     }
-    if($datainicial > $datafinal){
+    if($datainicial > $datafinal && $datafinal != ""){
         header("Location: index.php");
     }
     
@@ -47,33 +47,21 @@
                     </div>
                 </div>
             </div>
-
-            <form action="" class="form-inline" method="GET">
-                <div class="form-group ">
-                    <label for="" class="mx-2">Data Inicial: </label>
-                    <input type="date" name="datainicial" class="mx-1 form-control" id="datainicial">
-                </div>
-                <div class="form-group ">
-                    <label for="datafinal" class="mx-2">Data Final: </label>
-                    <input type="date" name="datafinal" class="mx-1 form-control" id="datafinal">
-                </div>
-                <button type="submit" class="btn btn-lg btn-outline-success mx-2">Procurar</button>
-            </form>
-        
-
+            <div class="row">
+                <form action="" class="form-inline" method="GET">
+                    <div class="form-group ">
+                        <label for="datainicial" class="mx-2">Data Inicial: </label>
+                        <input type="date" name="datainicial" class="mx-1 form-control" id="datainicial">
+                    </div>
+                    <div class="form-group ">
+                        <label for="datafinal" class="mx-2">Data Final: </label>
+                        <input type="date" name="datafinal" class="mx-1 form-control" id="datafinal">
+                    </div>
+                    <button type="submit" class="btn btn-lg btn-outline-success mx-2">Procurar</button>
+                </form>
+                <button onclick="impressao();" class="btn btn-lg btn-outline-info mx-2">Imprimir</button>
+            </div>
         </div>
-        <!--
-        <form action="" class="form-inline" method="GET">
-            <div class="form-group ">
-                <label for="" class="mx-2">Data Inicial: </label>
-                <input type="date" name="datainicial" class="mx-1 form-control" id="datainicial">
-            </div>
-            <div class="form-group ">
-                <label for="datafinal" class="mx-2">Data Final: </label>
-                <input type="date" name="datafinal" class="mx-1 form-control" id="datafinal">
-            </div>
-            <button type="submit" class="btn btn-lg btn-outline-success mx-2">Procurar</button>
-        </form>-->
         <div class="container">
             <div>
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -99,6 +87,7 @@
                             </thead>
                             <tbody>
                                 <?php
+                                if($datainicial != ""){
                                     if($datainicial != null && $datafinal != null){
                                         foreach ($data as $row) {
                                             ?>
@@ -113,6 +102,9 @@
                                     }else{
                                         echo "<p>"."NENHUM RESULTADO FOI ENCONTRADO PARA A SUA PESQUISA"."</p>";
                                     }
+                                }else{
+                                    echo "<p>"."ATENÇÃO!! Insira uma data inicial para iniciar um pesquisa em seu estoque"."</p>";
+                                }
                                 ?>
                             </tbody>
                         </table>

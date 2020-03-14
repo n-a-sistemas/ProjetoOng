@@ -30,7 +30,7 @@ if(!isset($_SESSION['id_usuario'])){
             <h1>Caixa</h1>
             <hr />
         </div>
-        <form action="#" method="POST" enctype="multipart/form-data" class="row">
+        <form action="finalizaCompras.php" method="POST" enctype="multipart/form-data" class="row" onsubmit="return enviarCompra();">
             <div class="col-12 col-lg-6">
                 <div class="form-group text-left col">
                     <label for="codigo">Código e nome do produto</label>
@@ -79,32 +79,57 @@ if(!isset($_SESSION['id_usuario'])){
                     <div class="input-group-prepend">
                         <span class="input-group-text"><strong>R$</strong></span>
                     </div>
-                    <input type="text" id="valor_compra" name="valor_compra" value="0" class="form-control dinheiro" required
-                        disabled>
+                    <input type="text" id="valor_compra" name="valor_compra" value="0" class="form-control dinheiro"
+                        required disabled>
+                </div>
+                <div>
+                    <input type="hidden" name="array_nome" id="array_nome" value="">
+                    <input type="hidden" name="array_quantidade" id="array_quantidade" value="">
+                    <input type="hidden" name="preco_final" id="preco_final" value="">
                 </div>
             </div>
 
-            <div class="col-12 col-lg-6 mt-2 text-center">
-                <img class="img-fluid" width="90px" id="fotoCx" src="camiseta.png" alt="">
+            <div class="d-flex justify-items-center flex-column mt-3">
+
+                <div class="col-12 col-md-12">
+                    <img class="img-fluid  mb-4" width="90px" src="imagens/camiseta azul.jpg" id="fotoCx" alt="">
+                    <table class="table table-bordered table-responsive table-hover rounded shadow">
+                        <thead>
+                            <tr>
+                                <th scope="col">Nome</th>
+                                <th scope="col">Quantidade</th>
+                                <th scope="col">Preço total da peça(R$)</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="compra">
+                        </tbody>
+                    </table>
+
+                </div>
             </div>
 
-            <button type="button" id="confirmar" class="btn btn-lg btn-outline-info my-4 mx-4">Confirmar</button>
-            <button type="button" id="finalizar" class="btn btn-lg btn-outline-success my-4 mx-4">Finalizar compra</button>
+
+            <!-- TESTES 
+
+            -->
+
+
+
+
+
+
+
+
+
+
+            <button type="button" id="confirmar" class="btn btn-lg btn-outline-info my-4 mx-4">Adicionar
+                produto</button>
+            <button type="submit" id="finalizar" class="btn btn-lg btn-outline-success my-4 mx-4">Finalizar
+                compra</button>
             <button type="reset" id="cancelar" class="btn btn-lg btn-outline-danger my-4 mx-4">Cancelar</button>
         </form>
-        <div class="col-12 col-lg-6 mt-2 text-center">
-                <table class="table table-bordered table-hover rounded shadow">
-                    <thead>
-                        <tr>
-                            <th scope="col">Nome</th>
-                            <th scope="col">Quantidade</th>
-                            <th scope="col">Preço total da peça(R$)</th>
-                        </tr>
-                    </thead>
-                    <tbody id="compra">
-                    </tbody>
-                </table>
-            </div>
+
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"

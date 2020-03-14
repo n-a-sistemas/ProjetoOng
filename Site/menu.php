@@ -1,5 +1,5 @@
 <?php 
-    session_start();
+    /*session_start();*/
     $acesso = $_SESSION['acesso'];
 ?>
 
@@ -48,7 +48,7 @@
                         <a class="nav-link" href="../Estoque">Estoque</a>
                 </li>
                 <li  class="nav-item">
-                    <a class="nav-link" href="../despesas/form.php">Despesas</a>
+                    <a class="nav-link" href="../despesas">Despesas</a>
                 </li>
                 <li  class="nav-item">
                     <a class="nav-link" href="../MeuPerfil">Meu perfil</a>
