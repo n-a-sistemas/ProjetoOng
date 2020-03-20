@@ -16,7 +16,9 @@ title{
 label{
     margin-top: 10px;
 }
-
+button.btn-remover{
+    font-size: 15px!important;
+}
 /*
 img #foto-Cx{
     border-width: medium!important;

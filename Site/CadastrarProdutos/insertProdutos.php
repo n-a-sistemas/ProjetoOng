@@ -12,6 +12,9 @@ if($_FILES['imagem']['name'] != ""){
     $tipo = strtolower(pathinfo($imagem, PATHINFO_EXTENSION));
     move_uploaded_file($_FILES['imagem']['tmp_name'], $imagem);
 }
+else{
+    $imagem = $diretorio . "camiseta azul.jpg";
+}
 $descricao = $_POST['descricao'];
 $valor = $_POST['valor'];
 $valor = str_replace('.','', $valor);

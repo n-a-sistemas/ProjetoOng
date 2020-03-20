@@ -8,23 +8,21 @@
     if(isset($_POST['tabela'])){
         $tabela = $_POST['tabela'];
     }
-    $imagem = 0;
-    if(isset($_POST['imagem'])){
-        $imagem = $_POST['imagem'];
-    }
     if($id != ""){
-        if($tabela == 0 && $imagem == 0){
+        if($tabela == 0){
             $preco = "";
+            $cx_imagem = "";
             $sql = "SELECT * FROM produtos WHERE id_produto = $id";
             $resultado = $conn->query($sql);
             if($resultado->num_rows == 1){
                 while($linha = $resultado->fetch_assoc()){
                     $preco = $linha['valor_unitario'];
+                    $cx_imagem = $linha['imagem'];
                 }
             }
-            echo $preco;
+            echo $preco .",". $cx_imagem;
         }
-        else if($tabela == 1 && $imagem == 0){
+        else{
             $nome = "";
             $sql = "SELECT * FROM produtos WHERE id_produto = $id";
             $resultado = $conn->query($sql);
@@ -34,17 +32,6 @@
                 }
             }
             echo $nome;
-        }
-        else if($tabela == 0 && $imagem == 1){
-            $cx_imagem = "";
-            $sql = "SELECT * FROM produtos WHERE id_produto = $id";
-            $resultado = $conn->query($sql);
-            if($resultado->num_rows == 1){
-                while($linha = $resultado->fetch_assoc()){
-                    $cx_imagem = $linha['imagem'];
-                }
-            }
-            echo $cx_imagem;
         }
     }
 ?>

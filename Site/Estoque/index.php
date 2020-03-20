@@ -56,7 +56,7 @@
                     <th scope="col">Categoria</th>
                     <th scope="col">Quantidade</th>
                     <th scope="col">Preço</th>
-                    <th scope="col">#</th>
+                    <th scope="col" colspan=2>#</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -74,6 +74,7 @@
                             <td><?php echo $row['quantidade'] ?></td>
                             <td>R$ <?php echo $row['valor_unitario'] ?></td>
                             <td> <a href="delete.php?id='<?php echo $row['id_produto'];?>'">Remover</a> </td>
+                            <td> <a href="../EditarProdutos/?id=<?php echo $row['id_produto'];?>">Editar produtos</a> </td>
                             </tr>
                         <?php
                         }
