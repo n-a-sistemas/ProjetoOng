@@ -30,15 +30,10 @@ if(!isset($_SESSION['id_usuario'])){
             <div>
                 <button class="btn btn-outline-success my-sm-0 cat" type="submit">Adicionar</button>
             </div>
-            <div>
-            </div>
         </form>
-        <div>
-            
-        </div>
         <div class="table-responsive">
             <table class="table table-bordered">
-                <thead class="table">
+                <thead>
                     <tr>
                     <th scope="col">ID</th>
                     <th scope="col">Nome</th>
