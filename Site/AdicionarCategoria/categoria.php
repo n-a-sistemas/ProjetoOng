@@ -10,7 +10,7 @@
         $sql = "SELECT * FROM categorias";
     }
     else if($texto != ""){
-        $sql = "SELECT * FROM categorias WHERE categoria LIKE '$texto%'";
+        $sql = "SELECT * FROM categorias WHERE categoria LIKE '%$texto%'";
     }
     $resultado = $conn->query($sql);
     if($resultado->num_rows > 0){
